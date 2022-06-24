@@ -1,4 +1,5 @@
-# Jobs
+# 仕事
+
 You enjoy to work with Tiptap? You are not alone. Some amazing companies are looking for developers with some Tiptap and/or [Hocuspocus](https://hocuspocus.dev) experience.
 
 - **[Software Engineer](https://gamma.app/docs/Software-Engineer-6s0e0grm9zk9w5s) @ Gamma**<br>
