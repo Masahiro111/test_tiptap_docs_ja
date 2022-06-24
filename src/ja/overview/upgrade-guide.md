@@ -2,49 +2,77 @@
 tableOfContents: true
 ---
 
-# Upgrade Guide
+# アップグレードガイド
 
-## Introduction
-First of all, Tiptap v1 isn’t supported anymore and won’t receive any further updates.
+## はじめに
 
-Yes, it’s tedious work to upgrade your favorite text editor to a new API, but we made sure you’ve got enough reasons to upgrade to the newest version.
+<!-- First of all, Tiptap v1 isn’t supported anymore and won’t receive any further updates. -->
 
-* Autocompletion in your IDE (thanks to TypeScript)
+<!-- Yes, it’s tedious work to upgrade your favorite text editor to a new API, but we made sure you’ve got enough reasons to upgrade to the newest version. -->
+
+まず、Tiptap v1はサポートされなくなり、それ以上のアップデートは受信されなくなります。
+
+お気に入りのテキストエディタを新しいAPIにアップグレードするのは面倒な作業ですが、最新バージョンにアップグレードする十分な理由があることを確認しました。
+
+<!-- * Autocompletion in your IDE (thanks to TypeScript)
 * Amazing documentation with 100+ pages and 100+ interactive examples
 * Active development, new features in the making, new releases every week
 * Tons of new extensions
-* Well-tested code base
+* Well-tested code base -->
 
-The new API will look pretty familiar to you, but there are a ton of changes though. To make the upgrade a little bit easier, here is everything you need to know:
+* IDEでのオートコンプリート（TypeScriptのおかげで）
+* 100以上のページと100以上のインタラクティブな例を含むすばらしいドキュメント
+* 活発な開発、作成中の新機能、毎週の新リリース
+* たくさんの新しい拡張機能
+* 十分にテストされたコードベース
 
-## Uninstall Tiptap v1
-The whole package structure has changed, we even moved to another npm namespace, so you’ll need to remove the old version entirely before upgrading to Tiptap 2.
+<!-- The new API will look pretty familiar to you, but there are a ton of changes though. To make the upgrade a little bit easier, here is everything you need to know: -->
 
-Otherwise you’ll run into an exception, for example “looks like multiple versions of prosemirror-model were loaded”.
+新しいAPIは見覚えがありますが、多くの変更があります。アップグレードを少し簡単にするために、知っておく必要のあるすべてがここにあります。
+
+## Tiptapv1をアンインストールします
+
+<!-- The whole package structure has changed, we even moved to another npm namespace, so you’ll need to remove the old version entirely before upgrading to Tiptap 2. -->
+
+<!-- Otherwise you’ll run into an exception, for example “looks like multiple versions of prosemirror-model were loaded”. -->
+
+パッケージ構造全体が変更され、別の npm 名前空間に移動したため、Tiptap 2 にアップグレードする前に古いバージョンを完全に削除する必要があります。
+
+そうしないと、「"looks like multiple versions of prosemirror-model were loaded" (複数のバージョンのprosemirror-model がロードされたように見えます)」などの例外が発生します。
 
 ```bash
 npm uninstall tiptap tiptap-commands tiptap-extensions tiptap-utils
 ```
 
-## Install Tiptap v2
+## Tiptap V2 をインストールします
 
-Once you have uninstalled the old version of Tiptap, install the new Vue 2 package and the starter kit:
+<!-- Once you have uninstalled the old version of Tiptap, install the new Vue 2 package and the starter kit: -->
+
+古いバージョンの Tiptap をアンインストールしたら、新しい Vue2 パッケージとスターターキットをインストールします。
 
 ```bash
 npm install @tiptap/vue-2 @tiptap/starter-kit
 ```
 
-## Keep Tiptap v2 up to date
-We are constantly releasing updates to Tiptap.
+## Tiptapv2を最新の状態に保つ
 
-Unfortunately, for npm there is no integrated tool to easily update your dependencies, but you can use the `npm-check` package:
+Tiptapのアップデートを常にリリースしています。
+
+<!-- We are constantly releasing updates to Tiptap. -->
+
+残念ながら、npm には依存関係を簡単に更新する統合ツールはありませんが、`npm-check` パッケージを使用できます。
+
+<!-- Unfortunately, for npm there is no integrated tool to easily update your dependencies, but you can use the `npm-check` package: -->
 
 ```bash
 npm install -g npm-check
 npm-check -u
 ```
 
-## Explicitly register the Document, Text and Paragraph extensions
+## ドキュメント、テキスト、段落の拡張子を明示的に登録する
+
+tiptap 1は、デフォルト設定の `useBuiltInExtensions：true`を使用して、いくつかの必要な拡張機能を非表示にしようとしました。その設定は削除されており、すべての拡張機能をインポートする必要があります。少なくとも[`Document`]（/ api / nodes / document）、[` Paragraph`]（/ api / ノード/paragraph）、[` Text`]（/ api / nodes / text）拡張子を明示的にインポートしてください。
+
 tiptap 1 tried to hide a few required extensions from you with the default setting `useBuiltInExtensions: true`. That setting has been removed and you’re required to import all extensions. Be sure to explicitly import at least the [`Document`](/api/nodes/document), [`Paragraph`](/api/nodes/paragraph) and [`Text`](/api/nodes/text) extensions.
 
 ```js
@@ -65,6 +93,7 @@ new Editor({
 And we removed some settings: `dropCursor`, `enableDropCursor`, and `enableGapCursor`. Those are separate extensions now: [`Dropcursor`](/api/extensions/dropcursor) and [`Gapcursor`](/api/extensions/gapcursor). You probably want to load them, but if you don’t, just ignore this.
 
 ## New names for most extensions
+
 We switched to lowerCamelCase, so there’s a lot type names that changed. If you stored your content as JSON you need to loop through it and rename them. Sorry for that one.
 
 | Old type              | New type               |
@@ -82,9 +111,11 @@ We switched to lowerCamelCase, so there’s a lot type names that changed. If yo
 | ~~`todo_item`~~       | `taskItem` (new name!) |
 
 ## Removed methods
+
 We removed the `.state()` method. No worries though, it’s still available through `editor.state`.
 
 ## New extension API
+
 In case you’ve built some custom extensions for your project, you’re required to rewrite them to fit the new API. No worries, you can keep a lot of your work though. The `schema`, `commands`, `keys`, `inputRules` and `pasteRules` all work like they did before. It’s just different how you register them.
 
 ```js
@@ -120,6 +151,7 @@ const CustomExtension = Node.create({
 Read more about [all the nifty details building custom extensions](/guide/custom-extensions) in our guide.
 
 ## Renamed settings and methods
+
 [We renamed a lot of settings and methods](/api/editor). Hopefully you can migrate to the new API with search & replace. Here is a list of what changed:
 
 | Old name        | New name    |
@@ -127,6 +159,7 @@ Read more about [all the nifty details building custom extensions](/guide/custom
 | ~~`autoFocus`~~ | `autofocus` |
 
 ## Renamed commands
+
 All new extensions come with specific commands to set, unset and toggle styles. So instead of `.bold()`, it’s now `.toggleBold()`. Also, we switched to lowerCamelCase, below are a few examples. Oh, and we renamed `todo_list`, to `taskList`, sorry for that one.
 
 | Old command              | New command                     |
@@ -151,9 +184,11 @@ All new extensions come with specific commands to set, unset and toggle styles. 
 | …                        | …                               |
 
 ## MenuBar, BubbleMenu and FloatingMenu
+
 Read the dedicated [guide on creating menus](/guide/menus) to migrate your menus.
 
 ## Commands can be chained now
+
 Most commands can be combined to one call now. That’s shorter than separate function calls in most cases. Here is an example to make the selected text bold:
 
 ```js
@@ -163,6 +198,7 @@ editor.chain().toggleBold().focus().run()
 The `.chain()` is required to start a new chain and the `.run()` is needed to actually execute all the commands in between. Read more about [the new Tiptap commands](/api/commands) in our API documentation.
 
 ## .focus() isn’t called on every command anymore
+
 We tried to hide the `.focus()` command from you with Tiptap 1 and executed that on every command. That led to issues in specific use cases, where you want to run a command, but don’t want to focus the editor.
 
 With Tiptap v2 you have to explicitly call the `focus()` and you probably want to do that in a lot of places. Here is an example:
@@ -172,17 +208,21 @@ editor.chain().focus().toggleBold().run()
 ```
 
 ## Event callbacks have fewer parameters
+
 The new event callbacks have fewer parameters. The same things should be available through `this.` now. [Read more about events here.](/api/events)
 
 ## Collaborative editing
+
 The reference implementation for collaborative editing uses Y.js now. That’s a whole different thing. You still can use the Tiptap 1 extension, but it’s up to you to adapt it to the new extension API. If you’ve done this, don’t forget to share it with us so we can link to it from here!
 
 Read more about [the new collaborative editing experience](/guide/collaborative-editing) in our guide.
 
 ## Marks don’t support node view anymore
+
 For marks, node views are [not well supported in ProseMirror](https://discuss.prosemirror.net/t/there-is-a-bug-in-marks-nodeview/2722/2). There is also [a related issue](https://github.com/ueberdosis/tiptap/issues/613) for Tiptap 1. That’s why we removed it in Tiptap 2.
 
 ## Become a sponsor
+
 tiptap wouldn’t exist without the funding of its community. If you fell in love with Tiptap, don’t forget to [become a sponsor](/sponsor) and make the maintenance, development and support sustainable.
 
 In exchange, we’ll take you into our hearts, invite you to private repositories, add a `sponsor ♥` label to your issues and pull requests and more.
