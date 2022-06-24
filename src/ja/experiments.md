@@ -10,7 +10,7 @@
 * [Content of multiple editors in a single Y.js](/experiments/multiple-editors)
 * [Generic Figure](/experiments/generic-figure)
 
-## Experimental extensions
+## 実験的な拡張
 
 * [@tiptap/extension-command-menu](/experiments/commands)
 * [@tiptap/extension-iframe](/experiments/embeds)
