@@ -1,9 +1,16 @@
 # CDN
-:::warning
+
+<!-- :::warning
 There’s [an issue with skypack](https://github.com/skypackjs/skypack-cdn/issues/159), which causes trouble every now and then. We can’t do much about that for now.
+::: -->
+
+:::警告
+[skypackの問題](https://github.com/skypackjs/skypack-cdn/issues/159) があり、これが時々問題を引き起こします。 今のところ、それについてはあまりできません。
 :::
 
-For testing purposes or demos, use our [Skypack](https://www.skypack.dev/) CDN builds. Here are the few lines of code you need to get started:
+<!-- For testing purposes or demos, use our [Skypack](https://www.skypack.dev/) CDN builds. Here are the few lines of code you need to get started: -->
+
+テスト目的またはデモには、[Skypack](https://www.skypack.dev/) CDNビルドを使用します。 開始するために必要な数行のコードは次のとおりです。
 
 ```html
 <!DOCTYPE html>
@@ -28,4 +35,6 @@ For testing purposes or demos, use our [Skypack](https://www.skypack.dev/) CDN b
 </html>
 ```
 
-You should now see Tiptap in your browser. Time to give yourself a pat on the back! :)
+<!-- You should now see Tiptap in your browser. Time to give yourself a pat on the back! :) -->
+
+これで、ブラウザに Tiptap が表示されます。 背中を軽くたたく時間です！ :)
