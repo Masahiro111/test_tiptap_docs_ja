@@ -100,7 +100,7 @@ Alpine.start()
 
 それでは、`index.html`　のコンテンツを次のサンプルコードに置き換えて、アプリでエディターを使用してみましょう。
 
-Now, let’s replace the content of the `index.html` with the following example code to use the editor in our app.
+<!-- Now, let’s replace the content of the `index.html` with the following example code to use the editor in our app. -->
 
 ```html
 <!-- index.html -->
@@ -149,4 +149,6 @@ Now, let’s replace the content of the `index.html` with the following example 
 </html>
 ```
 
-You should now see Tiptap in your browser. Time to give yourself a pat on the back! :)
+<!-- You should now see Tiptap in your browser. Time to give yourself a pat on the back! :) -->
+
+これで、ブラウザに Tiptap が表示されます。背中を軽くたたく時間です！ :)
