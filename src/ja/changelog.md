@@ -15,4 +15,4 @@ Tiptapは50を超える個別のパッケージで構成されているため、
 
 <!-- Once we’re transitioning to a stable version, [we’ll write blog posts](/blog) about bigger changes and keep them in a changelog here. -->
 
-安定版に移行したら、大きな変更について[ブログ投稿を作成]（/ blog）、ここで変更ログに保存します。
+安定版に移行したら、大きな変更について[ブログ投稿を作成](/blog)、ここで変更ログに保存します。

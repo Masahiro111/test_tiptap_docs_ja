@@ -49,6 +49,7 @@ tableOfContents: true
 
 
 ## コードスタイル
+
 一貫したコードスタイルを保証する eslint 構成があります。エラーをチェックするには、 `$ npm run lint` を実行します。プルリクエストを送信するときにもチェックされます。プルリクエストを送信する前に、パスしていることを確認してください。
 
 <!-- There is an eslint config that ensures a consistent code style. To check for errors, run `$ npm run lint`. That’ll be checked when you send a pull request, too. Make sure it’s passing, before sending a pull request. -->
