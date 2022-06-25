@@ -71,7 +71,7 @@ npm-check -u
 
 ## ドキュメント、テキスト、段落の拡張子を明示的に登録する
 
-tiptap 1は、デフォルト設定の `useBuiltInExtensions: true`を使用して、いくつかの必要な拡張機能を非表示にしようとしました。その設定は削除されており、すべての拡張機能をインポートする必要があります。少なくとも [`Document`](/api/nodes/document) 、[`Paragraph`](/api/nodes/paragraph) と [`Text`](/api/nodes/text) 拡張子を明示的にインポートしてください。
+tiptap v1 は、デフォルト設定の `useBuiltInExtensions: true` を使用して、いくつかの必要な拡張機能を非表示にしようとしました。その設定は削除されており、すべての拡張機能をインポートする必要があります。少なくとも [`Document`](/api/nodes/document) 、[`Paragraph`](/api/nodes/paragraph) と [`Text`](/api/nodes/text) 拡張子を明示的にインポートしてください。
 
 <!-- tiptap 1 tried to hide a few required extensions from you with the default setting `useBuiltInExtensions: true`. That setting has been removed and you’re required to import all extensions. Be sure to explicitly import at least the [`Document`](/api/nodes/document), [`Paragraph`](/api/nodes/paragraph) and [`Text`](/api/nodes/text) extensions. -->
 
@@ -90,9 +90,9 @@ new Editor({
 })
 ```
 
-And we removed some settings: `dropCursor`, `enableDropCursor`, and `enableGapCursor`. Those are separate extensions now: [`Dropcursor`](/api/extensions/dropcursor) and [`Gapcursor`](/api/extensions/gapcursor). You probably want to load them, but if you don’t, just ignore this.
+<!-- And we removed some settings: `dropCursor`, `enableDropCursor`, and `enableGapCursor`. Those are separate extensions now: [`Dropcursor`](/api/extensions/dropcursor) and [`Gapcursor`](/api/extensions/gapcursor). You probably want to load them, but if you don’t, just ignore this. -->
 
-そして、いくつかの設定を削除しました： `dropCursor`、` enableDropCursor`、および`enableGapCursor`。 これらは現在、別々の拡張機能です：[`Dropcursor`]（/ api / extends / dropcursor）と[`Gapcursor`]（/ api / extends / gapcursor）。 おそらくそれらをロードしたいのですが、ロードしない場合は、これを無視してください。
+そして、`dropCursor`、` enableDropCursor`、および`enableGapCursor`等、いくつかの設定を削除しました。 これらは現在、別々の拡張機能となっています（ [`Dropcursor`](/api/extends/dropcursor) と [`Gapcursor`](/api/extends/gapcursor)）。 通常は、それらをロードして使用できますが、この機能がいらない場合は、無視していただいて結構です。
 
 ## 拡張機能の新しい名前
 
@@ -156,7 +156,7 @@ const CustomExtension = Node.create({
 })
 ```
 
-Read more about [all the nifty details building custom extensions](/guide/custom-extensions) in our guide.
+<!-- Read more about [all the nifty details building custom extensions](/guide/custom-extensions) in our guide. -->
 
 ガイドで [カスタム拡張機能を構築するためのすべての気の利いた詳細](/guide/custom-extensions) の詳細をお読みください。
 
@@ -172,7 +172,7 @@ Read more about [all the nifty details building custom extensions](/guide/custom
 
 ## コマンドの名前を変更
 
-すべての新しい拡張機能には、スタイルを設定、設定解除、および切り替えるための特定のコマンドが付属しています。 したがって、`.bold()`の代わりに、`.toggleBold()` になりました。 また、lowerCamelCase に切り替えました。以下にいくつかの例を示します。 あぁ、`todo_list` の名前を `taskList` に変更しました。申し訳ありません。
+すべての新しい拡張機能には、スタイルを設定、設定解除、および切り替えるための特定のコマンドが付属しています。 したがって、`.bold()` の代わりに、`.toggleBold()` になりました。 また、lowerCamelCase に切り替えました。以下にいくつかの例を示します。 あぁ、`todo_list` の名前を `taskList` に変更しました。申し訳ありません。
 
 <!-- All new extensions come with specific commands to set, unset and toggle styles. So instead of `.bold()`, it’s now `.toggleBold()`. Also, we switched to lowerCamelCase, below are a few examples. Oh, and we renamed `todo_list`, to `taskList`, sorry for that one. -->
 
