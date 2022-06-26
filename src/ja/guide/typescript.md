@@ -2,7 +2,7 @@
 tableOfContents: true
 ---
 
-# TypeScriptの操作
+# TypeScript の操作
 
 ## はじめに
 
