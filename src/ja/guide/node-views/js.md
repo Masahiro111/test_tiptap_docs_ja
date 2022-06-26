@@ -5,9 +5,11 @@ tableOfContents: true
 # Node views with JavaScript
 
 ## Introduction
+
 Using frameworks like Vue or React can feel too complex, if you’re used to work without those two. Good news: You can use Vanilla JavaScript in your node views. There is just a little bit you need to know, but let’s go through this one by one.
 
 ## Render a node view with JavaScript
+
 Here is what you need to do to render a node view inside your editor:
 
 1. [Create a node extension](/guide/custom-extensions)
@@ -45,6 +47,7 @@ https://embed.tiptap.dev/preview/GuideNodeViews/JavaScript
 That node view even interacts with the editor. Time to see how that is wired up.
 
 ## Access node attributes
+
 The editor passes a few helpful things to your render function. One of them is the `node` prop. This one enables you to access node attributes in your node view. Let’s say you have [added an attribute](/guide/custom-extensions#attributes) named `count` to your node extension. You could access the attribute like this:
 
 ```js
@@ -59,6 +62,7 @@ addNodeView() {
 
 
 ## Update node attributes
+
 You can even update node attributes from your node view, with the help of the `getPos` prop passed to your render function. Dispatch a new transaction with an object of the updated attributes:
 
 ```js
@@ -91,6 +95,7 @@ addNodeView() {
 Does seem a little bit too complex? Consider using [React](/guide/node-views/react) or [Vue](/guide/node-views/vue), if you have one of those in your project anyway. It get’s a little bit easier with those two.
 
 ## Adding a content editable
+
 To add editable content to your node view, you need to pass a `contentDOM`, a container element for the content. Here is a simplified version of a node view with non-editable and editable text content:
 
 ```js

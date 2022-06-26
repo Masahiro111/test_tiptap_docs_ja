@@ -2,9 +2,10 @@
 tableOfContents: true
 ---
 
-# Custom extensions
+# カスタム拡張
 
-## Introduction
+## はじめに
+
 One of the strengths of Tiptap is its extendability. You don’t depend on the provided extensions, it is intended to extend the editor to your liking.
 
 With custom extensions you can add new content types and new functionalities, on top of what already exists or from scratch. Let’s start with a few common examples of how you can extend existing nodes, marks and extensions.
@@ -12,6 +13,7 @@ With custom extensions you can add new content types and new functionalities, on
 You’ll learn how you start from scratch at the end, but you’ll need the same knowledge for extending existing and creating new extensions.
 
 ## Extend existing extensions
+
 Every extension has an `extend()` method, which takes an object with everything you want to change or add to it.
 
 Let’s say, you’d like to change the keyboard shortcut for the bullet list. You should start with looking at the source code of the extension, in that case [the `BulletList` node](https://github.com/ueberdosis/tiptap/blob/main/packages/extension-bullet-list/src/bullet-list.ts). For the bespoken example to overwrite the keyboard shortcut, your code could look like that:
@@ -41,11 +43,13 @@ new Editor({
 The same applies to every aspect of an existing extension, except to the name. Let’s look at all the things that you can change through the extend method. We focus on one aspect in every example, but you can combine all those examples and change multiple aspects in one `extend()` call too.
 
 ### Name
+
 The extension name is used in a whole lot of places and changing it isn’t too easy. If you want to change the name of an existing extension, you can copy the whole extension and change the name in all occurrences.
 
 The extension name is also part of the JSON. If you [store your content as JSON](/guide/output#option-1-json), you need to change the name there too.
 
 ### Priority
+
 The priority defines the order in which extensions are registered. The default priority is `100`, that’s what most extension have. Extensions with a higher priority will be loaded earlier.
 
 ```js
@@ -65,6 +69,7 @@ The order in which extensions are loaded influences two things:
    The [`Link`](/api/marks/link) mark for example has a higher priority, which means it will be rendered as `<a href="…"><strong>Example</strong></a>` instead of `<strong><a href="…">Example</a></strong>`.
 
 ### Settings
+
 All settings can be configured through the extension anyway, but if you want to change the default settings, for example to provide a library on top of Tiptap for other developers, you can do it like that:
 
 ```js
@@ -81,6 +86,7 @@ const CustomHeading = Heading.extend({
 ```
 
 ### Storage
+
 At some point you probably want to save some data within your extension instance. This data is mutable. You can access it within the extension under `this.storage`.
 
 ```js
@@ -114,6 +120,7 @@ const awesomeness = editor.storage.customExtension.awesomeness
 ```
 
 ### Schema
+
 tiptap works with a strict schema, which configures how the content can be structured, nested, how it behaves and many more things. You [can change all aspects of the schema](/api/schema) for existing extensions. Let’s walk through a few common use cases.
 
 The default `Blockquote` extension can wrap other nodes, like headings. If you want to allow nothing but paragraphs in your blockquotes, set the `content` attribute accordingly:
@@ -141,6 +148,7 @@ const CustomParagraph = Paragraph.extend({
 That’s just two tiny examples, but [the underlying ProseMirror schema](https://prosemirror.net/docs/ref/#model.SchemaSpec) is really powerful.
 
 ### Attributes
+
 You can use attributes to store additional information in the content. Let’s say you want to extend the default `Paragraph` node to have different colors:
 
 ```js
@@ -216,6 +224,7 @@ const CustomParagraph = Paragraph.extend({
 You can completly disable the rendering of attributes with `rendered: false`.
 
 #### Extend existing attributes
+
 If you want to add an attribute to an extension and keep existing attributes, you can access them through `this.parent()`.
 
 In some cases, it is undefined, so make sure to check for that case, or use optional chaining `this.parent?.()`
@@ -234,6 +243,7 @@ const CustomTableCell = TableCell.extend({
 ```
 
 ### Global attributes
+
 Attributes can be applied to multiple extensions at once. That’s useful for text alignment, line height, color, font family, and other styling related attributes.
 
 Take a closer look at [the full source code](https://github.com/ueberdosis/tiptap/tree/main/packages/extension-text-align) of the [`TextAlign`](/api/extensions/text-align) extension to see a more complex example. But here is how it works in a nutshell:
@@ -267,6 +277,7 @@ const TextAlign = Extension.create({
 ```
 
 ### Render HTML
+
 With the `renderHTML` function you can control how an extension is rendered to HTML. We pass an attributes object to it, with all local attributes, global attributes, and configured CSS classes. Here is an example from the `Bold` extension:
 
 ```js
@@ -298,6 +309,7 @@ renderHTML({ HTMLAttributes }) {
 ```
 
 ### Parse HTML
+
 The `parseHTML()` function tries to load the editor document from HTML. The function gets the HTML DOM element passed as a parameter, and is expected to return an object with attributes and their values. Here is a simplified example from the [`Bold`](/api/marks/bold) mark:
 
 ```js
@@ -342,6 +354,7 @@ You are wondering what’s that `&& null` doing? [ProseMirror expects `null` or 
 [Pass `priority` to a rule](https://prosemirror.net/docs/ref/version/0.18.0.html#model.ParseRule.priority) to resolve conflicts with other extensions, for example if you build a custom extension which looks for paragraphs with a class attribute, but you already use the default paragraph extension.
 
 #### Using getAttrs
+
 The `getAttrs` function you’ve probably noticed in the example has two purposes:
 
 1. Check the HTML attributes to decide whether a rule matches (and a mark or node is created from that HTML). When the function returns `false`, it’s not matching.
@@ -400,6 +413,7 @@ To access other commands inside `addCommands` use the `commands` parameter that�
 :::
 
 ### Keyboard shortcuts
+
 Most core extensions come with sensible keyboard shortcut defaults. Depending on what you want to build, you’ll likely want to change them though. With the `addKeyboardShortcuts()` method you can overwrite the predefined shortcut map:
 
 ```js
@@ -416,6 +430,7 @@ const CustomBulletList = BulletList.extend({
 ```
 
 ### Input rules
+
 With input rules you can define regular expressions to listen for user inputs. They are used for markdown shortcuts, or for example to convert text like `(c)` to a `©` (and many more) with the [`Typography`](/api/extensions/typography) extension. Use the `markInputRule` helper function for marks, and the `nodeInputRule` for nodes.
 
 By default text between two tildes on both sides is transformed to ~~striked text~~. If you want to think one tilde on each side is enough, you can overwrite the input rule like this:

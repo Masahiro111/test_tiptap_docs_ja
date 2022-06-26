@@ -5,9 +5,11 @@ tableOfContents: true
 # Node views with React
 
 ## Introduction
+
 Using Vanilla JavaScript can feel complex if you are used to work in React. Good news: You can use regular React components in your node views, too. There is just a little bit you need to know, but let’s go through this one by one.
 
 ## Render a React component
+
 Here is what you need to do to render React components inside your editor:
 
 1. [Create a node extension](/guide/custom-extensions)
@@ -47,6 +49,7 @@ https://embed.tiptap.dev/preview/GuideNodeViews/ReactComponent
 That component doesn’t interact with the editor, though. Time to wire it up.
 
 ## Access node attributes
+
 The `ReactNodeViewRenderer` which you use in your node extension, passes a few very helpful props to your custom React component. One of them is the `node` prop. Let’s say you have [added an attribute](/guide/custom-extensions#attributes) named `count` to your node extension (like we did in the above example) you could access it like this:
 
 ```js
@@ -54,6 +57,7 @@ props.node.attrs.count
 ```
 
 ## Update node attributes
+
 You can even update node attributes from your node, with the help of the `updateAttributes` prop passed to your component. Pass an object with updated attributes to the `updateAttributes` prop:
 
 ```js
@@ -71,6 +75,7 @@ export default props => {
 And yes, all of that is reactive, too. A pretty seemless communication, isn’t it?
 
 ## Adding a content editable
+
 There is another component called `NodeViewContent` which helps you adding editable content to your node view. Here is an example:
 
 ```jsx
@@ -97,33 +102,43 @@ Keep in mind that this content is rendered by Tiptap. That means you need to tel
 The `NodeViewWrapper` and `NodeViewContent` components render a `<div>` HTML tag (`<span>` for inline nodes), but you can change that. For example `<NodeViewContent as="p">` should render a paragraph. One limitation though: That tag must not change during runtime.
 
 ## All available props
+
 Here is the full list of what props you can expect:
 
 ### editor
+
 The editor instance
 
 ### node
+
 The current node
 
 ### decorations
+
 An array of decorations
 
 ### selected
+
 `true` when there is a `NodeSelection` at the current node view
 
 ### extension
+
 Access to the node extension, for example to get options
 
 ### getPos()
+
 Get the document position of the current node
 
 ### updateAttributes()
+
 Update attributes of the current node
 
 ### deleteNode()
+
 Delete the current node
 
 ## Dragging
+
 To make your node views draggable, set `draggable: true` in the extension and add `data-drag-handle` to the DOM element that should function as the drag handle.
 
 <!-- https://embed.tiptap.dev/preview/GuideNodeViews/DragHandle -->

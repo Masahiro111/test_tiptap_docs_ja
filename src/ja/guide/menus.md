@@ -5,11 +5,13 @@ tableOfContents: true
 # Create menus
 
 ## Introduction
+
 tiptap comes very raw, but that’s a good thing. You have full control about the appearance of it.
 
 When we say full control, we mean it. You can (and have to) build a menu on your own. We help you to wire everything up.
 
 ## Menus
+
 The editor provides a fluent API to trigger commands and add active states. You can use any markup you like. To make the positioning of menus easier, we provide a few utilities and components. Let’s go through the most typical use cases one by one.
 
 ### Fixed menu

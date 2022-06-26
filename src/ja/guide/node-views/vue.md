@@ -5,9 +5,11 @@ tableOfContents: true
 # Node views with Vue
 
 ## Introduction
+
 Using Vanilla JavaScript can feel complex if you are used to work in Vue. Good news: You can use regular Vue components in your node views, too. There is just a little bit you need to know, but let’s go through this one by one.
 
 ## Render a Vue component
+
 Here is what you need to do to render Vue components inside your editor:
 
 1. [Create a node extension](/guide/custom-extensions)
@@ -49,6 +51,7 @@ https://embed.tiptap.dev/preview/GuideNodeViews/VueComponent
 That component doesn’t interact with the editor, though. Time to wire it up.
 
 ## Access node attributes
+
 The `VueNodeViewRenderer` which you use in your node extension, passes a few very helpful props to your custom Vue component. One of them is the `node` prop. Add this snippet to your Vue component to directly access the node:
 
 ```js
@@ -67,6 +70,7 @@ this.node.attrs.count
 ```
 
 ## Update node attributes
+
 You can even update node attributes from your node, with the help of the `updateAttributes` prop passed to your component. Just add this snippet to your component:
 
 ```js
@@ -89,6 +93,7 @@ this.updateAttributes({
 And yes, all of that is reactive, too. A pretty seemless communication, isn’t it?
 
 ## Adding a content editable
+
 There is another component called `NodeViewContent` which helps you adding editable content to your node view. Here is an example:
 
 ```html
@@ -119,30 +124,39 @@ Keep in mind that this content is rendered by Tiptap. That means you need to tel
 The `NodeViewWrapper` and `NodeViewContent` components render a `<div>` HTML tag (`<span>` for inline nodes), but you can change that. For example `<node-view-content as="p">` should render a paragraph. One limitation though: That tag must not change during runtime.
 
 ## All available props
+
 For advanced use cases, we pass a few more props to the component.
 
 ### editor
+
 The editor instance.
 
 ### node
+
 Access the current node.
 
 ### decorations
+
 An array of decorations.
 
 ### selected
+
 `true` when there is a `NodeSelection` at the current node view.
 
 ### extension
+
 Access to the node extension, for example to get options.
 
 ### getPos()
+
 Get the document position of the current node.
 
 ### updateAttributes()
+
 Update attributes of the current node.
 
 ### deleteNode()
+
 Delete the current node.
 
 Here is the full list of what props you can expect:
@@ -224,6 +238,7 @@ export default Vue.extend({
 ```
 
 ## Dragging
+
 To make your node views draggable, set `draggable: true` in the extension and add `data-drag-handle` to the DOM element that should function as the drag handle.
 
 https://embed.tiptap.dev/preview/GuideNodeViews/DragHandle

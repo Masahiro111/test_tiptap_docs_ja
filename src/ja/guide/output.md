@@ -5,11 +5,13 @@ tableOfContents: true
 # Output
 
 ## Introduction
+
 You can store your content as a JSON object or as a good old HTML string. Both work fine. And of course, you can pass both formats to the editor to restore your content. Here is an interactive example, that exports the content as HTML and JSON when the document is changed:
 
 ## Export
 
 ### Option 1: JSON
+
 JSON is probably easier to loop through, for example to look for a mention and it’s more like what Tiptap uses under the hood. Anyway, if you want to use JSON to store the content we provide a method to retrieve the content as JSON:
 
 ```js
@@ -45,6 +47,7 @@ Here is an interactive example where you can see that in action:
 https://embed.tiptap.dev/preview/GuideContent/ExportJSON?hideSource
 
 ### Option 2: HTML
+
 HTML can be easily rendered in other places, for example in emails and it’s wildly used, so it’s probably easier to switch the editor at some point. Anyway, every editor instance provides a method to get HTML from the current document:
 
 ```js
@@ -69,6 +72,7 @@ Use this interactive example to fiddle around:
 https://embed.tiptap.dev/preview/GuideContent/ExportHTML?hideSource
 
 ### Option 3: Y.js
+
 Our editor has top notch support for Y.js, which is amazing to add features like [realtime collaboration, offline editing, or syncing between devices](/guide/collaborative-editing).
 
 Internally, Y.js stores a history of all changes. That can be in the browser, on a server, synced with other connected clients, or on a USB stick. But, it’s important to know that Y.js needs those stored changes. A simple JSON document is not enough to merge changes.
@@ -92,6 +96,7 @@ If you still think you need Markdown, ProseMirror has an [example on how to deal
 That said, Tiptap does support [Markdown shortcuts](/examples/markdown-shortcuts) to format your content. Also you’re free to let your content look like Markdown, for example add a `#` before an `<h1>` with CSS.
 
 ## Listening for changes
+
 If you want to continuously store the updated content while people write, you can [hook into events](/api/events). Here is an example how that could look like:
 
 ```js
@@ -110,11 +115,13 @@ const editor = new Editor({
 ## Rendering
 
 ### Option 1: Read-only instance of Tiptap
+
 To render the saved content, set the editor to read-only. That’s how you can achieve the exact same rendering as it’s in the editor, without duplicating your CSS and other code.
 
 https://embed.tiptap.dev/preview/GuideContent/ReadOnly
 
 ### Option 2: Generate HTML from ProseMirror JSON
+
 If you need to render the content on the server side, for example to generate the HTML for a blog post which has been written in Tiptap, you’ll probably want to do just that without an actual editor instance.
 
 That’s what the `generateHTML()` is for. It’s a helper function which renders HTML without an actual editor instance.
@@ -126,6 +133,7 @@ By the way, the other way is possible, too. The below examples shows how to gene
 https://embed.tiptap.dev/preview/GuideContent/GenerateJSON
 
 ## Migration
+
 If you’re migrating existing content to Tiptap we would recommend to get your existing output to HTML. That’s probably the best format to get your initial content into Tiptap, because ProseMirror ensures there is nothing wrong with it. Even if there are some tags or attributes that aren’t allowed (based on your configuration), Tiptap just throws them away quietly.
 
 We’re about to go through a few cases to help with that, for example we provide a PHP package to convert HTML to a compatible JSON structure: [ueberdosis/prosemirror-to-html](https://github.com/ueberdosis/html-to-prosemirror).
@@ -133,4 +141,5 @@ We’re about to go through a few cases to help with that, for example we provid
 [Share your experiences with us!](mailto:humans@tiptap.dev) We’d like to add more information here.
 
 ## Security
+
 There is no reason to use one or the other because of security concerns. If someone wants to send malicious content to your server, it doesn’t matter if it’s JSON or HTML. It doesn’t even matter if you’re using Tiptap or not. You should always validate user input.
