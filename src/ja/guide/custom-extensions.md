@@ -6,13 +6,23 @@ tableOfContents: true
 
 ## はじめに
 
-One of the strengths of Tiptap is its extendability. You don’t depend on the provided extensions, it is intended to extend the editor to your liking.
+Tiptap の強みの1つは、その拡張性です。提供されている拡張機能に依存するのではなく、エディターを好みに合わせて拡張することを目的としています。
 
-With custom extensions you can add new content types and new functionalities, on top of what already exists or from scratch. Let’s start with a few common examples of how you can extend existing nodes, marks and extensions.
+カスタム拡張機能を使用すると、既存のものに加えて、または最初から、新しいコンテンツタイプと新しい機能を追加できます。既存のノード、マーク、拡張機能を拡張する方法のいくつかの一般的な例から始めましょう。
 
-You’ll learn how you start from scratch at the end, but you’ll need the same knowledge for extending existing and creating new extensions.
+最後に最初から始める方法を学びますが、既存の拡張機能を拡張したり、新しい拡張機能を作成したりするためにも同じ知識が必要です。
 
-## Extend existing extensions
+<!-- One of the strengths of Tiptap is its extendability. You don’t depend on the provided extensions, it is intended to extend the editor to your liking. -->
+
+<!-- With custom extensions you can add new content types and new functionalities, on top of what already exists or from scratch. Let’s start with a few common examples of how you can extend existing nodes, marks and extensions. -->
+
+<!-- You’ll learn how you start from scratch at the end, but you’ll need the same knowledge for extending existing and creating new extensions. -->
+
+## 既存の拡張機能を拡張する
+
+すべての拡張機能には`extend（）`メソッドがあり、変更または追加したいすべてのものを含むオブジェクトを取得します。
+
+たとえば、箇条書きのキーボードショートカットを変更したいとします。拡張機能のソースコード、その場合は[`BulletList`ノード]（https://github.com/ueberdosis/tiptap/blob/main/packages/extension-bullet-list/src/ bullet-list.ts）。キーボードショートカットを上書きする特注の例の場合、コードは次のようになります。
 
 Every extension has an `extend()` method, which takes an object with everything you want to change or add to it.
 
@@ -42,13 +52,23 @@ new Editor({
 
 The same applies to every aspect of an existing extension, except to the name. Let’s look at all the things that you can change through the extend method. We focus on one aspect in every example, but you can combine all those examples and change multiple aspects in one `extend()` call too.
 
-### Name
+名前を除いて、同じことが既存の拡張機能のすべての側面に当てはまります。 extendメソッドで変更できるすべてのものを見てみましょう。すべての例で1つの側面に焦点を当てていますが、これらすべての例を組み合わせて、1つの `extend（）`呼び出しで複数の側面を変更することもできます。
+
+### 名前
+
+拡張子の名前は多くの場所で使用されており、変更するのは簡単ではありません。既存の拡張機能の名前を変更する場合は、拡張機能全体をコピーして、すべての場所で名前を変更できます。
+
+拡張子名もJSONの一部です。 [コンテンツをJSONとして保存]（/ guide / output＃option-1-json）する場合は、そこでも名前を変更する必要があります。
 
 The extension name is used in a whole lot of places and changing it isn’t too easy. If you want to change the name of an existing extension, you can copy the whole extension and change the name in all occurrences.
 
 The extension name is also part of the JSON. If you [store your content as JSON](/guide/output#option-1-json), you need to change the name there too.
 
 ### Priority
+
+優先順位
+
+優先度は、内線番号が登録される順序を定義します。デフォルトの優先度は`100`で、これがほとんどの拡張機能にあります。優先度の高い拡張機能は、より早くロードされます。
 
 The priority defines the order in which extensions are registered. The default priority is `100`, that’s what most extension have. Extensions with a higher priority will be loaded earlier.
 
@@ -62,15 +82,25 @@ const CustomLink = Link.extend({
 
 The order in which extensions are loaded influences two things:
 
+拡張機能が読み込まれる順序は、次の2つのことに影響します。
+
+1.####プラグインの注文
+   優先度の高い拡張機能のProseMirrorプラグインが最初に実行されます。
+
+2.####スキーマの順序
+   たとえば、[`Link`]（/ api / marks / link）マークの優先度が高くなります。つまり、` <ahref="…"><strong>例</strong></a>としてレンダリングされます。 `<strong><ahref="…">例</a></strong>`の代わりに`。
+
 1. #### Plugin order
    ProseMirror plugins of extensions with a higher priority will run first.
 
 2. #### Schema order
    The [`Link`](/api/marks/link) mark for example has a higher priority, which means it will be rendered as `<a href="…"><strong>Example</strong></a>` instead of `<strong><a href="…">Example</a></strong>`.
 
-### Settings
+### 設定
 
-All settings can be configured through the extension anyway, but if you want to change the default settings, for example to provide a library on top of Tiptap for other developers, you can do it like that:
+いずれにせよ、すべての設定は拡張機能を介して構成できますが、デフォルト設定を変更する場合、たとえば、他の開発者に Tiptap の上にライブラリを提供する場合は、次のように行うことができます。
+
+<!-- All settings can be configured through the extension anyway, but if you want to change the default settings, for example to provide a library on top of Tiptap for other developers, you can do it like that: -->
 
 ```js
 import Heading from '@tiptap/extension-heading'
@@ -85,9 +115,11 @@ const CustomHeading = Heading.extend({
 })
 ```
 
-### Storage
+### ストレージ
 
-At some point you probably want to save some data within your extension instance. This data is mutable. You can access it within the extension under `this.storage`.
+ある時点で、拡張インスタンス内にデータを保存したいと思うかもしれません。このデータは変更可能です。`this.storage` の下の拡張機能内でアクセスできます。
+
+<!-- At some point you probably want to save some data within your extension instance. This data is mutable. You can access it within the extension under `this.storage`. -->
 
 ```js
 import { Extension } from '@tiptap/core'
@@ -107,7 +139,9 @@ const CustomExtension = Extension.create({
 })
 ```
 
-Outside the extension you have access via `editor.storage`. Make sure that each extension has a unique name.
+<!-- Outside the extension you have access via `editor.storage`. Make sure that each extension has a unique name. -->
+
+拡張機能の外部では、`editor.storage` を介してアクセスできます。各拡張子に一意の名前が付いていることを確認してください。
 
 ```js
 const editor = new Editor({
@@ -119,11 +153,15 @@ const editor = new Editor({
 const awesomeness = editor.storage.customExtension.awesomeness
 ```
 
-### Schema
+### スキーマ
 
-tiptap works with a strict schema, which configures how the content can be structured, nested, how it behaves and many more things. You [can change all aspects of the schema](/api/schema) for existing extensions. Let’s walk through a few common use cases.
+Tiptap は、コンテンツの構造化、ネスト、動作などを構成する厳密なスキーマで機能します。既存の拡張機能については、[スキーマのすべての側面を変更できます](/api/schema) 。いくつかの一般的な使用例を見ていきましょう。
 
-The default `Blockquote` extension can wrap other nodes, like headings. If you want to allow nothing but paragraphs in your blockquotes, set the `content` attribute accordingly:
+デフォルトの `Blockquote` 拡張機能は、見出しなどの他のノードをラップできます。ブロッククォートに段落のみを許可する場合は、それに応じて `content` 属性を設定します。
+
+<!-- tiptap works with a strict schema, which configures how the content can be structured, nested, how it behaves and many more things. You [can change all aspects of the schema](/api/schema) for existing extensions. Let’s walk through a few common use cases. -->
+
+<!-- The default `Blockquote` extension can wrap other nodes, like headings. If you want to allow nothing but paragraphs in your blockquotes, set the `content` attribute accordingly: -->
 
 ```js
 // Blockquotes must only include paragraphs
@@ -134,7 +172,9 @@ const CustomBlockquote = Blockquote.extend({
 })
 ```
 
-The schema even allows to make your nodes draggable, that’s what the `draggable` option is for. It defaults to `false`, but you can override that.
+<!-- The schema even allows to make your nodes draggable, that’s what the `draggable` option is for. It defaults to `false`, but you can override that. -->
+
+スキーマでは、ノードをドラッグ可能にすることもできます。これが、`draggable` オプションの目的です。デフォルトは `false` ですが、これをオーバーライドできます。
 
 ```js
 // Draggable paragraphs
@@ -145,11 +185,15 @@ const CustomParagraph = Paragraph.extend({
 })
 ```
 
-That’s just two tiny examples, but [the underlying ProseMirror schema](https://prosemirror.net/docs/ref/#model.SchemaSpec) is really powerful.
+<!-- That’s just two tiny examples, but [the underlying ProseMirror schema](https://prosemirror.net/docs/ref/#model.SchemaSpec) is really powerful. -->
 
-### Attributes
+これはほんの2つの小さな例ですが、[基盤となる ProseMirror スキーマ](https://prosemirror.net/docs/ref/#model.SchemaSpec) は非常に強力です。
 
-You can use attributes to store additional information in the content. Let’s say you want to extend the default `Paragraph` node to have different colors:
+### 属性
+
+属性を使用して、コンテンツに追加情報を格納できます。デフォルトの`Paragraph` ノードを拡張してさまざまな色にしたいとします。
+
+<!-- You can use attributes to store additional information in the content. Let’s say you want to extend the default `Paragraph` node to have different colors: -->
 
 ```js
 const CustomParagraph = Paragraph.extend({
@@ -167,11 +211,17 @@ const CustomParagraph = Paragraph.extend({
 // <p color="pink">Example Text</p>
 ```
 
-That is already enough to tell Tiptap about the new attribute, and set `'pink'` as the default value. All attributes will be rendered as a HTML attribute by default, and parsed from the content when initiated.
+<!-- That is already enough to tell Tiptap about the new attribute, and set `'pink'` as the default value. All attributes will be rendered as a HTML attribute by default, and parsed from the content when initiated. -->
 
-Let’s stick with the color example and assume you want to add an inline style to actually color the text. With the `renderHTML` function you can return HTML attributes which will be rendered in the output.
+<!-- Let’s stick with the color example and assume you want to add an inline style to actually color the text. With the `renderHTML` function you can return HTML attributes which will be rendered in the output. -->
 
-This examples adds a style HTML attribute based on the value of `color`:
+<!-- This examples adds a style HTML attribute based on the value of `color`: -->
+
+これで、Tiptap に新しい属性を通知し、デフォルト値として「ピンク」を設定するのに十分です。すべての属性はデフォルトで HTML 属性としてレンダリングされ、開始時にコンテンツから解析されます。
+
+色の例に固執し、実際にテキストに色を付けるためにインラインスタイルを追加するとします。`renderHTML` 関数を使用すると、出力でレンダリングされる HTML 属性を返すことができます。
+
+この例では、`color` の値に基づいてスタイル HTML 属性を追加します。
 
 ```js
 const CustomParagraph = Paragraph.extend({
@@ -197,6 +247,8 @@ const CustomParagraph = Paragraph.extend({
 
 You can also control how the attribute is parsed from the HTML. Maybe you want to store the color in an attribute called `data-color` (and not just `color`), here’s how you would do that:
 
+HTML から属性を解析する方法を制御することもできます。色を`data-color` (` color`だけでなく) という属性に保存したい場合は、次のようにします。
+
 ```js
 const CustomParagraph = Paragraph.extend({
   addAttributes() {
@@ -221,13 +273,19 @@ const CustomParagraph = Paragraph.extend({
 // <p data-color="pink" style="color: pink">Example Text</p>
 ```
 
-You can completly disable the rendering of attributes with `rendered: false`.
+<!-- You can completly disable the rendering of attributes with `rendered: false`. -->
 
-#### Extend existing attributes
+`rendered: false`を使用して、属性のレンダリングを完全に無効にすることができます。
 
-If you want to add an attribute to an extension and keep existing attributes, you can access them through `this.parent()`.
+#### 既存の属性を拡張する
 
-In some cases, it is undefined, so make sure to check for that case, or use optional chaining `this.parent?.()`
+拡張機能に属性を追加して既存の属性を保持する場合は、`this.parent()` を介してそれらにアクセスできます。
+
+未定義の場合もあるので、必ず確認するか、オプションのチェーンである `this.parent?.()` を使用してください。
+
+<!-- If you want to add an attribute to an extension and keep existing attributes, you can access them through `this.parent()`. -->
+
+<!-- In some cases, it is undefined, so make sure to check for that case, or use optional chaining `this.parent?.()` -->
 
 ```js
 const CustomTableCell = TableCell.extend({
@@ -242,11 +300,15 @@ const CustomTableCell = TableCell.extend({
 })
 ```
 
-### Global attributes
+### グローバル属性
 
-Attributes can be applied to multiple extensions at once. That’s useful for text alignment, line height, color, font family, and other styling related attributes.
+属性は、一度に複数の拡張機能に適用できます。これは、テキストの配置、行の高さ、色、フォントファミリ、およびその他のスタイル関連の属性に役立ちます。
 
-Take a closer look at [the full source code](https://github.com/ueberdosis/tiptap/tree/main/packages/extension-text-align) of the [`TextAlign`](/api/extensions/text-align) extension to see a more complex example. But here is how it works in a nutshell:
+[`TextAlign`](/api/extensions/text-align) の [完全なソースコード](https://github.com/ueberdosis/tiptap/tree/main/packages/extension-text-align) を詳しく見てください。 拡張機能を使用して、より複雑な例を確認してください。しかし、これが一言で言えばどのように機能するかです。
+
+<!-- Attributes can be applied to multiple extensions at once. That’s useful for text alignment, line height, color, font family, and other styling related attributes. -->
+
+<!-- Take a closer look at [the full source code](https://github.com/ueberdosis/tiptap/tree/main/packages/extension-text-align) of the [`TextAlign`](/api/extensions/text-align) extension to see a more complex example. But here is how it works in a nutshell: -->
 
 ```js
 import { Extension } from '@tiptap/core'
@@ -276,9 +338,11 @@ const TextAlign = Extension.create({
 })
 ```
 
-### Render HTML
+### HTMLをレンダリングする
 
-With the `renderHTML` function you can control how an extension is rendered to HTML. We pass an attributes object to it, with all local attributes, global attributes, and configured CSS classes. Here is an example from the `Bold` extension:
+`renderHTML` 関数を使用すると、拡張機能を HTML にレンダリングする方法を制御できます。すべてのローカル属性、グローバル属性、および構成された CSS クラスを含む属性オブジェクトをオブジェクトに渡します。`Bold` 拡張機能の例を次に示します。
+
+<!-- With the `renderHTML` function you can control how an extension is rendered to HTML. We pass an attributes object to it, with all local attributes, global attributes, and configured CSS classes. Here is an example from the `Bold` extension: -->
 
 ```js
 renderHTML({ HTMLAttributes }) {
@@ -286,9 +350,13 @@ renderHTML({ HTMLAttributes }) {
 },
 ```
 
-The first value in the array should be the name of HTML tag. If the second element is an object, it’s interpreted as a set of attributes. Any elements after that are rendered as children.
+<!-- The first value in the array should be the name of HTML tag. If the second element is an object, it’s interpreted as a set of attributes. Any elements after that are rendered as children. -->
 
-The number zero (representing a hole) is used to indicate where the content should be inserted. Let’s look at the rendering of the `CodeBlock` extension with two nested tags:
+<!-- The number zero (representing a hole) is used to indicate where the content should be inserted. Let’s look at the rendering of the `CodeBlock` extension with two nested tags: -->
+
+配列の最初の値は、HTML タグの名前である必要があります。 2番目の要素がオブジェクトの場合、属性のセットとして解釈されます。その後の要素はすべて子としてレンダリングされます。
+
+数字のゼロ（穴を表す）は、コンテンツを挿入する場所を示すために使用されます。 2つのネストされたタグを使用した `CodeBlock` 拡張機能のレンダリングを見てみましょう。
 
 ```js
 renderHTML({ HTMLAttributes }) {
@@ -296,7 +364,9 @@ renderHTML({ HTMLAttributes }) {
 },
 ```
 
-If you want to add some specific attributes there, import the `mergeAttributes` helper from `@tiptap/core`:
+<!-- If you want to add some specific attributes there, import the `mergeAttributes` helper from `@tiptap/core`: -->
+
+そこに特定の属性を追加する場合は、`@tiptap/core` から `mergeAttributes` ヘルパーをインポートします。
 
 ```js
 import { mergeAttributes } from '@tiptap/core'
@@ -308,9 +378,11 @@ renderHTML({ HTMLAttributes }) {
 },
 ```
 
-### Parse HTML
+### HTMLを解析する
 
-The `parseHTML()` function tries to load the editor document from HTML. The function gets the HTML DOM element passed as a parameter, and is expected to return an object with attributes and their values. Here is a simplified example from the [`Bold`](/api/marks/bold) mark:
+`parseHTML()` 関数は、HTML からエディタドキュメントを読み込もうとします。この関数は、パラメーターとして渡された HTML DOM 要素を取得し、属性とその値を持つオブジェクトを返すことが期待されています。 [`Bold`](/api/marks/bold) マークの簡単な例を次に示します。
+
+<!-- The `parseHTML()` function tries to load the editor document from HTML. The function gets the HTML DOM element passed as a parameter, and is expected to return an object with attributes and their values. Here is a simplified example from the [`Bold`](/api/marks/bold) mark: -->
 
 ```js
 parseHTML() {

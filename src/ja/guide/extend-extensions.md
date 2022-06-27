@@ -2,5 +2,7 @@
 tableOfContents: true
 ---
 
-# Overwrite & extend
+<!-- # Overwrite & extend -->
+
+# 上書きと拡張
 
