@@ -118,26 +118,28 @@ https://embed.tiptap.dev/preview/GuideContent/ExportHTML?hideSource
 
 HTML または JSON を使用してコンテンツを保存することを検討する必要があります。これらは、ほとんどのユースケースで完全に問題ありません。
 
-それでもMarkdownが必要だと思われる場合は、ProseMirrorに[Markdownの処理方法の例]（https://prosemirror.net/examples/markdown/）、[Nextcloud Text]（https://github.com/nextcloud/ text）はTiptap1を使用してMarkdownを操作します。多分あなたはそれらから学ぶことができます。または、本当に優れたMarkdownエディターをお探しの場合は、[CodeMirror]（https://codemirror.net/）をお試しください。
+それでもMarkdownが必要だと思われる場合は、ProseMirrorに[Markdownの処理方法の例](https://prosemirror.net/examples/markdown/)、[Nextcloud Text](https://github.com/nextcloud/text) はTiptap v1 を使用して Markdown を操作します。多分あなたはそれらから学ぶことができます。または、本当に優れた Markdown エディターをお探しの場合は、[CodeMirror](https://codemirror.net/) をお試しください。
 
-そうは言っても、Tiptapはコンテンツをフォーマットするための[Markdownショートカット]（/ examples / markdown-shortcuts）をサポートしています。また、コンテンツをMarkdownのように見せることもできます。たとえば、CSSで `<h1>`の前に`＃`を追加します。
+そうは言っても、Tiptap はコンテンツをフォーマットするための[Markdownショートカット](/examples/markdown-shortcuts) をサポートしています。また、コンテンツを Markdown のように見せることもできます。たとえば、CSS で `<h1>` の前に `＃` を追加します。
 
-Unfortunately, **tiptap doesn’t support Markdown as an input or output format**. We considered to add support for it, but those are the reasons why we decided to not do it:
+<!-- Unfortunately, **tiptap doesn’t support Markdown as an input or output format**. We considered to add support for it, but those are the reasons why we decided to not do it: -->
 
-* Both, HTML and JSON, can have deeply nested structures, Markdown is flat.
+<!-- * Both, HTML and JSON, can have deeply nested structures, Markdown is flat.
 * Markdown standards vary.
 * Tiptap’s strength is customization, that doesn’t work very well with Markdown.
-* There are enough packages to convert HTML to Markdown and vice-versa.
+* There are enough packages to convert HTML to Markdown and vice-versa. -->
 
-You should really consider to work with HTML or JSON to store your content, they are perfectly fine for most use cases.
+<!-- You should really consider to work with HTML or JSON to store your content, they are perfectly fine for most use cases. -->
 
-If you still think you need Markdown, ProseMirror has an [example on how to deal with Markdown](https://prosemirror.net/examples/markdown/), [Nextcloud Text](https://github.com/nextcloud/text) uses Tiptap 1 to work with Markdown. Maybe you can learn from them. Or if you are looking for a really good Markdown editor, try [CodeMirror](https://codemirror.net/).
+<!-- If you still think you need Markdown, ProseMirror has an [example on how to deal with Markdown](https://prosemirror.net/examples/markdown/), [Nextcloud Text](https://github.com/nextcloud/text) uses Tiptap 1 to work with Markdown. Maybe you can learn from them. Or if you are looking for a really good Markdown editor, try [CodeMirror](https://codemirror.net/). -->
 
-That said, Tiptap does support [Markdown shortcuts](/examples/markdown-shortcuts) to format your content. Also you’re free to let your content look like Markdown, for example add a `#` before an `<h1>` with CSS.
+<!-- That said, Tiptap does support [Markdown shortcuts](/examples/markdown-shortcuts) to format your content. Also you’re free to let your content look like Markdown, for example add a `#` before an `<h1>` with CSS. -->
 
-## Listening for changes
+## 変更箇所のリッスン
 
-If you want to continuously store the updated content while people write, you can [hook into events](/api/events). Here is an example how that could look like:
+人々が書いている間、更新されたコンテンツを継続的に保存したい場合は、[イベントにフック](/api/events) することができます。 これがどのように見えるかの例です：
+
+<!-- If you want to continuously store the updated content while people write, you can [hook into events](/api/events). Here is an example how that could look like: -->
 
 ```js
 const editor = new Editor({
@@ -152,34 +154,52 @@ const editor = new Editor({
 })
 ```
 
-## Rendering
+## レンダリング
 
-### Option 1: Read-only instance of Tiptap
+### オプション1：Tiptap の読み取り専用インスタンス
 
-To render the saved content, set the editor to read-only. That’s how you can achieve the exact same rendering as it’s in the editor, without duplicating your CSS and other code.
+保存したコンテンツをレンダリングするには、エディターを読み取り専用に設定します。 これにより、CSS やその他のコードを複製することなく、エディターとまったく同じレンダリングを実現できます。
+
+<!-- To render the saved content, set the editor to read-only. That’s how you can achieve the exact same rendering as it’s in the editor, without duplicating your CSS and other code. -->
 
 https://embed.tiptap.dev/preview/GuideContent/ReadOnly
 
-### Option 2: Generate HTML from ProseMirror JSON
+### オプション2：ProseMirror の JSON から HTML を生成する
 
-If you need to render the content on the server side, for example to generate the HTML for a blog post which has been written in Tiptap, you’ll probably want to do just that without an actual editor instance.
+サーバー側でコンテンツをレンダリングする必要がある場合、たとえば、Tiptap で記述されたブログ投稿の HTML を生成する場合は、実際のエディターインスタンスなしでそれを実行することをお勧めします。
 
-That’s what the `generateHTML()` is for. It’s a helper function which renders HTML without an actual editor instance.
+それが `generateHTML()` の目的です。 これは、実際のエディターインスタンスなしで HTML をレンダリングするヘルパー関数です。
 
 https://embed.tiptap.dev/preview/GuideContent/GenerateHTML
 
-By the way, the other way is possible, too. The below examples shows how to generate JSON from HTML.
+ちなみに、他の方法も可能です。 以下の例は、HTML から JSON を生成する方法を示しています。
+
+<!-- If you need to render the content on the server side, for example to generate the HTML for a blog post which has been written in Tiptap, you’ll probably want to do just that without an actual editor instance. -->
+
+<!-- That’s what the `generateHTML()` is for. It’s a helper function which renders HTML without an actual editor instance. -->
+
+<!-- https://embed.tiptap.dev/preview/GuideContent/GenerateHTML -->
+
+<!-- By the way, the other way is possible, too. The below examples shows how to generate JSON from HTML. -->
 
 https://embed.tiptap.dev/preview/GuideContent/GenerateJSON
 
-## Migration
+## マイグレーション
 
-If you’re migrating existing content to Tiptap we would recommend to get your existing output to HTML. That’s probably the best format to get your initial content into Tiptap, because ProseMirror ensures there is nothing wrong with it. Even if there are some tags or attributes that aren’t allowed (based on your configuration), Tiptap just throws them away quietly.
+既存のコンテンツを Tiptap に移行する場合は、既存の出力を HTML に変換することをお勧めします。 ProseMirror は問題がないことを保証するため、これはおそらく最初のコンテンツを Tiptap に取り込むのに最適な形式です。（構成に基づいて）許可されていないタグや属性がある場合でも、Tiptap はそれらを静かに破棄します。
 
-We’re about to go through a few cases to help with that, for example we provide a PHP package to convert HTML to a compatible JSON structure: [ueberdosis/prosemirror-to-html](https://github.com/ueberdosis/html-to-prosemirror).
+これを支援するために、いくつかのケースを検討します。たとえば、HTML を互換性のある JSON 構造に変換する PHP パッケージを提供します [ueberdosis/prosemirror-to-html](https://github.com/ueberdosis/html-to-prosemirror) 。
 
-[Share your experiences with us!](mailto:humans@tiptap.dev) We’d like to add more information here.
+[あなたの経験を私たちと共有してください！](mailto:humans@tiptap.dev) ここにさらに情報を追加したいと思います。
 
-## Security
+<!-- If you’re migrating existing content to Tiptap we would recommend to get your existing output to HTML. That’s probably the best format to get your initial content into Tiptap, because ProseMirror ensures there is nothing wrong with it. Even if there are some tags or attributes that aren’t allowed (based on your configuration), Tiptap just throws them away quietly. -->
 
-There is no reason to use one or the other because of security concerns. If someone wants to send malicious content to your server, it doesn’t matter if it’s JSON or HTML. It doesn’t even matter if you’re using Tiptap or not. You should always validate user input.
+<!-- We’re about to go through a few cases to help with that, for example we provide a PHP package to convert HTML to a compatible JSON structure: [ueberdosis/prosemirror-to-html](https://github.com/ueberdosis/html-to-prosemirror). -->
+
+<!-- [Share your experiences with us!](mailto:humans@tiptap.dev) We’d like to add more information here. -->
+
+## セキュリティ
+
+セキュリティ上の懸念から、どちらか一方を使用する理由はありません。誰かが悪意のあるコンテンツをサーバーに送信したい場合、それが JSON であるか HTML であるかは関係ありません。 Tiptap を使用しているかどうかは関係ありません。常にユーザー入力を検証する必要があります。
+
+<!-- There is no reason to use one or the other because of security concerns. If someone wants to send malicious content to your server, it doesn’t matter if it’s JSON or HTML. It doesn’t even matter if you’re using Tiptap or not. You should always validate user input. -->
