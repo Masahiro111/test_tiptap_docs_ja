@@ -20,13 +20,13 @@ Tiptap の強みの1つは、その拡張性です。提供されている拡張
 
 ## 既存の拡張機能を拡張する
 
-すべての拡張機能には`extend（）`メソッドがあり、変更または追加したいすべてのものを含むオブジェクトを取得します。
+すべての拡張機能には `extend()` メソッドがあり、変更または追加したいすべてのものを含むオブジェクトを取得します。
 
-たとえば、箇条書きのキーボードショートカットを変更したいとします。拡張機能のソースコード、その場合は[`BulletList`ノード]（https://github.com/ueberdosis/tiptap/blob/main/packages/extension-bullet-list/src/ bullet-list.ts）。キーボードショートカットを上書きする特注の例の場合、コードは次のようになります。
+たとえば、箇条書きのキーボードショートカットを変更したいとします。拡張機能のソースコード、その場合は [`BulletList`ノード](https://github.com/ueberdosis/tiptap/blob/main/packages/extension-bullet-list/src/bullet-list.ts) 。キーボードショートカットを上書きする特注の例の場合、コードは次のようになります。
 
-Every extension has an `extend()` method, which takes an object with everything you want to change or add to it.
+<!-- Every extension has an `extend()` method, which takes an object with everything you want to change or add to it. -->
 
-Let’s say, you’d like to change the keyboard shortcut for the bullet list. You should start with looking at the source code of the extension, in that case [the `BulletList` node](https://github.com/ueberdosis/tiptap/blob/main/packages/extension-bullet-list/src/bullet-list.ts). For the bespoken example to overwrite the keyboard shortcut, your code could look like that:
+<!-- Let’s say, you’d like to change the keyboard shortcut for the bullet list. You should start with looking at the source code of the extension, in that case [the `BulletList` node](https://github.com/ueberdosis/tiptap/blob/main/packages/extension-bullet-list/src/bullet-list.ts). For the bespoken example to overwrite the keyboard shortcut, your code could look like that: -->
 
 ```js
 // 1. Import the extension
@@ -50,15 +50,15 @@ new Editor({
 })
 ```
 
-The same applies to every aspect of an existing extension, except to the name. Let’s look at all the things that you can change through the extend method. We focus on one aspect in every example, but you can combine all those examples and change multiple aspects in one `extend()` call too.
+<!-- The same applies to every aspect of an existing extension, except to the name. Let’s look at all the things that you can change through the extend method. We focus on one aspect in every example, but you can combine all those examples and change multiple aspects in one `extend()` call too. -->
 
-名前を除いて、同じことが既存の拡張機能のすべての側面に当てはまります。 extendメソッドで変更できるすべてのものを見てみましょう。すべての例で1つの側面に焦点を当てていますが、これらすべての例を組み合わせて、1つの `extend（）`呼び出しで複数の側面を変更することもできます。
+名前を除いて、同じことが既存の拡張機能のすべての側面に当てはまります。 extend メソッドで変更できるすべてのものを見てみましょう。すべての例で1つの側面に焦点を当てていますが、これらすべての例を組み合わせて、1つの `extend()` 呼び出しで複数の側面を変更することもできます。
 
 ### 名前
 
 拡張子の名前は多くの場所で使用されており、変更するのは簡単ではありません。既存の拡張機能の名前を変更する場合は、拡張機能全体をコピーして、すべての場所で名前を変更できます。
 
-拡張子名もJSONの一部です。 [コンテンツをJSONとして保存]（/ guide / output＃option-1-json）する場合は、そこでも名前を変更する必要があります。
+拡張子名も JSON の一部です。 [コンテンツをJSONとして保存](/guide/output#option-1-json) する場合は、そこでも名前を変更する必要があります。
 
 The extension name is used in a whole lot of places and changing it isn’t too easy. If you want to change the name of an existing extension, you can copy the whole extension and change the name in all occurrences.
 
