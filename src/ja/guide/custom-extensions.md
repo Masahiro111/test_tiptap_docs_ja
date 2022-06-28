@@ -60,17 +60,15 @@ new Editor({
 
 拡張子名も JSON の一部です。 [コンテンツをJSONとして保存](/guide/output#option-1-json) する場合は、そこでも名前を変更する必要があります。
 
-The extension name is used in a whole lot of places and changing it isn’t too easy. If you want to change the name of an existing extension, you can copy the whole extension and change the name in all occurrences.
+<!-- The extension name is used in a whole lot of places and changing it isn’t too easy. If you want to change the name of an existing extension, you can copy the whole extension and change the name in all occurrences. -->
 
-The extension name is also part of the JSON. If you [store your content as JSON](/guide/output#option-1-json), you need to change the name there too.
+<!-- The extension name is also part of the JSON. If you [store your content as JSON](/guide/output#option-1-json), you need to change the name there too. -->
 
-### Priority
-
-優先順位
+### 優先順位
 
 優先度は、内線番号が登録される順序を定義します。デフォルトの優先度は`100`で、これがほとんどの拡張機能にあります。優先度の高い拡張機能は、より早くロードされます。
 
-The priority defines the order in which extensions are registered. The default priority is `100`, that’s what most extension have. Extensions with a higher priority will be loaded earlier.
+<!-- The priority defines the order in which extensions are registered. The default priority is `100`, that’s what most extension have. Extensions with a higher priority will be loaded earlier. -->
 
 ```js
 import Link from '@tiptap/extension-link'
@@ -80,21 +78,21 @@ const CustomLink = Link.extend({
 })
 ```
 
-The order in which extensions are loaded influences two things:
+<!-- The order in which extensions are loaded influences two things: -->
 
-拡張機能が読み込まれる順序は、次の2つのことに影響します。
+拡張機能が読み込まれる順序は、次の 2つのことに影響します。
 
-1.####プラグインの注文
-   優先度の高い拡張機能のProseMirrorプラグインが最初に実行されます。
+1. #### プラグインの注文
+   優先度の高い拡張機能の ProseMirror プラグインが最初に実行されます。
 
-2.####スキーマの順序
-   たとえば、[`Link`]（/ api / marks / link）マークの優先度が高くなります。つまり、` <ahref="…"><strong>例</strong></a>としてレンダリングされます。 `<strong><ahref="…">例</a></strong>`の代わりに`。
+2. #### スキーマの順序
+   たとえば、[`Link`](/api/marks/link) マークの優先度が高くなります。つまり、 `<strong><ahref="…">例</a></strong>`の代わりに、 `<ahref="…"><strong>例</strong></a>` としてレンダリングされます。。
 
-1. #### Plugin order
-   ProseMirror plugins of extensions with a higher priority will run first.
+<!-- 1. #### Plugin order -->
+   <!-- ProseMirror plugins of extensions with a higher priority will run first. -->
 
-2. #### Schema order
-   The [`Link`](/api/marks/link) mark for example has a higher priority, which means it will be rendered as `<a href="…"><strong>Example</strong></a>` instead of `<strong><a href="…">Example</a></strong>`.
+<!-- 2. #### Schema order -->
+   <!-- The [`Link`](/api/marks/link) mark for example has a higher priority, which means it will be rendered as `<a href="…"><strong>Example</strong></a>` instead of `<strong><a href="…">Example</a></strong>`. -->
 
 ### 設定
 
@@ -245,9 +243,9 @@ const CustomParagraph = Paragraph.extend({
 // <p style="color: pink">Example Text</p>
 ```
 
-You can also control how the attribute is parsed from the HTML. Maybe you want to store the color in an attribute called `data-color` (and not just `color`), here’s how you would do that:
+<!-- You can also control how the attribute is parsed from the HTML. Maybe you want to store the color in an attribute called `data-color` (and not just `color`), here’s how you would do that: -->
 
-HTML から属性を解析する方法を制御することもできます。色を`data-color` (` color`だけでなく) という属性に保存したい場合は、次のようにします。
+HTML から属性を解析する方法を制御することもできます。色を`data-color` (`color`だけでなく) という属性に保存したい場合は、次のようにします。
 
 ```js
 const CustomParagraph = Paragraph.extend({
