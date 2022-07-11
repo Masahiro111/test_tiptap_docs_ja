@@ -1,6 +1,6 @@
 # CodeSandbox
 
-CodeSandbox is an online coding environment. It’s great to fiddle around without setting up a local project. You can also use it to share your code and collaborate with others.
+<!-- CodeSandbox is an online coding environment. It’s great to fiddle around without setting up a local project. You can also use it to share your code and collaborate with others. -->
 
 CodeSandbox はオンラインコーディング環境です。 ローカルプロジェクトを設定せずにいじくり回すのは素晴らしいことです。 また、コードを共有したり、他のユーザーと共同作業したりするためにも使用できます。
 

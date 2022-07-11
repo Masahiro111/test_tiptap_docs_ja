@@ -50,7 +50,7 @@ npm run dev
 npm install alpinejs @tiptap/core @tiptap/starter-kit
 ```
 
-If you followed step 1, you can now start your project with `npm run dev`, and open [http://localhost:3000](http://localhost:3000) in your favorite browser. This might be different, if you’re working with an existing project.
+<!-- If you followed step 1, you can now start your project with `npm run dev`, and open [http://localhost:3000](http://localhost:3000) in your favorite browser. This might be different, if you’re working with an existing project. -->
 
 手順1 を実行した場合は、`npm run dev` を使用してプロジェクトを開始し、お気に入りのブラウザで [http://localhost:3000](http://localhost:3000) を開くことができます。既存のプロジェクトで作業している場合、これは異なる場合があります。
 

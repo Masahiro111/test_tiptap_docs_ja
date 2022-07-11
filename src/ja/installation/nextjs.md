@@ -20,7 +20,8 @@ tableOfContents: true
 <!-- * Experience with [React](https://reactjs.org/) -->
 
 ## 1. プロジェクトを作成します（オプション）
-既存のNext.jsプロジェクトがある場合は、それでも問題ありません。このステップをスキップして、次のステップに進んでください。
+
+既存の Next.js プロジェクトがある場合は、それでも問題ありません。このステップをスキップして、次のステップに進んでください。
 
 <!-- If you already have an existing Next.js project, that’s fine too. Just skip this step and proceed with the next step. -->
 
@@ -38,7 +39,7 @@ cd my-tiptap-project
 
 ## 2.依存関係をインストールします
 
-標準のボイラープレートが設定されたので、Tiptapの起動と実行を開始できます。このためには、`@tiptap/react` と `@tiptap/starter-kit` の2つのパッケージをインストールする必要があります。これらのパッケージにはすぐに開始するために必要なすべての拡張機能が含まれています。
+標準のボイラープレートが設定されたので、Tiptap の起動と実行を開始できます。このためには、`@tiptap/react` と `@tiptap/starter-kit` の2つのパッケージをインストールする必要があります。これらのパッケージにはすぐに開始するために必要なすべての拡張機能が含まれています。
 
 <!-- Now that we have a standard boilerplate set up we can get started on getting Tiptap up and running! For this we will need to install two packages: `@tiptap/react` and `@tiptap/starter-kit` which includes all the extensions you need to get started quickly. -->
 
@@ -48,7 +49,7 @@ npm install @tiptap/react @tiptap/starter-kit
 
 <!-- If you followed step 1 and 2, you can now start your project with `npm run dev`, and open [http://localhost:3000/](http://localhost:3000/) in your favorite browser. This might be different, if you’re working with an existing project. -->
 
-手順1 と 2 を実行した場合は、`npm run dev` を使用してプロジェクトを開始し、お気に入りのブラウザで[http://localhost:3000 /](http://localhost:3000/) を開くことができます。既存のプロジェクトで作業している場合、これは異なる場合があります。
+手順1 と 2 を実行した場合は、`npm run dev` を使用してプロジェクトを開始し、お気に入りのブラウザで [http://localhost:3000 /](http://localhost:3000/) を開くことができます。既存のプロジェクトで作業している場合、これは異なる場合があります。
 
 ## 3.新しいコンポーネントを作成します
 

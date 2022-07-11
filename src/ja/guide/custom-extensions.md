@@ -392,7 +392,9 @@ parseHTML() {
 },
 ```
 
-This defines a rule to convert all `<strong>` tags to `Bold` marks. But you can get more advanced with this, here is the full example from the extension:
+<!-- This defines a rule to convert all `<strong>` tags to `Bold` marks. But you can get more advanced with this, here is the full example from the extension: -->
+
+これは、すべての `<strong>` タグを `Bold` マークに変換するルールを定義します。ただし、これを使用するとさらに高度になります。拡張機能の完全な例を次に示します。
 
 ```js
 parseHTML() {
@@ -423,7 +425,20 @@ You are wondering what’s that `&& null` doing? [ProseMirror expects `null` or 
 
 [Pass `priority` to a rule](https://prosemirror.net/docs/ref/version/0.18.0.html#model.ParseRule.priority) to resolve conflicts with other extensions, for example if you build a custom extension which looks for paragraphs with a class attribute, but you already use the default paragraph extension.
 
-#### Using getAttrs
+これにより、 `<strong>`タグと`<b>`タグ、および`font-weight`を太字に設定するインラインスタイルのHTMLタグがチェックされます。
+
+ご覧のとおり、オプションで `getAttrs`コールバックを渡して、特定のHTML属性などのより複雑なチェックを追加できます。コールバックは、 `style`属性をチェックする場合を除いて、HTML DOMノードに渡され、それが値になります。
+
+その`&&null`は何をしているのか疑問に思っていますか？ [チェックが成功した場合、ProseMirrorは`null`または`undefined`を予期します。]（https://prosemirror.net/docs/ref/version/0.18.0.html#model.ParseRule.getAttrs）
+
+[ルールに`priority`を渡す]（https://prosemirror.net/docs/ref/version/0.18.0.html#model.ParseRule.priority）他の拡張機能との競合を解決するには、たとえば、カスタムを作成する場合クラス属性を持つ段落を検索する拡張機能ですが、すでにデフォルトの段落拡張機能を使用しています。
+
+#### getAttrs の使用
+
+この例でおそらく気付いた`getAttrs`関数には、次の2つの目的があります。
+
+1. HTML属性をチェックして、ルールが一致するかどうかを判断します（そして、マークまたはノードがそのHTMLから作成されます）。関数が`false`を返す場合、それは一致していません。
+2. DOM要素を取得し、HTML属性を使用して、それに応じてマークまたはノード属性を設定します。
 
 The `getAttrs` function you’ve probably noticed in the example has two purposes:
 
@@ -450,6 +465,8 @@ parseHTML() {
 
 You can return an object with the attribute as the key and the parsed value to set your mark or node attribute. We would recommend to use the `parseHTML` inside `addAttributes()`, though. That will keep your code cleaner.
 
+マークまたはノード属性を設定するために、キーとしての属性と解析された値を持つオブジェクトを返すことができます。ただし、 `addAttributes（）`内で`parseHTML`を使用することをお勧めします。これにより、コードがよりクリーンに保たれます。
+
 ```js
 addAttributes() {
   return {
@@ -463,7 +480,11 @@ addAttributes() {
 
 Read more about `getAttrs` and all other `ParseRule` properties in the [ProseMirror reference](https://prosemirror.net/docs/ref/#model.ParseRule).
 
-### Commands
+[ProseMirrorリファレンス]（https://prosemirror.net/docs/ref/#model.ParseRule）で、`getAttrs`およびその他すべての`ParseRule`プロパティの詳細をご覧ください。
+
+
+### コマンド
+
 ```js
 import Paragraph from '@tiptap/extension-paragraph'
 
@@ -482,7 +503,13 @@ const CustomParagraph = Paragraph.extend({
 To access other commands inside `addCommands` use the `commands` parameter that’s passed to it.
 :::
 
-### Keyboard shortcuts
+:::警告addCommands内のcommandsパラメータを使用します
+`addCommands`内の他のコマンドにアクセスするには、渡された`commands`パラメータを使用します。
+：：：
+
+### キーボードショートカット
+
+ほとんどのコア拡張機能には、適切なキーボードショートカットのデフォルトが付属しています。構築したいものによっては、変更したい場合もあります。 `addKeyboardShortcuts（）`メソッドを使用すると、事前定義されたショートカットマップを上書きできます。
 
 Most core extensions come with sensible keyboard shortcut defaults. Depending on what you want to build, you’ll likely want to change them though. With the `addKeyboardShortcuts()` method you can overwrite the predefined shortcut map:
 
@@ -499,7 +526,11 @@ const CustomBulletList = BulletList.extend({
 })
 ```
 
-### Input rules
+### 入力ルール
+
+入力ルールを使用すると、ユーザー入力をリッスンする正規表現を定義できます。これらは、マークダウンショートカットに使用されます。たとえば、 `（c）`などのテキストを[`Typography`]（/ api / extends / typography）拡張子を持つ `©`（およびその他多数）に変換するために使用されます。マークには`markInputRule`ヘルパー関数を使用し、ノードには`nodeInputRule`を使用します。
+
+デフォルトでは、両側の2つのチルダの間のテキストは~~打たれたテキスト~~に変換されます。両側に1つのチルダで十分だと考えたい場合は、次のように入力ルールを上書きできます。
 
 With input rules you can define regular expressions to listen for user inputs. They are used for markdown shortcuts, or for example to convert text like `(c)` to a `©` (and many more) with the [`Typography`](/api/extensions/typography) extension. Use the `markInputRule` helper function for marks, and the `nodeInputRule` for nodes.
 
@@ -528,7 +559,14 @@ const CustomStrike = Strike.extend({
 })
 ```
 
-### Paste rules
+### ペースト ルール
+
+貼り付けルールは、入力ルール（上記を参照）と同じように機能します。ただし、ユーザーが入力した内容を聞く代わりに、貼り付けられたコンテンツに適用されます。
+
+正規表現には小さな違いが1つあります。入力ルールは通常、 `$`ドル記号（「行末の位置をアサートする」を意味します）で終わり、貼り付けルールは通常、目を通します。すべてのコンテンツで、「$」ドル記号は表示されていません。
+
+上記の例を使用して貼り付けルールに適用すると、次の例のようになります。
+
 Paste rules work like input rules (see above) do. But instead of listening to what the user types, they are applied to pasted content.
 
 There is one tiny difference in the regular expression. Input rules typically end with a `$` dollar sign (which means “asserts position at the end of a line”), paste rules typically look through all the content and don’t have said `$` dollar sign.
@@ -558,7 +596,10 @@ const CustomStrike = Strike.extend({
 })
 ```
 
-### Events
+### イベント
+
+[イベントリスナー]（/ api / events）を別の拡張機能に移動することもできます。すべてのイベントのリスナーの例を次に示します。
+
 You can even move your [event listeners](/api/events) to a separate extension. Here is an example with listeners for all events:
 
 ```js
@@ -589,7 +630,10 @@ const CustomExtension = Extension.create({
 })
 ```
 
-### What’s available in this?
+### これで何が利用できますか？
+
+これらの拡張機能はクラスではありませんが、拡張機能のどこでも「this」で利用できる重要なものがいくつかあります。
+
 Those extensions aren’t classes, but you still have a few important things available in `this` everywhere in the extension.
 
 ```js
@@ -609,10 +653,16 @@ this.options
 this.parent
 ```
 
-### ProseMirror Plugins (Advanced)
+### ProseMirrorプラグイン（Advanced）
+
+結局のところ、TiptapはProseMirror上に構築されており、ProseMirrorには非常に強力なプラグインAPIもあります。これに直接アクセスするには、 `addProseMirrorPlugins（）`を使用します。
+
 After all, Tiptap is built on ProseMirror and ProseMirror has a pretty powerful plugin API, too. To access that directly, use `addProseMirrorPlugins()`.
 
-#### Existing plugins
+#### 既存のプラグイン
+
+以下の例に示すように、既存のProseMirrorプラグインをTiptap拡張機能でラップできます。
+
 You can wrap existing ProseMirror plugins in Tiptap extensions like shown in the example below.
 
 ```js
@@ -628,10 +678,15 @@ const History = Extension.create({
 })
 ```
 
-#### Access the ProseMirror API
+#### ProseMirrorAPIにアクセスする
+
+クリック、ダブルクリック、コンテンツの貼り付けなどのイベントにフックするには、[イベントハンドラー]（https://prosemirror.net/docs/ref/#view.EditorProps）を[の`editorProps`に渡すことができます。エディター]（/ api / editor＃editor-props）。
+
 To hook into events, for example a click, double click or when content is pasted, you can pass [event handlers](https://prosemirror.net/docs/ref/#view.EditorProps) to `editorProps` on the [editor](/api/editor#editor-props).
 
 Or you can add them to a Tiptap extension like shown in the below example.
+
+または、以下の例に示すように、それらをTiptap拡張機能に追加することもできます。
 
 ```js
 import { Extension } from '@tiptap/core'
@@ -657,7 +712,12 @@ export const EventHandler = Extension.create({
 })
 ```
 
-### Node views (Advanced)
+### ノードビュー（Advanced）
+
+たとえば、画像の周囲に洗練されたインターフェイスをレンダリングするために、ノード内で JavaScript を実行する必要がある高度なユースケースでは、ノードビューについて学習する必要があります。
+
+それらは本当に強力ですが、複雑でもあります。簡単に言うと、親DOM要素と、コンテンツがレンダリングされるDOM要素を返す必要があります。次の簡略化された例を見てください。
+
 For advanced use cases, where you need to execute JavaScript inside your nodes, for example to render a sophisticated interface around an image, you need to learn about node views.
 
 They are really powerful, but also complex. In a nutshell, you need to return a parent DOM element, and a DOM element where the content should be rendered in. Look at the following, simplified example:
@@ -688,10 +748,18 @@ const CustomImage = Image.extend({
 
 There is a whole lot to learn about node views, so head over to the [dedicated section in our guide about node views](/guide/node-views) for more information. If you are looking for a real-world example, look at the source code of the [`TaskItem`](/api/nodes/task-item) node. This is using a node view to render the checkboxes.
 
-## Create new extensions
+ノードビューについて学ぶことはたくさんあるので、詳細については、[ノードビューに関するガイドの専用セクション]（/ guide / node-views）にアクセスしてください。実際の例を探している場合は、[`TaskItem`]（/ api / nodes / task-item）ノードのソースコードを確認してください。これは、ノードビューを使用してチェックボックスをレンダリングしています。
+
+## 新しい拡張機能を作成する
+
+独自の拡張機能を最初から作成できますが、何を知っていますか？これは、上記の既存の拡張機能を拡張する場合と同じ構文です。
+
 You can build your own extensions from scratch and you know what? It’s the same syntax as for extending existing extension described above.
 
-### Create a node
+### ノードを作成する
+
+ドキュメントをツリーと考えると、[ノード]（/ api / ノード）はそのツリーのコンテンツの一種にすぎません。学ぶのに良い例は、[`Paragraph`]（/ api / ノード/paragraph）、[` Heading`]（/ api / ノード/heading）、または[`CodeBlock`]（/ api / nodes / code-block）です。
+
 If you think of the document as a tree, then [nodes](/api/nodes) are just a type of content in that tree. Good examples to learn from are [`Paragraph`](/api/nodes/paragraph), [`Heading`](/api/nodes/heading), or [`CodeBlock`](/api/nodes/code-block).
 
 ```js
@@ -706,7 +774,12 @@ const CustomNode = Node.create({
 
 Nodes don’t have to be blocks. They can also be rendered inline with the text, for example for [@mentions](/api/nodes/mention).
 
-### Create a mark
+ノードはブロックである必要はありません。たとえば、テキストとインラインでレンダリングすることもできます。[@mentions]（/ api / ノード/メンション）
+
+### マークを作成する
+
+たとえば、インラインフォーマットを追加するために、1つまたは複数のマークを[ノード]（/ api / ノード）に適用できます。学ぶべき良い例は、[`太字`]（/ api / marks / bold）、[`斜体`]（/ api / marks / italic）、[`ハイライト`]（/ api / marks /ハイライト）
+
 One or multiple marks can be applied to [nodes](/api/nodes), for example to add inline formatting. Good examples to learn from are [`Bold`](/api/marks/bold), [`Italic`](/api/marks/italic) and [`Highlight`](/api/marks/highlight).
 
 ```js
@@ -719,7 +792,12 @@ const CustomMark = Mark.create({
 })
 ```
 
-### Create an extension
+### 拡張機能を作成する
+
+拡張機能はTiptapに新しい機能を追加し、ノードやマークの場合でも、ここで拡張機能という単語を頻繁に読みます。しかし、文字通りの拡張機能があります。これらはスキーマに追加できませんが（マークやノードのように）、機能を追加したり、エディターの動作を変更したりできます。
+
+学ぶべき良い例はおそらく[`TextAlign`]（/ api / extends / text-align）です。
+
 Extensions add new capabilities to Tiptap and you’ll read the word extension here very often, even for nodes and marks. But there are literal extensions. Those can’t add to the schema (like marks and nodes do), but can add functionality or change the behaviour of the editor.
 
 A good example to learn from is probably [`TextAlign`](/api/extensions/text-align).
@@ -734,5 +812,8 @@ const CustomExtension = Extension.create({
 })
 ```
 
-## Sharing
+## 共有
+
+すべてが正常に機能している場合は、[コミュニティと共有する]（https://github.com/ueberdosis/tiptap/issues/819）ことを忘れないでください。
+
 When everything is working fine, don’t forget to [share it with the community](https://github.com/ueberdosis/tiptap/issues/819).

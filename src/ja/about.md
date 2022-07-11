@@ -12,8 +12,6 @@ tableOfContents: true
 
 オープンソースコミュニティに戻って、 [GitHubでスポンサーになってください](https://github.com/sponsors/ueberdosis)! ♥
 
-
-
 ## スポンサーとしてのあなたのメリット💖
 
 <!-- * Get early access to private repositories
@@ -46,7 +44,7 @@ Tiptap を使用して「素晴らしい！」と思ってくれたら、この 
 
 ## より安心
 
-Companies betting on Tiptap probably want some peace of mind and ensure that we keep maintaining Tiptap, but don’t forget that our work is based on the work of other lovely people that you should definitely sponsor too:
+<!-- Companies betting on Tiptap probably want some peace of mind and ensure that we keep maintaining Tiptap, but don’t forget that our work is based on the work of other lovely people that you should definitely sponsor too: -->
 
 Tiptap 使用して利益をあげている企業は、おそらくある程度の安定を望んでおり、Tiptap を維持し続けることを保証しますが、私たちの仕事は、間違いなく後援する必要がある他の素敵な人々の仕事に基づいていることを忘れないでください。
 
@@ -62,7 +60,7 @@ Tiptap 使用して利益をあげている企業は、おそらくある程度�
 
 <!-- If you’re a company, don’t want to use GitHub, don’t have a credit card or want a proper invoice from us, just reach out to us at [humans@tiptap.dev](mailto:humans@tiptap.dev). -->
 
-We are part of the [Y-Collective](https://opencollective.com/y-collective), a fund for projects related to Y.js (the technology we’re using for all the collaborative editing magic). That’s an OpenCollective, which allows you to send money through transfer, PayPal or credit card. Donations are tax deductible for US companies.
+<!-- We are part of the [Y-Collective](https://opencollective.com/y-collective), a fund for projects related to Y.js (the technology we’re using for all the collaborative editing magic). That’s an OpenCollective, which allows you to send money through transfer, PayPal or credit card. Donations are tax deductible for US companies. -->
 
 私たちは、Y.js（すべての協調編集の魔法に使用しているテクノロジー）に関連するプロジェクトの基金である[Y-Collective](https://opencollective.com/y-collective) の一部です。これは OpenCollective であり、送金、PayPal、またはクレジットカードで送金できます。米国企業の寄付は税控除の対象となります。
 
