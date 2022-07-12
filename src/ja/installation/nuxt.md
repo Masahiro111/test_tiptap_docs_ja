@@ -19,7 +19,7 @@ tableOfContents: true
 <!-- * [Node](https://nodejs.org/en/download/) installed on your machine -->
 <!-- * Experience with [Vue](https://vuejs.org/v2/guide/#Getting-Started) -->
 
-## 1.プロジェクトを作成します（オプション）
+## 1.プロジェクトを作成（オプション）
 
 既存の Vue プロジェクトがある場合は、それでも問題ありません。このステップをスキップして、次のステップに進んでください。
 
@@ -37,7 +37,7 @@ npm init nuxt-app my-tiptap-project
 cd my-tiptap-project
 ```
 
-## 2.依存関係をインストールします
+## 2.依存関係をインストール
 
 さて、退屈な定型文の仕事は十分です。いよいよTiptapをインストールしましょう！次の例では、いくつかのコンポーネントを含む `@tiptap/vue-2` パッケージと、すぐに開始するための最も一般的な拡張機能を備えた`@tiptap/starter-kit` が必要です。
 
@@ -51,7 +51,7 @@ npm install @tiptap/vue-2 @tiptap/starter-kit
 
 手順1 と 2 を実行した場合は、`npm run serve` を使用してプロジェクトを開始し、お気に入りのブラウザで [http://localhost:8080/](http://localhost:8080/) を開くことができます。既存のプロジェクトで作業している場合、これは異なる場合があります。
 
-## 3.新しいコンポーネントを作成します
+## 3.新しいコンポーネントを作成
 
 Tiptap の使用を実際に開始するには、アプリに新しいコンポーネントを追加する必要があります。これを `TiptapEditor` と呼び、次のサンプルコードを `components/TiptapEditor.vue` に配置します。
 
@@ -97,7 +97,7 @@ export default {
 </script>
 ```
 
-## 4.アプリに追加します
+## 4.アプリに追加
 
 次に、`pages/index.vue` のコンテンツを次のサンプルコードに置き換えて、アプリで新しい `TiptapEditor` コンポーネントを使用します。
 
@@ -129,7 +129,7 @@ Tiptap は、サーバーではなくクライアントで実行する必要が�
 
 これで、ブラウザにTiptapが表示されます。背中を軽くたたく時間です！ :)
 
-## 5. v-model を使用する（オプション）
+## 5. v-model を使用（オプション）
 
 おそらく、フォーム内の `v-model` を使用してデータをバインドするために使用されていますが、これはTiptapでも可能です。これは、プロジェクトに統合できる実用的なサンプルコンポーネントです。
 

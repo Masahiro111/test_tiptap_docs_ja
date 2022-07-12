@@ -21,7 +21,7 @@ tableOfContents: true
 * [Vue CLI](https://cli.vuejs.org/) installed on your machine
 * Experience with [Vue](https://v3.vuejs.org/guide/introduction.html) -->
 
-## 1. プロジェクトを作成します（オプション）
+## 1. プロジェクトを作成（オプション）
 
 既存のVueプロジェクトがある場合は、それでも問題ありません。このステップをスキップして、次のステップに進んでください。
 
@@ -53,7 +53,7 @@ npm install @tiptap/vue-3 @tiptap/starter-kit
 
 手順1 と 2 を実行した場合は、「npm runserve」を使用してプロジェクトを開始し、お気に入りのブラウザで [http://localhost:8080](http://localhost:8080) を開くことができます。既存のプロジェクトで作業している場合、これは異なる場合があります。
 
-## 3. 新しいコンポーネントを作成します
+## 3. 新しいコンポーネントを作成
 
 Tiptap の使用を実際に開始するには、アプリに新しいコンポーネントを追加する必要があります。それを `Tiptap` と呼び、次のサンプルコードを `components/Tiptap.vue` に入れましょう。
 
@@ -153,7 +153,7 @@ const editor = useEditor({
 </script>
 ```
 
-## 4. アプリに追加します
+## 4. アプリに追加
 
 次に、 `src/App.vue` のコンテンツを次のサンプルコードに置き換えて、アプリで新しい `Tiptap` コンポーネントを使用します。
 

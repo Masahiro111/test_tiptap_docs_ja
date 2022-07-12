@@ -11,7 +11,7 @@ tableOfContents: true
 
 次のガイドでは、Tiptap を [React](https://reactjs.org/) プロジェクトと統合する方法について説明します。ここでは[CreateReactApp](https://reactjs.org/docs/getting-started.html) を使用していますが、ワークフローは他の設定と同様である必要があります。
 
-## Reactアプリを作成する
+## Reactアプリを作成
 
 ### クイックスタート
 
@@ -31,7 +31,7 @@ npx create-react-app my-tiptap-project --template tiptap
 
 https://tiptap.dev/screencasts/installation/install-tiptap-with-create-react-app
 
-#### 1.プロジェクトを作成します（オプション）
+#### 1.プロジェクトを作成（オプション）
 
 `my-tiptap-project` と呼ばれる新しい React プロジェクトから始めましょう。 [Reactアプリの作成](https://reactjs.org/docs/getting-started.html) は、必要なものすべてをセットアップします。
 
@@ -45,7 +45,7 @@ npx create-react-app my-tiptap-project
 cd my-tiptap-project
 ```
 
-#### 2.依存関係をインストールします
+#### 2.依存関係をインストール
 
 `@tiptap/react` パッケージと[`StarterKit`](/api/extends/starter-kit) をインストールします。これには、すぐに開始できる最も人気のある拡張機能があります。
 
@@ -59,7 +59,7 @@ If you followed step 1 and 2, you can now start your project with `npm run start
 
 手順1 と 2 を実行した場合は、`npm run start`を使用してプロジェクトを開始し、ブラウザで[http://localhost:3000](http://localhost:3000) を開くことができます。
 
-#### 3.新しいコンポーネントを作成します
+#### 3.新しいコンポーネントを作成
 
 Tiptap の使用を実際に開始するには、新しいコンポーネントを作成する必要があります。これを `Tiptap` と呼び、次のサンプルコードを `src/Tiptap.jsx` に配置します。
 
@@ -86,7 +86,7 @@ const Tiptap = () => {
 export default Tiptap
 ```
 
-#### 4.アプリに追加します
+#### 4.アプリに追加
 
 最後に、`src/App.js` のコンテンツを新しい`Tiptap` コンポーネントに置き換えます。
 

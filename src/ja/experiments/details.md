@@ -1,8 +1,9 @@
-# Details
+# 詳細
 
-⚠️ Experiment
+⚠️ 実験
 
-## Issues
-* Nested lists cause trouble
+## 問題
+
+* ネストされたリストは問題を引き起こします
 
 https://embed.tiptap.dev/preview/Experiments/Details

@@ -1,5 +1,5 @@
-# GenericFigure
+# 一般的な図
 
-⚠️ Experiment
+⚠️ 実験
 
 https://embed.tiptap.dev/preview/Experiments/GenericFigure

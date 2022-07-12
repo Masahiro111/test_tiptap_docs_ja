@@ -9,7 +9,7 @@ tableOfContents: true
 
 <!-- You can use Tiptap with Laravel, Livewire, Inertia.js, [Alpine.js](/installation/alpine), [Tailwind CSS](/guide/styling#with-tailwind-css), and even - yes you read that right - inside PHP. -->
 
-Tiptap は、Laravel、Livewire、Inertia.js、[Alpine.js](/installation/alpine)、[Tailwind CSS](/guide/styling#with-tailwind-css) で使用できます。もちろん、その権利をお読みください。 --PHP内。
+Tiptap は、Laravel、Livewire、Inertia.js、[Alpine.js](/installation/alpine)、[Tailwind CSS](/guide/styling#with-tailwind-css) で使用できます。もちろん、ライセンスもお読みください。
 
 ## PHPのヒント
 

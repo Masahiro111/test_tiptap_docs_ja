@@ -19,7 +19,7 @@ tableOfContents: true
 <!-- * [Node](https://nodejs.org/en/download/) installed on your machine -->
 <!-- * Experience with [React](https://reactjs.org/) -->
 
-## 1. プロジェクトを作成します（オプション）
+## 1. プロジェクトを作成（オプション）
 
 既存の Next.js プロジェクトがある場合は、それでも問題ありません。このステップをスキップして、次のステップに進んでください。
 
@@ -37,7 +37,7 @@ npx create-next-app my-tiptap-project
 cd my-tiptap-project
 ```
 
-## 2.依存関係をインストールします
+## 2.依存関係をインストール
 
 標準のボイラープレートが設定されたので、Tiptap の起動と実行を開始できます。このためには、`@tiptap/react` と `@tiptap/starter-kit` の2つのパッケージをインストールする必要があります。これらのパッケージにはすぐに開始するために必要なすべての拡張機能が含まれています。
 
@@ -51,7 +51,7 @@ npm install @tiptap/react @tiptap/starter-kit
 
 手順1 と 2 を実行した場合は、`npm run dev` を使用してプロジェクトを開始し、お気に入りのブラウザで [http://localhost:3000 /](http://localhost:3000/) を開くことができます。既存のプロジェクトで作業している場合、これは異なる場合があります。
 
-## 3.新しいコンポーネントを作成します
+## 3.新しいコンポーネントを作成
 
 Tiptap の使用を実際に開始するには、アプリに新しいコンポーネントを追加する必要があります。これを行うには、最初に `components/` というディレクトリを作成します。次に、`Tiptap` と呼ぶコンポーネントを作成します。これを行うには、次のサンプルコードを  `components/Tiptap.js` に配置します。
 
@@ -77,7 +77,7 @@ const Tiptap = () => {
 export default Tiptap;
 ```
 
-## 4.アプリに追加します
+## 4.アプリに追加
 
 次に、`pages/index.js` のコンテンツを次のサンプルコードに置き換えて、アプリで新しい `Tiptap` コンポーネントを使用します。
 
