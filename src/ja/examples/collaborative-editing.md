@@ -2,7 +2,7 @@
 tableOfContents: true
 ---
 
-# 協調編集
+# コラボ編集
 
 ## はじめに
 
