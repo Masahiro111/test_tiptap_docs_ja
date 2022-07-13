@@ -4,12 +4,14 @@ icon: calculator-line
 ---
 
 # CharacterCount
+
 [![Version](https://img.shields.io/npm/v/@tiptap/extension-character-count.svg?label=version)](https://www.npmjs.com/package/@tiptap/extension-character-count)
 [![Downloads](https://img.shields.io/npm/dm/@tiptap/extension-character-count.svg)](https://npmcharts.com/compare/@tiptap/extension-character-count?minimal=true)
 
 The `CharacterCount` extension limits the number of allowed character to a specific length. That’s it, that’s all.
 
 ## Installation
+
 ```bash
 npm install @tiptap/extension-character-count
 ```
@@ -43,6 +45,7 @@ CharacterCount.configure({
 ## Storage
 
 ### characters()
+
 Get the number of characters for the current document.
 
 ```js
@@ -56,6 +59,7 @@ editor.storage.characterCount.characters({ mode: 'nodeSize' })
 ```
 
 ### words()
+
 Get the number of words for the current document.
 
 ```js
@@ -66,7 +70,9 @@ editor.storage.characterCount.words({ node: someCustomNode })
 ```
 
 ## Source code
+
 [packages/extension-character-count/](https://github.com/ueberdosis/tiptap/blob/main/packages/extension-character-count/)
 
 ## Usage
+
 https://embed.tiptap.dev/preview/Extensions/CharacterCount
