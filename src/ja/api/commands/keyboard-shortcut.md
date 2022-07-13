@@ -1,12 +1,19 @@
 # keyboardShortcut
-The `keyboardShortcut` command will try to trigger a ShortcutEvent with a given name.
 
-## Parameters
+<!-- The `keyboardShortcut` command will try to trigger a ShortcutEvent with a given name. -->
+
+`keyboardShortcut` コマンドは、指定された名前で ShortcutEvent をトリガーしようとします。
+
+## パラメーター
+
 `name: String`
 
-The name of the shortcut to trigger.
+<!-- The name of the shortcut to trigger. -->
 
-## Usage
+トリガーへのショートカットの名前。
+
+## 使い方
+
 ```js
 editor.commands.keyboardShortcut('undo')
 ```

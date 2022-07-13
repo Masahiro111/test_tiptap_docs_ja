@@ -1,9 +1,13 @@
 # blur
-This command removes the focus from the editor.
 
-See also: [focus](/api/commands/focus)
+このコマンドは、エディターからフォーカスを削除します。
 
-## Usage
+<!-- This command removes the focus from the editor. -->
+
+参照 : [focus](/api/commands/focus)
+
+## 使い方
+
 ```js
 // Remove the focus from the editor
 editor.commands.blur()

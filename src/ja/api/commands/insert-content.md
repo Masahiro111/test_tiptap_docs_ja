@@ -1,14 +1,21 @@
 # insertContent
-The `insertContent` command adds the passed value to the document.
 
-See also: [setContent](/api/commands/set-content), [clearContent](/api/commands/clear-content)
+<!-- The `insertContent` command adds the passed value to the document. -->
 
-## Parameters
+`insertContent`コマンドは、渡された値をドキュメントに追加します。
+
+参照 : [setContent](/api/commands/set-content), [clearContent](/api/commands/clear-content)
+
+## パラメーター
+
 `value: Content`
 
-The command is pretty flexible and takes plain text, HTML or even JSON as a value.
+<!-- The command is pretty flexible and takes plain text, HTML or even JSON as a value. -->
 
-## Usage
+このコマンドは非常に柔軟性があり、プレーンテキスト、HTML、さらにはJSONを値として受け取ります。
+
+## 使い方
+
 ```js
 // Plain text
 editor.commands.insertContent('Example Text')
