@@ -4,10 +4,14 @@ tableOfContents: true
 
 # Marks
 
-## Introduction
-One or multiple marks can be applied to [nodes](/api/nodes), for example to add inline formatting like bold and italic, or other additional information.
+## はじめに
 
-## List of supported marks
+<!-- One or multiple marks can be applied to [nodes](/api/nodes), for example to add inline formatting like bold and italic, or other additional information. -->
+
+[ノード](/api/nodes) に 1つまたは複数のマークを適用して、たとえば、太字や斜体などのインラインフォーマットやその他の追加情報を追加できます。
+
+## サポートされているマークのリスト
+
 | Title                                 | StarterKit ([view](/api/extensions/starter-kit)) | Source Code                                                                              |
 | ------------------------------------- | ------------------------------------------------ | ---------------------------------------------------------------------------------------- |
 | [Bold](/api/marks/bold)               | Included                                         | [GitHub](https://github.com/ueberdosis/tiptap/blob/main/packages/extension-bold/)        |
