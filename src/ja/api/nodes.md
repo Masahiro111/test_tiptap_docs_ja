@@ -2,12 +2,18 @@
 tableOfContents: true
 ---
 
-# Nodes
+# ノード
 
-## Introduction
+## はじめに
+
 If you think of the document as a tree, then nodes are just a type of content in that tree. Examples of nodes are paragraphs, headings, or code blocks. But nodes don’t have to be blocks. They can also be rendered inline with the text, for example for **@mentions**.
 
+ドキュメントをツリーと考えると、ノードはそのツリーのコンテンツの一種にすぎません。ノードの例は、段落、見出し、またはコードブロックです。ただし、ノードはブロックである必要はありません。たとえば、** @メンション**の場合は、テキストとインラインでレンダリングすることもできます。
+
 ## List of supported nodes
+
+サポートされているノードのリスト
+
 | Title                                        | StarterKit ([view](/api/extensions/starter-kit)) | Source Code                                                                                  |
 | -------------------------------------------- | ------------------------------------------------ | -------------------------------------------------------------------------------------------- |
 | [Blockquote](/api/nodes/blockquote)          | Included                                         | [GitHub](https://github.com/ueberdosis/tiptap/blob/main/packages/extension-blockquote/)      |
@@ -31,8 +37,11 @@ If you think of the document as a tree, then nodes are just a type of content in
 | [TaskItem](/api/nodes/task-item)             | –                                                | [GitHub](https://github.com/ueberdosis/tiptap/blob/main/packages/extension-task-item/)       |
 | [Text](/api/nodes/text)                      | Included                                         | [GitHub](https://github.com/ueberdosis/tiptap/blob/main/packages/extension-text/)            |
 
-## Create a new node
-You’re free to create your own nodes for Tiptap. Here is the boilerplate code that’s need to create and register your own node:
+## 新しいノートの作成
+
+Tiptap 用に独自のノードを自由に作成できます。独自のノードを作成して登録するために必要な定型コードは次のとおりです。
+
+<!-- You’re free to create your own nodes for Tiptap. Here is the boilerplate code that’s need to create and register your own node: -->
 
 ```js
 import { Node } from '@tiptap/core'
@@ -54,4 +63,4 @@ const editor = new Editor({
 })
 ```
 
-Learn [more about custom extensions in our guide](/guide/custom-extensions).
+参考 [more about custom extensions in our guide](/guide/custom-extensions).
