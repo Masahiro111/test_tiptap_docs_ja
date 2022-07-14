@@ -282,13 +282,18 @@ Node.create({
 
 For nodes that should fence the cursor for regular editing operations like backspacing, for example a TableCell, set `isolating: true`.
 
+TableCellなど、バックスペースなどの通常の編集操作のためにカーソルをフェンスする必要があるノードの場合は、 `isolating：true`を設定します。
+
 ```js
 Node.create({
   isolating: true,
 })
 ```
 
-#### Allow gap cursor
+#### ギャップカーソルを許可する
+
+[`Gapcursor`]（/ api / extends / gapcursor）拡張機能は、新しいスキーマ属性を登録して、そのノードのすべての場所でギャップカーソルを許可するかどうかを制御します。
+
 The [`Gapcursor`](/api/extensions/gapcursor) extension registers a new schema attribute to control if gap cursors are allowed everywhere in that node.
 
 ```js
@@ -297,7 +302,10 @@ Node.create({
 })
 ```
 
-#### Table roles
+#### テーブルの役割
+
+[`Table`]（/ api / nodes / table）拡張機能は、ノードが持つ役割を構成するための新しいスキーマ属性を登録します。許可される値は、 `table`、` row`、 `cell`、および`header_cell`です。
+
 The [`Table`](/api/nodes/table) extension registers a new schema attribute to configure which role an Node has. Allowed values are `table`, `row`, `cell`, and `header_cell`.
 
 ```js
@@ -306,8 +314,12 @@ Node.create({
 })
 ```
 
-### The mark schema
+### マークスキーマ
+
 #### Inclusive
+
+カーソルが最後にあるときにマークをアクティブにしたくない場合は、包括的を`false`に設定します。たとえば、[`Link`]（/ api / marks / link）マークの設定方法は次のとおりです。
+
 If you don’t want the mark to be active when the cursor is at its end, set inclusive to `false`. For example, that’s how it’s configured for [`Link`](/api/marks/link) marks:
 
 ```js
@@ -317,6 +329,9 @@ Mark.create({
 ```
 
 #### Excludes
+
+デフォルトでは、すべてのノードを同時に適用できます。除外属性を使用すると、マークと共存してはならないマークを定義できます。たとえば、インラインコードマークは他のマーク（太字、斜体、その他すべて）を除外します。
+
 By default all nodes can be applied at the same time. With the excludes attribute you can define which marks must not coexist with the mark. For example, the inline code mark excludes any other mark (bold, italic, and all others).
 
 ```js
@@ -329,7 +344,10 @@ Mark.create({
 ```
 
 #### Group
+
 Add this mark to a group of extensions, which can be referred to in the content attribute of the schema.
+
+このマークを拡張機能のグループに追加します。これは、スキーマのコンテンツ属性で参照できます。
 
 ```js
 Mark.create({
@@ -344,6 +362,8 @@ Mark.create({
 
 Users expect code to behave very differently. For all kind of marks containing code, you can set `code: true` to take this into account.
 
+ユーザーは、コードの動作が大きく異なることを期待しています。コードを含むすべての種類のマークについて、これを考慮に入れるために `code：true`を設定できます。
+
 ```js
 Mark.create({
   code: true,
@@ -351,7 +371,10 @@ Mark.create({
 ```
 
 #### Spanning
+
 By default marks can span multiple nodes when rendered as HTML. Set `spanning: false` to indicate that a mark must not span multiple nodes.
+
+デフォルトでは、マークはHTMLとしてレンダリングされるときに、複数のノードにまたがることができます。マークが複数のノードにまたがってはならないことを示すには、 `spanning：false`を設定します。
 
 ```js
 Mark.create({
@@ -359,10 +382,17 @@ Mark.create({
 })
 ```
 
-## Get the underlying ProseMirror schema
+## 基礎となるProseMirrorスキーマを取得します
+
+基盤となるスキーマを操作する必要があるユースケースがいくつかあります。 Tiptapの共同テキスト編集機能を使用している場合、またはコンテンツをHTMLとして手動でレンダリングする場合は、これが必要になります。
+
 There are a few use cases where you need to work with the underlying schema. You’ll need that if you’re using the Tiptap collaborative text editing features or if you want to manually render your content as HTML.
 
 ### Option 1: With an Editor
+
+オプション1：エディターを使用
+クライアント側でこれが必要で、とにかくエディタインスタンスが必要な場合は、エディタから利用できます。
+
 If you need this on the client side and need an editor instance anyway, it’s available through the editor:
 
 ```js
@@ -384,6 +414,10 @@ const schema = editor.schema
 ```
 
 ### Option 2: Without an Editor
+
+オプション2：エディターなし
+実際のエディターを初期化せずにスキーマを作成したいだけの場合は、`getSchema`ヘルパー関数を使用できます。利用可能な拡張機能の配列が必要であり、ProseMirrorスキーマを便利に生成します。
+
 If you just want to have the schema *without* initializing an actual editor, you can use the `getSchema` helper function. It needs an array of available extensions and conveniently generates a ProseMirror schema for you:
 
 ```js
