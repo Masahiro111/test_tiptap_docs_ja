@@ -4,13 +4,13 @@ tableOfContents: true
 
 # アクセシビリティ
 
-:::pro Fund the development ♥
+<!-- :::pro Fund the development ♥
 We need your support to maintain, update, support and develop Tiptap. If you’re waiting for progress here, [become a sponsor and fund our work](/sponsor).
-:::
+::: -->
 
-:::pro開発資金♥
-Tiptapを維持、更新、サポート、開発するには、あなたのサポートが必要です。ここで進捗を待っている場合は、[スポンサーになり、私たちの仕事に資金を提供してください]（/スポンサー）。
-：：：
+> pro 開発資金♥
+> Tiptap を維持、更新、サポート、開発するには、あなたのサポートが必要です。ここで進捗を待っている場合は、[スポンサーになり、私たちの仕事に資金を提供してください](/sponsor) 。
+
 
 ## はじめに
 

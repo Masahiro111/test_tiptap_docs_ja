@@ -112,7 +112,7 @@ addNodeView() {
 }
 ```
 
-Does seem a little bit too complex? Consider using [React](/guide/node-views/react) or [Vue](/guide/node-views/vue), if you have one of those in your project anyway. It get’s a little bit easier with those two.
+<!-- Does seem a little bit too complex? Consider using [React](/guide/node-views/react) or [Vue](/guide/node-views/vue), if you have one of those in your project anyway. It get’s a little bit easier with those two. -->
 
 少し複雑すぎるように見えますか？とにかくプロジェクトにこれらのいずれかがある場合は、[React](/guide/node-views/react) または、[Vue](/guide/node-views/vue) の使用を検討してください。この 2つを使用すると、少し簡単になります。
 
