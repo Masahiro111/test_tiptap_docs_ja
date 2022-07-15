@@ -5,39 +5,50 @@ tableOfContents: true
 # Events
 
 ## Introduction
+
 The editor fires a few different events that you can hook into. Let’s have a look at all the available events first:
 
 ## List of available events
 
 ### beforeCreate
+
 Before the view is created.
 
 ### create
+
 The editor is ready.
 
 ### update
+
 The content has changed.
 
 ### selectionUpdate
+
 The selection has changed.
 
 ### transaction
+
 The editor state has changed.
 
 ### focus
+
 The editor is focused.
 
 ### blur
+
 The editor isn’t focused anymore.
 
 ### destroy
+
 The editor is being destroyed.
 
 
 ## Register event listeners
+
 There are three ways to register event listeners.
 
 ### Option 1: Configuration
+
 You can define your event listeners on a new editor instance right-away:
 
 ```js
@@ -70,9 +81,11 @@ const editor = new Editor({
 ```
 
 ### Option 2: Binding
+
 Or you can register your event listeners on a running editor instance:
 
 #### Bind event listeners
+
 ```js
 editor.on('beforeCreate', ({ editor }) => {
   // Before the view is created.
@@ -108,6 +121,7 @@ editor.on('destroy', () => {
 ```
 
 #### Unbind event listeners
+
 If you need to unbind those event listeners at some point, you should register your event listeners with `.on()` and unbind them with `.off()` then.
 
 ```js
@@ -123,6 +137,7 @@ editor.off('update', onUpdate)
 ```
 
 ### Option 3: Extensions
+
 Moving your event listeners to custom extensions (or nodes, or marks) is also possible. Here’s how that would look like:
 
 ```js

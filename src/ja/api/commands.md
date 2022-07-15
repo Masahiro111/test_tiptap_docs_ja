@@ -4,20 +4,31 @@ tableOfContents: true
 
 # Commands
 
-## Introduction
-The editor provides a ton of commands to programmatically add or change content or alter the selection. If you want to build your own editor you definitely want to learn more about them.
+## はじめに
 
-## Execute a command
-All available commands are accessible through an editor instance. Let’s say you want to make text bold when a user clicks on a button. That’s how that would look like:
+<!-- The editor provides a ton of commands to programmatically add or change content or alter the selection. If you want to build your own editor you definitely want to learn more about them. -->
+
+エディターには、コンテンツをプログラムで追加または変更したり、選択を変更したりするための多数のコマンドが用意されています。独自のエディターを作成したい場合は、間違いなくそれらについてもっと知りたいと思います。
+
+## コマンドの実行
+
+使用可能なすべてのコマンドには、エディターインスタンスからアクセスできます。ユーザーがボタンをクリックしたときにテキストを太字にしたい場合は次のようになります。
+
+<!-- All available commands are accessible through an editor instance. Let’s say you want to make text bold when a user clicks on a button. That’s how that would look like: -->
 
 ```js
 editor.commands.setBold()
 ```
 
-While that’s perfectly fine and does make the selected bold, you’d likely want to change multiple commands in one run. Let’s have a look at how that works.
+<!-- While that’s perfectly fine and does make the selected bold, you’d likely want to change multiple commands in one run. Let’s have a look at how that works. -->
 
-### Chain commands
-Most commands can be combined to one call. That’s shorter than separate function calls in most cases. Here is an example to make the selected text bold:
+選択したものが太字になっていると思いますが、実際にコマンドを実行する際には **1回の実行で複数のコマンドを変更する** ことをお勧めします。それがどのように機能するかを見てみましょう。
+
+### チェーンコマンド
+
+ほとんどのコマンドは、1つの呼び出しに組み合わせることができます。ほとんどの場合、これは個別の関数呼び出しよりも短くなります。選択したテキストを太字にする例を次に示します。
+
+<!-- Most commands can be combined to one call. That’s shorter than separate function calls in most cases. Here is an example to make the selected text bold: -->
 
 ```js
 editor
@@ -27,14 +38,23 @@ editor
   .run()
 ```
 
-The `.chain()` is required to start a new chain and the `.run()` is needed to actually execute all the commands in between.
+<!-- The `.chain()` is required to start a new chain and the `.run()` is needed to actually execute all the commands in between. -->
 
-In the example above two different commands are executed at once. When a user clicks on a button outside of the content, the editor isn’t in focus anymore. That’s why you probably want to add a `.focus()` call to most of your commands. It brings back the focus to the editor, so the user can continue to type.
+<!-- In the example above two different commands are executed at once. When a user clicks on a button outside of the content, the editor isn’t in focus anymore. That’s why you probably want to add a `.focus()` call to most of your commands. It brings back the focus to the editor, so the user can continue to type. -->
 
-All chained commands are kind of queued up. They are combined to one single transaction. That means, the content is only updated once, also the `update` event is only triggered once.
+<!-- All chained commands are kind of queued up. They are combined to one single transaction. That means, the content is only updated once, also the `update` event is only triggered once. -->
 
-#### Chaining inside custom commands
-When chaining a command, the transaction is held back. If you want to chain commands inside your custom commands, you’ll need to use said transaction and add to it. Here is how you would do that:
+新しいチェーンを開始するには `.chain()` が必要であり、その間のすべてのコマンドを実際に実行するには `.run()` が必要です。
+
+上記の例では、2つの異なるコマンドが同時に実行されます。ユーザーがコンテンツの外側のボタンをクリックすると、エディターはフォーカスされなくなります。そのため、ほとんどのコマンドに `.focus()` 呼び出しを追加することをお勧めします。これにより、フォーカスがエディターに戻されるため、ユーザーは入力を続けることができます。
+
+連鎖したコマンドはすべて、一種のキューに入れられます。それらは1つの単一のトランザクションに結合されます。つまり、コンテンツは 1回だけ更新され、`update` イベントも1回だけトリガーされます。
+
+#### カスタムコマンド内のチェーン
+
+コマンドを連鎖させると、トランザクションは保留されます。カスタムコマンド内でコマンドをチェーンする場合は、上記のトランザクションを使用して追加する必要があります。これを行う方法は次のとおりです。
+
+<!-- When chaining a command, the transaction is held back. If you want to chain commands inside your custom commands, you’ll need to use said transaction and add to it. Here is how you would do that: -->
 
 ```js
 addCommands() {
@@ -54,6 +74,7 @@ addCommands() {
 ```
 
 ### Inline commands
+
 In some cases, it’s helpful to put some more logic in a command. That’s why you can execute commands in commands. I know, that sounds crazy, but let’s look at an example:
 
 ```js
@@ -70,6 +91,7 @@ editor
 ```
 
 ### Dry run for commands
+
 Sometimes, you don’t want to actually run the commands, but only know if it would be possible to run commands, for example to show or hide buttons in a menu. That’s what we added `.can()` for. Everything coming after this method will be executed, without applying the changes to the document:
 
 ```js
@@ -153,9 +175,11 @@ export default () => ({ commands }) => {
 ```
 
 ## List of commands
+
 Have a look at all of the core commands listed below. They should give you a good first impression of what’s possible.
 
 ### Content
+
 | Command            | Description                                              | Links                                   |
 | ------------------ | -------------------------------------------------------- | --------------------------------------- |
 | clearContent()    | Clear the whole document.                                | [More](/api/commands/clear-content)     |
@@ -164,6 +188,7 @@ Have a look at all of the core commands listed below. They should give you a goo
 | setContent()      | Replace the whole document with new content.             | [More](/api/commands/set-content)       |
 
 ### Nodes & Marks
+
 | Command                 | Description                                               | Links                                |
 | ----------------------- | --------------------------------------------------------- | ------------------------------------ |
 | clearNodes()           | Normalize nodes to a simple paragraph.                    | [More](/api/commands/clear-nodes)  |
@@ -189,6 +214,7 @@ Have a look at all of the core commands listed below. They should give you a goo
 | updateAttributes()     | Update attributes of a node or mark.                      | [More](/api/commands/update-attributes)  |
 
 ### Lists
+
 | Command          | Description                                 | Links                                |
 | ---------------- | ------------------------------------------- | ------------------------------------ |
 | liftListItem()  | Lift the list item into a wrapping list.    | [More](/api/commands/lift-list-item)  |
@@ -198,6 +224,7 @@ Have a look at all of the core commands listed below. They should give you a goo
 | wrapInList()    | Wrap a node in a list.                      | [More](/api/commands/wrap-in-list)  |
 
 ### Selection
+
 | Command               | Description                             | Links                                |
 | --------------------- | --------------------------------------- | ------------------------------------ |
 | blur()               | Removes focus from the editor.          | [More](/api/commands/blur)  |
@@ -265,6 +292,7 @@ addCommands() {
 -->
 
 ## Write your own commands
+
 All extensions can add additional commands (and most do), check out the specific [documentation for the provided nodes](/api/nodes), [marks](/api/marks), and [extensions](/api/extensions) to learn more about those. And of course, you can [add your custom extensions](/guide/custom-extensions) with custom commands aswell.
 
 But how do you write those commands? There’s a little bit to learn about that.

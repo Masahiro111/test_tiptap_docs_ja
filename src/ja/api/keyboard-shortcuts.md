@@ -4,15 +4,18 @@ tableOfContents: true
 
 # Keyboard Shortcuts
 
-## Introduction
+## はじめに
+
 tiptap comes with sensible keyboard shortcut defaults. Depending on what you want to use it for, you’ll probably want to change those keyboard shortcuts to your liking. Let’s have a look at what we defined for you, and show you how to change it then!
 
 Funfact: We built a [keyboard shortcut learning app](https://mouseless.app), to which we manually added exercises for thousands of keyboard shortcuts for a bunch of tools.
 
 ## Predefined keyboard shortcuts
+
 Most of the core extensions register their own keyboard shortcuts. Depending on what set of extension you use, not all of the below listed keyboard shortcuts work for your editor.
 
 ### Essentials
+
 | Command                   | Windows/Linux                   | macOS                       |
 | ------------------------ | ------------------------------- | --------------------------- |
 | Copy                     | `Control`&nbsp;`C`              | `Cmd`&nbsp;`C`              |
@@ -24,6 +27,7 @@ Most of the core extensions register their own keyboard shortcuts. Depending on 
 | Add a line break         | `Shift`&nbsp;`Enter`            | `Shift`&nbsp;`Enter`        |
 
 ### Text Formatting
+
 | Command        | Windows/Linux                   | macOS                       |
 | ------------- | ------------------------------- | --------------------------- |
 | Bold          | `Control`&nbsp;`B`              | `Cmd`&nbsp;`B`              |
@@ -34,6 +38,7 @@ Most of the core extensions register their own keyboard shortcuts. Depending on 
 | Code          | `Control`&nbsp;`E`              | `Cmd`&nbsp;`E`              |
 
 ### Paragraph Formatting
+
 | Command                  | Windows/Linux                   | macOS                       |
 | ----------------------- | ------------------------------- | --------------------------- |
 | Apply normal text style | `Control`&nbsp;`Alt`&nbsp;`0`   | `Cmd`&nbsp;`Alt`&nbsp;`0`   |
@@ -58,6 +63,7 @@ Most of the core extensions register their own keyboard shortcuts. Depending on 
 <!--| Toggle task| `Control`&nbsp;`Enter` | `Cmd`&nbsp;`Enter` | -->
 
 ### Text Selection
+
 | Command                                            | Windows/Linux                   | macOS                       |
 | ------------------------------------------------- | ------------------------------- | --------------------------- |
 | Select all                                        | `Control`&nbsp;`A`              | `Cmd`&nbsp;`A`              |
@@ -69,6 +75,7 @@ Most of the core extensions register their own keyboard shortcuts. Depending on 
 | Extend selection to the end of the document       | `Control`&nbsp;`Shift`&nbsp;`↓` | `Cmd`&nbsp;`Shift`&nbsp;`↓` |
 
 ## Overwrite keyboard shortcuts
+
 Keyboard shortcuts may be strings like `'Shift-Control-Enter'`. Keys are based on the strings that can appear in `event.key`, concatenated with a `-`. There is a little tool called [keycode.info](https://keycode.info/), which shows the `event.key` interactively.
 
 Use lowercase letters to refer to letter keys (or uppercase letters if you want shift to be held). You may use `Space` as an alias for the <code>&nbsp;</code>.

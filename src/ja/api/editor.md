@@ -5,14 +5,17 @@ tableOfContents: true
 # Editor
 
 ## Introduction
+
 This class is a central building block of Tiptap. It does most of the heavy lifting of creating a working  [ProseMirror](https://ProseMirror.net/) editor such as creating the [`EditorView`](https://ProseMirror.net/docs/ref/#view.EditorView), setting the initial [`EditorState`](https://ProseMirror.net/docs/ref/#state.Editor_State) and so on.
 
 ## Methods
+
 The editor instance will provide a bunch of public methods. Methods are regular functions and can return anything. They’ll help you to work with the editor.
 
 Don’t confuse methods with [commands](/api/commands). Commands are used to change the state of editor (content, selection, and so on) and only return `true` or `false`.
 
 ### can()
+
 Check if a command or a command chain can be executed – without actually executing it. Can be very helpful to enable/disable or show/hide buttons.
 
 ```js
@@ -21,6 +24,7 @@ editor.can().undo()
 ```
 
 ### chain()
+
 Create a command chain to call multiple commands at once.
 
 ```js
@@ -29,6 +33,7 @@ editor.chain().toggleBold().focus().run()
 ```
 
 ### destroy()
+
 Stops the editor instance and unbinds all events.
 
 ```js
@@ -37,6 +42,7 @@ editor.destroy()
 ```
 
 ### getHTML()
+
 Returns the current editor document as HTML
 
 ```js
@@ -44,6 +50,7 @@ editor.getHTML()
 ```
 
 ### getJSON()
+
 Returns the current editor document as JSON.
 
 ```js
@@ -51,6 +58,7 @@ editor.getJSON()
 ```
 
 ### getText()
+
 Returns the current editor document as plain text.
 
 | Parameter  | Type                           | Description              |
@@ -65,6 +73,7 @@ editor.getText({ blockSeparator: "\n\n" })
 ```
 
 ### getAttributes()
+
 Get attributes of the currently selected node or mark.
 
 | Parameter  | Type                           | Description              |
@@ -76,6 +85,7 @@ editor.getAttributes('link').href
 ```
 
 ### isActive()
+
 Returns if the currently selected node or mark is active.
 
 | Parameter              | Type                | Description                    |
@@ -93,6 +103,7 @@ editor.isActive({ textAlign: 'justify' })
 ```
 
 ### registerPlugin()
+
 Register a ProseMirror plugin.
 
 | Parameter      | Type                                               | Description                                               |
@@ -101,6 +112,7 @@ Register a ProseMirror plugin.
 | handlePlugins? | (newPlugin: Plugin, plugins: Plugin[]) => Plugin[] | Control how to merge the plugin into the existing plugins |
 
 ### setOptions()
+
 Update editor options.
 
 | Parameter | Type                   | Description       |
@@ -119,6 +131,7 @@ editor.setOptions({
 ```
 
 ### setEditable()
+
 Update editable state of the editor.
 
 | Parameter | Type    | Description                                                   |
@@ -131,6 +144,7 @@ editor.setEditable(false)
 ```
 
 ### unregisterPlugin()
+
 Unregister a ProseMirror plugin.
 
 | Parameter       | Type                | Description      |

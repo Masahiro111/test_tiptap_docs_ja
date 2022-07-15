@@ -6,13 +6,11 @@ tableOfContents: true
 
 ## はじめに
 
-If you think of the document as a tree, then nodes are just a type of content in that tree. Examples of nodes are paragraphs, headings, or code blocks. But nodes don’t have to be blocks. They can also be rendered inline with the text, for example for **@mentions**.
+<!-- If you think of the document as a tree, then nodes are just a type of content in that tree. Examples of nodes are paragraphs, headings, or code blocks. But nodes don’t have to be blocks. They can also be rendered inline with the text, for example for **@mentions**. -->
 
-ドキュメントをツリーと考えると、ノードはそのツリーのコンテンツの一種にすぎません。ノードの例は、段落、見出し、またはコードブロックです。ただし、ノードはブロックである必要はありません。たとえば、** @メンション**の場合は、テキストとインラインでレンダリングすることもできます。
+ドキュメントをツリーと考えると、ノードはそのツリーのコンテンツの一種にすぎません。ノードの例は、段落、見出し、またはコードブロックです。ただし、ノードはブロックである必要はありません。たとえば、`@mentions` の場合は、テキストとインラインでレンダリングすることもできます。
 
-## List of supported nodes
-
-サポートされているノードのリスト
+## サポートされているノードのリスト
 
 | Title                                        | StarterKit ([view](/api/extensions/starter-kit)) | Source Code                                                                                  |
 | -------------------------------------------- | ------------------------------------------------ | -------------------------------------------------------------------------------------------- |
