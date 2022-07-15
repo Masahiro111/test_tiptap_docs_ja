@@ -242,20 +242,20 @@ export default () => ({ commands }) => {
 
 ### リスト
 
-| Command          | Description                                 | Links                                |
+| コマンド          | 説明                                 | リンク                                |
 | ---------------- | ------------------------------------------- | ------------------------------------ |
-| liftListItem()  | Lift the list item into a wrapping list.    | [詳細](/api/commands/lift-list-item)  |
-| sinkListItem()  | Sink the list item down into an inner list. | [詳細](/api/commands/sink-list-item)  |
-| splitListItem() | Splits one list item into two list items.   | [詳細](/api/commands/split-list-item)  |
-| toggleList()    | Toggle between different list types.        | [詳細](/api/commands/toggle-list)  |
-| wrapInList()    | Wrap a node in a list.                      | [詳細](/api/commands/wrap-in-list)  |
+| liftListItem()  | リストアイテムをラッピングリストに持ち上げ | [詳細](/api/commands/lift-list-item)  |
+| sinkListItem()  | リストアイテムを内側のリストに沈める | [詳細](/api/commands/sink-list-item)  |
+| splitListItem() | 1つのリストアイテムを2つのリストアイテムに分割 | [詳細](/api/commands/split-list-item)  |
+| toggleList()    | 異なるリストタイプを切り替え | [詳細](/api/commands/toggle-list)  |
+| wrapInList()    | リスト内のノードをラップ | [詳細](/api/commands/wrap-in-list)  |
 
-### Selection
+### 選択
 
-| Command               | Description                             | Links                                |
+| コマンド               | 選択                             | リンク                                |
 | --------------------- | --------------------------------------- | ------------------------------------ |
-| blur()               | Removes focus from the editor.          | [詳細](/api/commands/blur)  |
-| deleteRange()        | Delete a given range.                   | [詳細](/api/commands/delete-range)  |
+| blur()               | エディターからフォーカスを削除 | [詳細](/api/commands/blur)  |
+| deleteRange()        | 指定された範囲を削除 | [詳細](/api/commands/delete-range)  |
 | deleteSelection()    | Delete the selection, if there is one.  | [詳細](/api/commands/delete-selection)  |
 | enter()              | Trigger enter.                          | [詳細](/api/commands/enter)  |
 | focus()              | Focus the editor at the given position. | [詳細](/api/commands/focus)  |
@@ -318,18 +318,30 @@ addCommands() {
 ```
 -->
 
-## Write your own commands
+## 独自のコマンドを書く
 
 All extensions can add additional commands (and most do), check out the specific [documentation for the provided nodes](/api/nodes), [marks](/api/marks), and [extensions](/api/extensions) to learn more about those. And of course, you can [add your custom extensions](/guide/custom-extensions) with custom commands aswell.
 
+すべての拡張機能は、コマンドを追加でき（ほとんどの場合、追加できます）、特定の[提供されたノードのドキュメント]（/ api / ノード）、[マーク]（/ api /マーク）、および[拡張機能]（/ api / extends）を確認できます。 それらについてもっと学ぶために。 もちろん、カスタムコマンドを使用して[カスタム拡張機能を追加]（/ guide / custom-extensions）することもできます。
+
 But how do you write those commands? There’s a little bit to learn about that.
+
+しかし、これらのコマンドをどのように記述しますか？ それについて学ぶことが少しあります。
 
 :::pro Oops, this is work in progress
 A well-written documentation needs attention to detail, a great understanding of the project and time to write.
 
+::: proおっと、これは仕掛品です
+適切に作成されたドキュメントには、詳細に注意を払い、プロジェクトを十分に理解し、作成する時間が必要です。
+
 Though Tiptap is used by thousands of developers all around the world, it’s still a side project for us. Let’s change that and make open source our full-time job! With nearly 300 sponsors we are half way there already.
 
+
+Tiptapは世界中の何千もの開発者によって使用されていますが、それでも私たちにとっては副次的なプロジェクトです。 それを変えて、オープンソースを私たちのフルタイムの仕事にしましょう！ 300近くのスポンサーがいるので、私たちはすでに中途半端です。
+
 Join them and become a sponsor! Enable us to put more time into open source and we’ll fill this page and keep it up to date for you.
+
+それらに参加してスポンサーになりましょう！ オープンソースにより多くの時間を費やせるようにしてください。このページに記入して、最新の状態に保ちます。
 
 [Become a sponsor on GitHub →](https://github.com/sponsors/ueberdosis)
 :::

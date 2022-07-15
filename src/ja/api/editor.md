@@ -4,11 +4,17 @@ tableOfContents: true
 
 # Editor
 
-## Introduction
+## はじめに
 
-This class is a central building block of Tiptap. It does most of the heavy lifting of creating a working  [ProseMirror](https://ProseMirror.net/) editor such as creating the [`EditorView`](https://ProseMirror.net/docs/ref/#view.EditorView), setting the initial [`EditorState`](https://ProseMirror.net/docs/ref/#state.Editor_State) and so on.
+This class is a central building block of Tiptap. It does most of the heavy lifting of creating a working  [ProseMirror](https://ProseMirror.net/) editor such as creating the [`EditorView`](https://ProseMirror.net/docs/ref/#view.EditorView), setting the initial [`EditorState`](https://ProseMirror.net/docs/ref/#state.Editor_State) 
 
-## Methods
+このクラスは、Tiptapの中心的な構成要素です。これは、[`EditorView`]（https://ProseMirror.net/docs/ref/#view）の作成など、機能する[ProseMirror]（https://ProseMirror.net/）エディターを作成するための手間のかかる作業のほとんどを実行します。 EditorView）、初期[`EditorState`]（https://ProseMirror.net/docs/ref/#state.Editor_State）などを設定します。and so on.
+
+## メソッド
+
+エディターインスタンスは、一連のパブリックメソッドを提供します。メソッドは通常の関数であり、何でも返すことができます。編集者との共同作業に役立ちます。
+
+メソッドを[コマンド]（/ api /コマンド）と混同しないでください。コマンドは、エディターの状態（コンテンツ、選択など）を変更し、`true`または`false`のみを返すために使用されます。
 
 The editor instance will provide a bunch of public methods. Methods are regular functions and can return anything. They’ll help you to work with the editor.
 
@@ -17,6 +23,8 @@ Don’t confuse methods with [commands](/api/commands). Commands are used to cha
 ### can()
 
 Check if a command or a command chain can be executed – without actually executing it. Can be very helpful to enable/disable or show/hide buttons.
+
+コマンドまたはコマンドチェーンを実際に実行せずに実行できるかどうかを確認します。ボタンを有効/無効または表示/非表示にするのに非常に役立ちます。
 
 ```js
 // Returns `true` if the undo command can be executed
@@ -27,6 +35,8 @@ editor.can().undo()
 
 Create a command chain to call multiple commands at once.
 
+一度に複数のコマンドを呼び出すコマンドチェーンを作成します。
+
 ```js
 // Execute two commands at once
 editor.chain().toggleBold().focus().run()
@@ -35,6 +45,8 @@ editor.chain().toggleBold().focus().run()
 ### destroy()
 
 Stops the editor instance and unbinds all events.
+
+エディタインスタンスを停止し、すべてのイベントのバインドを解除します。
 
 ```js
 // Hasta la vista, baby!
@@ -45,6 +57,8 @@ editor.destroy()
 
 Returns the current editor document as HTML
 
+現在のエディタドキュメントをHTMLとして返します
+
 ```js
 editor.getHTML()
 ```
@@ -53,6 +67,8 @@ editor.getHTML()
 
 Returns the current editor document as JSON.
 
+現在のエディタードキュメントをJSONとして返します。
+
 ```js
 editor.getJSON()
 ```
@@ -60,6 +76,8 @@ editor.getJSON()
 ### getText()
 
 Returns the current editor document as plain text.
+
+現在のエディタドキュメントをプレーンテキストとして返します。
 
 | Parameter  | Type                           | Description              |
 | ---------- | ------------------------------ | ------------------------ |
@@ -76,6 +94,8 @@ editor.getText({ blockSeparator: "\n\n" })
 
 Get attributes of the currently selected node or mark.
 
+現在選択されているノードまたはマークの属性を取得します。
+
 | Parameter  | Type                           | Description              |
 | ---------- | ------------------------------ | ------------------------ |
 | typeOrName | string \| NodeType \| MarkType | Name of the node or mark |
@@ -87,6 +107,8 @@ editor.getAttributes('link').href
 ### isActive()
 
 Returns if the currently selected node or mark is active.
+
+現在選択されているノードまたはマークがアクティブかどうかを返します。
 
 | Parameter              | Type                | Description                    |
 | ---------------------- | ------------------- | ------------------------------ |
@@ -105,6 +127,8 @@ editor.isActive({ textAlign: 'justify' })
 ### registerPlugin()
 
 Register a ProseMirror plugin.
+
+ProseMirrorプラグインを登録します。
 
 | Parameter      | Type                                               | Description                                               |
 | -------------- | -------------------------------------------------- | --------------------------------------------------------- |
@@ -134,9 +158,11 @@ editor.setOptions({
 
 Update editable state of the editor.
 
+エディターの編集可能な状態を更新します。
+
 | Parameter | Type    | Description                                                   |
 | --------- | ------- | ------------------------------------------------------------- |
-| editable  | boolean | `true` when the user should be able to write into the editor. |
+| editable  | boolean | ユーザーがエディターに書き込める必要がある場合は `true` |
 
 ```js
 // Make the editor read-only
@@ -147,29 +173,38 @@ editor.setEditable(false)
 
 Unregister a ProseMirror plugin.
 
+ProseMirrorプラグインの登録を解除します。
+
 | Parameter       | Type                | Description      |
 | --------------- | ------------------- | ---------------- |
 | nameOrPluginKey | string \| PluginKey | The plugins name |
 
-## Getters
+## ゲッター
 
 ### isEditable
-Returns whether the editor is editable or read-only.
+
+<!-- Returns whether the editor is editable or read-only. -->
+
+エディターが編集可能か読み取り専用かを返します。
 
 ```js
 editor.isEditable
 ```
 
 ### isEmpty
-Check if there is content.
+
+<!-- Check if there is content. -->
+
+コンテンツがあるかどうかを確認します。
 
 ```js
 editor.isEmpty
 ```
 
-## Settings
+## 設定
 
 ### element
+
 The `element` specifies the HTML element the editor will be binded to. The following code will integrate Tiptap with an element with the `.element` class:
 
 ```js
