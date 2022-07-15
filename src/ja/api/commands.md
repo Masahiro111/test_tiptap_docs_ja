@@ -2,7 +2,7 @@
 tableOfContents: true
 ---
 
-# Commands
+# コマンド
 
 ## はじめに
 
@@ -73,9 +73,11 @@ addCommands() {
 }
 ```
 
-### Inline commands
+### インライン コマンド
 
-In some cases, it’s helpful to put some more logic in a command. That’s why you can execute commands in commands. I know, that sounds crazy, but let’s look at an example:
+<!-- In some cases, it’s helpful to put some more logic in a command. That’s why you can execute commands in commands. I know, that sounds crazy, but let’s look at an example: -->
+
+場合によっては、コマンドにさらにロジックを含めると便利です。そのため、コマンドでコマンドを実行できます。クレイジーに聞こえるかもしれませんが、例を見てみましょう。
 
 ```js
 editor
@@ -90,9 +92,11 @@ editor
   .run()
 ```
 
-### Dry run for commands
+### コマンドのドライラン
 
-Sometimes, you don’t want to actually run the commands, but only know if it would be possible to run commands, for example to show or hide buttons in a menu. That’s what we added `.can()` for. Everything coming after this method will be executed, without applying the changes to the document:
+<!-- Sometimes, you don’t want to actually run the commands, but only know if it would be possible to run commands, for example to show or hide buttons in a menu. That’s what we added `.can()` for. Everything coming after this method will be executed, without applying the changes to the document: -->
+
+場合によっては、実際にコマンドを実行したくないが、メニューのボタンを表示または非表示にするなど、コマンドを実行できるかどうかしかわからないことがあります。そのために `.can()` を追加しました。このメソッドの後に続くものはすべて、ドキュメントに変更を適用せずに実行されます。
 
 ```js
 editor
@@ -100,7 +104,9 @@ editor
   .toggleBold()
 ```
 
-And you can use it together with `.chain()`, too. Here is an example which checks if it’s possible to apply all the commands:
+<!-- And you can use it together with `.chain()`, too. Here is an example which checks if it’s possible to apply all the commands: -->
+
+また、`.chain()` と併用することもできます。すべてのコマンドを適用できるかどうかを確認する例を次に示します。
 
 ```js
 editor
@@ -111,11 +117,19 @@ editor
   .run()
 ```
 
-Both calls would return `true` if it’s possible to apply the commands, and `false` in case it’s not.
+<!-- Both calls would return `true` if it’s possible to apply the commands, and `false` in case it’s not. -->
 
-In order to make that work with your custom commands, don’t forget to return `true` or `false`.
+<!-- In order to make that work with your custom commands, don’t forget to return `true` or `false`. -->
 
-For some of your own commands, you probably want to work with the raw [transaction](/api/introduction). To make them work with `.can()` you should check if the transaction should be dispatched. Here is how you can create a simple `.insertText()` command:
+<!-- For some of your own commands, you probably want to work with the raw [transaction](/api/introduction). To make them work with `.can()` you should check if the transaction should be dispatched. Here is how you can create a simple `.insertText()` command: -->
+
+
+コマンドを適用できる場合は両方の呼び出しで `true` が返され、適用できない場合は
+`false` が返されます。
+
+カスタムコマンドでそれを機能させるために、`true` または `false` を返すことを忘れないでください。
+
+独自のコマンドのいくつかについては、生の[transaction](/api/introduction) を使用することをお勧めします。それらを `.can()` で機能させるには、トランザクションをディスパッチする必要があるかどうかを確認する必要があります。簡単な `.insertText()` コマンドを作成する方法は次のとおりです。
 
 ```js
 export default (value) => ({ tr, dispatch }) => {
@@ -127,7 +141,9 @@ export default (value) => ({ tr, dispatch }) => {
 }
 ```
 
-If you’re just wrapping another Tiptap command, you don’t need to check that, we’ll do it for you.
+<!-- If you’re just wrapping another Tiptap command, you don’t need to check that, we’ll do it for you. -->
+
+別の Tiptap コマンドをラップするだけの場合は、それをチェックする必要はありません。私たちが自動的に行います。
 
 ```js
 addCommands() {
@@ -139,7 +155,9 @@ addCommands() {
 }
 ```
 
-If you’re just wrapping a plain ProseMirror command, you’ll need to pass `dispatch` anyway. Then there’s also no need to check it:
+<!-- If you’re just wrapping a plain ProseMirror command, you’ll need to pass `dispatch` anyway. Then there’s also no need to check it: -->
+
+プレーンな ProseMirror コマンドをラップするだけの場合は、とにかく `dispatch` を渡す必要があります。次に、それをチェックする必要もありません。
 
 ```js
 import { exitCode } from 'prosemirror-commands'
@@ -149,10 +167,15 @@ export default () => ({ state, dispatch }) => {
 }
 ```
 
-### Try commands
-If you want to run a list of commands, but want only the first successful command to be applied, you can do this with the `.first()` method. This method runs one command after the other and stops at the first which returns `true`.
+### コマンドを試す
 
-For example, the backspace key tries to undo an input rule first. If that was successful, it stops there. If no input rule has been applied and thus can’t be reverted, it runs the next command and deletes the selection, if there is one. Here is the simplified example:
+コマンドのリストを実行したいが、最初に成功したコマンドのみを適用したい場合は、`.first()` メソッドを使用してこれを行うことができます。このメソッドは次々にコマンドを実行し、最初に停止して `true` を返します。
+
+たとえば、バックスペースキーは最初に入力ルールを元に戻そうとします。それが成功した場合、それはそこで止まります。入力ルールが適用されておらず、元に戻せない場合は、次のコマンドを実行し、選択範囲がある場合は削除します。簡略化した例を次に示します。
+
+<!-- If you want to run a list of commands, but want only the first successful command to be applied, you can do this with the `.first()` method. This method runs one command after the other and stops at the first which returns `true`. -->
+
+<!-- For example, the backspace key tries to undo an input rule first. If that was successful, it stops there. If no input rule has been applied and thus can’t be reverted, it runs the next command and deletes the selection, if there is one. Here is the simplified example: -->
 
 ```js
 editor.first(({ commands }) => [
@@ -162,7 +185,9 @@ editor.first(({ commands }) => [
 ])
 ```
 
-Inside of commands you can do the same thing like that:
+<!-- Inside of commands you can do the same thing like that: -->
+
+コマンド内では、次のような同じことを行うことができます。
 
 ```js
 export default () => ({ commands }) => {
@@ -174,72 +199,74 @@ export default () => ({ commands }) => {
 }
 ```
 
-## List of commands
+## コマンドのリスト
 
-Have a look at all of the core commands listed below. They should give you a good first impression of what’s possible.
+以下にリストされているすべてのコアコマンドを見てください。彼らはあなたに何が可能かについての良い第一印象を与えるはずです。
 
-### Content
+<!-- Have a look at all of the core commands listed below. They should give you a good first impression of what’s possible. -->
 
-| Command            | Description                                              | Links                                   |
+### コンテンツ
+
+| コマンド           | 説明                                              | リンク                                   |
 | ------------------ | -------------------------------------------------------- | --------------------------------------- |
-| clearContent()    | Clear the whole document.                                | [More](/api/commands/clear-content)     |
-| insertContent()   | Insert a node or string of HTML at the current position. | [More](/api/commands/insert-content)    |
-| insertContentAt() | Insert a node or string of HTML at a specific position.  | [More](/api/commands/insert-content-at) |
-| setContent()      | Replace the whole document with new content.             | [More](/api/commands/set-content)       |
+| clearContent()    | ドキュメント全体をクリア             | [詳細](/api/commands/clear-content)     |
+| insertContent()   | 現在の位置にHTMLのノードまたは文字列を挿入 | [詳細](/api/commands/insert-content)    |
+| insertContentAt() | HTMLのノードまたは文字列を特定の位置に挿入 | [詳細](/api/commands/insert-content-at) |
+| setContent()      | ドキュメント全体を新しいコンテンツに置き換え          | [詳細](/api/commands/set-content)       |
 
-### Nodes & Marks
+### ノードとマーク
 
-| Command                 | Description                                               | Links                                |
+| コマンド                 | 説明                                               |                                 |
 | ----------------------- | --------------------------------------------------------- | ------------------------------------ |
-| clearNodes()           | Normalize nodes to a simple paragraph.                    | [More](/api/commands/clear-nodes)  |
-| createParagraphNear()  | Create a paragraph nearby.                                | [More](/api/commands/create-paragraph-near)  |
-| deleteNode()           | Delete a node.                                            | [More](/api/commands/delete-node)  |
-| extendMarkRange()      | Extends the text selection to the current mark.           | [More](/api/commands/extend-mark-range)  |
-| exitCode()             | Exit from a code block.                                   | [More](/api/commands/exit-code)  |
-| joinBackward()         | Join two nodes backward.                                  | [More](/api/commands/join-backward)  |
-| joinForward()          | Join two nodes forward.                                   | [More](/api/commands/join-forward)  |
-| lift()                 | Removes an existing wrap.                                 | [More](/api/commands/lift)  |
-| liftEmptyBlock()       | Lift block if empty.                                      | [More](/api/commands/lift-empty-block)  |
-| newlineInCode()        | Add a newline character in code.                          | [More](/api/commands/newline-in-code)  |
-| resetAttributes()      | Resets some node or mark attributes to the default value. | [More](/api/commands/reset-attributes)  |
-| setMark()              | Add a mark with new attributes.                           | [More](/api/commands/set-mark)  |
-| setNode()              | Replace a given range with a node.                        | [More](/api/commands/set-node)  |
-| splitBlock()           | Forks a new node from an existing node.                   | [More](/api/commands/split-block)  |
-| toggleMark()           | Toggle a mark on and off.                                 | [More](/api/commands/toggle-mark)  |
-| toggleNode()           | Toggle a node with another node.                          | [More](/api/commands/toggle-node)  |
-| toggleWrap()           | Wraps nodes in another node, or removes an existing wrap. | [More](/api/commands/toggle-wrap)  |
-| undoInputRule()        | Undo an input rule.                                       | [More](/api/commands/undo-input-rule)  |
-| unsetAllMarks()        | Remove all marks in the current selection.                | [More](/api/commands/unset-all-marks)  |
-| unsetMark()            | Remove a mark in the current selection.                   | [More](/api/commands/unset-mark)  |
-| updateAttributes()     | Update attributes of a node or mark.                      | [More](/api/commands/update-attributes)  |
+| clearNodes()           | ノードを単純な段落に正規化                  | [詳細](/api/commands/clear-nodes)  |
+| createParagraphNear()  | 近くに段落を作成                                | [詳細](/api/commands/create-paragraph-near)  |
+| deleteNode()           | ノードを削除                | [詳細](/api/commands/delete-node)  |
+| extendMarkRange()      | テキスト選択を現在のマークまで拡張 | [詳細](/api/commands/extend-mark-range)  |
+| exitCode()             | コードブロックを終了  | [詳細](/api/commands/exit-code)  |
+| joinBackward()         | 2つのノードを逆方向に結合   | [詳細](/api/commands/join-backward)  |
+| joinForward()          | 2つのノードを前方に結合          | [詳細](/api/commands/join-forward)  |
+| lift()                 | 既存のラップを削除                          | [詳細](/api/commands/lift)  |
+| liftEmptyBlock()       | 空の場合はブロックを持ち上げ          | [詳細](/api/commands/lift-empty-block)  |
+| newlineInCode()        | コードに改行文字を追加   | [詳細](/api/commands/newline-in-code)  |
+| resetAttributes()      | 一部のノードまたはマーク属性をデフォルト値にリセット | [詳細](/api/commands/reset-attributes)  |
+| setMark()              | 新しい属性でマークを追加 | [詳細](/api/commands/set-mark)  |
+| setNode()              | 指定された範囲をノードに置き換え | [詳細](/api/commands/set-node)  |
+| splitBlock()           | 既存のノードから新しいノードをフォーク | [詳細](/api/commands/split-block)  |
+| toggleMark()           | マークのオンとオフを切り替え | [詳細](/api/commands/toggle-mark)  |
+| toggleNode()           | ノードを別のノードと切り替え | [詳細](/api/commands/toggle-node)  |
+| toggleWrap()           | ノードを別のノードでラップするか、既存のラップを削除 | [詳細](/api/commands/toggle-wrap)  |
+| undoInputRule()        | 入力ルールを元に戻す | [詳細](/api/commands/undo-input-rule)  |
+| unsetAllMarks()        | 現在の選択のすべてのマークを削除します。 | [詳細]（/ api / Commands / unset-all-m | [詳細](/api/commands/unset-all-marks)  |
+| unsetMark()            | 現在の選択のマークを削除 | [詳細](/api/commands/unset-mark)  |
+| updateAttributes()     | ノードまたはマークの属性を更新  | [詳細](/api/commands/update-attributes)  |
 
-### Lists
+### リスト
 
 | Command          | Description                                 | Links                                |
 | ---------------- | ------------------------------------------- | ------------------------------------ |
-| liftListItem()  | Lift the list item into a wrapping list.    | [More](/api/commands/lift-list-item)  |
-| sinkListItem()  | Sink the list item down into an inner list. | [More](/api/commands/sink-list-item)  |
-| splitListItem() | Splits one list item into two list items.   | [More](/api/commands/split-list-item)  |
-| toggleList()    | Toggle between different list types.        | [More](/api/commands/toggle-list)  |
-| wrapInList()    | Wrap a node in a list.                      | [More](/api/commands/wrap-in-list)  |
+| liftListItem()  | Lift the list item into a wrapping list.    | [詳細](/api/commands/lift-list-item)  |
+| sinkListItem()  | Sink the list item down into an inner list. | [詳細](/api/commands/sink-list-item)  |
+| splitListItem() | Splits one list item into two list items.   | [詳細](/api/commands/split-list-item)  |
+| toggleList()    | Toggle between different list types.        | [詳細](/api/commands/toggle-list)  |
+| wrapInList()    | Wrap a node in a list.                      | [詳細](/api/commands/wrap-in-list)  |
 
 ### Selection
 
 | Command               | Description                             | Links                                |
 | --------------------- | --------------------------------------- | ------------------------------------ |
-| blur()               | Removes focus from the editor.          | [More](/api/commands/blur)  |
-| deleteRange()        | Delete a given range.                   | [More](/api/commands/delete-range)  |
-| deleteSelection()    | Delete the selection, if there is one.  | [More](/api/commands/delete-selection)  |
-| enter()              | Trigger enter.                          | [More](/api/commands/enter)  |
-| focus()              | Focus the editor at the given position. | [More](/api/commands/focus)  |
-| keyboardShortcut()   | Trigger a keyboard shortcut.            | [More](/api/commands/keyboard-shortcut)  |
-| scrollIntoView()     | Scroll the selection into view.         | [More](/api/commands/scroll-into-view)  |
-| selectAll()          | Select the whole document.              | [More](/api/commands/select-all)  |
-| selectNodeBackward() | Select a node backward.                 | [More](/api/commands/select-node-backward)  |
-| selectNodeForward()  | Select a node forward.                  | [More](/api/commands/select-node-forward)  |
-| selectParentNode()   | Select the parent node.                 | [More](/api/commands/select-parent-node)  |
-| setNodeSelection()   | Creates a NodeSelection.                | [More](/api/commands/set-node-selection)  |
-| setTextSelection()   | Creates a TextSelection.                | [More](/api/commands/set-text-selection)  |
+| blur()               | Removes focus from the editor.          | [詳細](/api/commands/blur)  |
+| deleteRange()        | Delete a given range.                   | [詳細](/api/commands/delete-range)  |
+| deleteSelection()    | Delete the selection, if there is one.  | [詳細](/api/commands/delete-selection)  |
+| enter()              | Trigger enter.                          | [詳細](/api/commands/enter)  |
+| focus()              | Focus the editor at the given position. | [詳細](/api/commands/focus)  |
+| keyboardShortcut()   | Trigger a keyboard shortcut.            | [詳細](/api/commands/keyboard-shortcut)  |
+| scrollIntoView()     | Scroll the selection into view.         | [詳細](/api/commands/scroll-into-view)  |
+| selectAll()          | Select the whole document.              | [詳細](/api/commands/select-all)  |
+| selectNodeBackward() | Select a node backward.                 | [詳細](/api/commands/select-node-backward)  |
+| selectNodeForward()  | Select a node forward.                  | [詳細](/api/commands/select-node-forward)  |
+| selectParentNode()   | Select the parent node.                 | [詳細](/api/commands/select-parent-node)  |
+| setNodeSelection()   | Creates a NodeSelection.                | [詳細](/api/commands/set-node-selection)  |
+| setTextSelection()   | Creates a TextSelection.                | [詳細](/api/commands/set-text-selection)  |
 
 <!-- ## Example use cases
 

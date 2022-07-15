@@ -2,16 +2,15 @@
 tableOfContents: true
 ---
 
-# Extensions
+# 拡張機能
 
-## Introduction
+## はじめに
 
 Extensions add new capabilities to Tiptap and you’ll read the word extension here very often. Actually, there are literal Extensions. Those can’t add to the schema, but can add functionality or change the behaviour of the editor.
 
 There are also some extensions with more capabilities. We call them [nodes](/api/nodes) and [marks](/api/marks) which can render content in the editor.
 
-## List of provided extensions
-
+## 提供されている拡張機能のリスト
 | Title                                                       | StarterKit ([view](/api/extensions/starter-kit)) | Source Code                                                                                       |
 | ----------------------------------------------------------- | ------------------------------------------------ | ------------------------------------------------------------------------------------------------- |
 | [BubbleMenu](/api/extensions/bubble-menu)                   | –                                                | [GitHub](https://github.com/ueberdosis/tiptap/blob/main/packages/extension-bubble-menu/)          |
