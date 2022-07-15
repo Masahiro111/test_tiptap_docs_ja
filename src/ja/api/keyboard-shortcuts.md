@@ -2,7 +2,7 @@
 tableOfContents: true
 ---
 
-# Keyboard Shortcuts
+# キーボード ショートカット
 
 ## はじめに
 
@@ -14,67 +14,67 @@ Funfact: We built a [keyboard shortcut learning app](https://mouseless.app), to 
 
 Most of the core extensions register their own keyboard shortcuts. Depending on what set of extension you use, not all of the below listed keyboard shortcuts work for your editor.
 
-### Essentials
+### よく使うショートカット
 
 | Command                   | Windows/Linux                   | macOS                       |
 | ------------------------ | ------------------------------- | --------------------------- |
-| Copy                     | `Control`&nbsp;`C`              | `Cmd`&nbsp;`C`              |
-| Cut                      | `Control`&nbsp;`X`              | `Cmd`&nbsp;`X`              |
-| Paste                    | `Control`&nbsp;`V`              | `Cmd`&nbsp;`V`              |
-| Paste without formatting | `Control`&nbsp;`Shift`&nbsp;`V` | `Cmd`&nbsp;`Shift`&nbsp;`V` |
-| Undo                     | `Control`&nbsp;`Z`              | `Cmd`&nbsp;`Z`              |
-| Redo                     | `Control`&nbsp;`Shift`&nbsp;`Z` | `Cmd`&nbsp;`Shift`&nbsp;`Z` |
-| Add a line break         | `Shift`&nbsp;`Enter`            | `Shift`&nbsp;`Enter`        |
+| Copy                     | `Ctrl` + `C`              | `Cmd` + `C`              |
+| Cut                      | `Ctrl` + `X`              | `Cmd` + `X`              |
+| Paste                    | `Ctrl` + `V`              | `Cmd` + `V`              |
+| Paste without formatting | `Ctrl` + `Shift` + `V` | `Cmd` + `Shift` + `V` |
+| Undo                     | `Ctrl` + `Z`              | `Cmd` + `Z`              |
+| Redo                     | `Ctrl` + `Shift` + `Z` | `Cmd` + `Shift` + `Z` |
+| Add a line break         | `Shift` + `Enter`            | `Shift` + `Enter`        |
 
-### Text Formatting
+### テキスト フォーマット
 
 | Command        | Windows/Linux                   | macOS                       |
 | ------------- | ------------------------------- | --------------------------- |
-| Bold          | `Control`&nbsp;`B`              | `Cmd`&nbsp;`B`              |
-| Italicize     | `Control`&nbsp;`I`              | `Cmd`&nbsp;`I`              |
-| Underline     | `Control`&nbsp;`U`              | `Cmd`&nbsp;`U`              |
-| Strikethrough | `Control`&nbsp;`Shift`&nbsp;`X` | `Cmd`&nbsp;`Shift`&nbsp;`X` |
-| Highlight     | `Control`&nbsp;`Shift`&nbsp;`H` | `Cmd`&nbsp;`Shift`&nbsp;`H` |
-| Code          | `Control`&nbsp;`E`              | `Cmd`&nbsp;`E`              |
+| Bold          | `Ctrl` + `B`              | `Cmd` + `B`              |
+| Italicize     | `Ctrl` + `I`              | `Cmd` + `I`              |
+| Underline     | `Ctrl` + `U`              | `Cmd` + `U`              |
+| Strikethrough | `Ctrl` + `Shift` + `X` | `Cmd` + `Shift` + `X` |
+| Highlight     | `Ctrl` + `Shift` + `H` | `Cmd` + `Shift` + `H` |
+| Code          | `Ctrl` + `E`              | `Cmd` + `E`              |
 
-### Paragraph Formatting
+### パラグラフ フォーマット
 
 | Command                  | Windows/Linux                   | macOS                       |
 | ----------------------- | ------------------------------- | --------------------------- |
-| Apply normal text style | `Control`&nbsp;`Alt`&nbsp;`0`   | `Cmd`&nbsp;`Alt`&nbsp;`0`   |
-| Apply heading style 1   | `Control`&nbsp;`Alt`&nbsp;`1`   | `Cmd`&nbsp;`Alt`&nbsp;`1`   |
-| Apply heading style 2   | `Control`&nbsp;`Alt`&nbsp;`2`   | `Cmd`&nbsp;`Alt`&nbsp;`2`   |
-| Apply heading style 3   | `Control`&nbsp;`Alt`&nbsp;`3`   | `Cmd`&nbsp;`Alt`&nbsp;`3`   |
-| Apply heading style 4   | `Control`&nbsp;`Alt`&nbsp;`4`   | `Cmd`&nbsp;`Alt`&nbsp;`4`   |
-| Apply heading style 5   | `Control`&nbsp;`Alt`&nbsp;`5`   | `Cmd`&nbsp;`Alt`&nbsp;`5`   |
-| Apply heading style 6   | `Control`&nbsp;`Alt`&nbsp;`6`   | `Cmd`&nbsp;`Alt`&nbsp;`6`   |
-| Ordered list            | `Control`&nbsp;`Shift`&nbsp;`7` | `Cmd`&nbsp;`Shift`&nbsp;`7` |
-| Bullet list             | `Control`&nbsp;`Shift`&nbsp;`8` | `Cmd`&nbsp;`Shift`&nbsp;`8` |
-| Task list               | `Control`&nbsp;`Shift`&nbsp;`9` | `Cmd`&nbsp;`Shift`&nbsp;`9` |
-| Blockquote              | `Control`&nbsp;`Shift`&nbsp;`B` | `Cmd`&nbsp;`Shift`&nbsp;`B` |
-| Left align              | `Control`&nbsp;`Shift`&nbsp;`L` | `Cmd`&nbsp;`Shift`&nbsp;`L` |
-| Center align            | `Control`&nbsp;`Shift`&nbsp;`E` | `Cmd`&nbsp;`Shift`&nbsp;`E` |
-| Right align             | `Control`&nbsp;`Shift`&nbsp;`R` | `Cmd`&nbsp;`Shift`&nbsp;`R` |
-| Justify                 | `Control`&nbsp;`Shift`&nbsp;`J` | `Cmd`&nbsp;`Shift`&nbsp;`J` |
-| Code block              | `Control`&nbsp;`Alt`&nbsp;`C`   | `Cmd`&nbsp;`Alt`&nbsp;`C`   |
-| Subscript               | `Control`&nbsp;`,`              | `Cmd`&nbsp;`,`              |
-| Superscript             | `Control`&nbsp;`.`              | `Cmd`&nbsp;`.`              |
+| Apply normal text style | `Ctrl` + `Alt` + `0`   | `Cmd` + `Alt` + `0`   |
+| Apply heading style 1   | `Ctrl` + `Alt` + `1`   | `Cmd` + `Alt` + `1`   |
+| Apply heading style 2   | `Ctrl` + `Alt` + `2`   | `Cmd` + `Alt` + `2`   |
+| Apply heading style 3   | `Ctrl` + `Alt` + `3`   | `Cmd` + `Alt` + `3`   |
+| Apply heading style 4   | `Ctrl` + `Alt` + `4`   | `Cmd` + `Alt` + `4`   |
+| Apply heading style 5   | `Ctrl` + `Alt` + `5`   | `Cmd` + `Alt` + `5`   |
+| Apply heading style 6   | `Ctrl` + `Alt` + `6`   | `Cmd` + `Alt` + `6`   |
+| Ordered list            | `Ctrl` + `Shift` + `7` | `Cmd` + `Shift` + `7` |
+| Bullet list             | `Ctrl` + `Shift` + `8` | `Cmd` + `Shift` + `8` |
+| Task list               | `Ctrl` + `Shift` + `9` | `Cmd` + `Shift` + `9` |
+| Blockquote              | `Ctrl` + `Shift` + `B` | `Cmd` + `Shift` + `B` |
+| Left align              | `Ctrl` + `Shift` + `L` | `Cmd` + `Shift` + `L` |
+| Center align            | `Ctrl` + `Shift` + `E` | `Cmd` + `Shift` + `E` |
+| Right align             | `Ctrl` + `Shift` + `R` | `Cmd` + `Shift` + `R` |
+| Justify                 | `Ctrl` + `Shift` + `J` | `Cmd` + `Shift` + `J` |
+| Code block              | `Ctrl` + `Alt` + `C`   | `Cmd` + `Alt` + `C`   |
+| Subscript               | `Ctrl` + `,`              | `Cmd` + `,`              |
+| Superscript             | `Ctrl` + `.`              | `Cmd` + `.`              |
 
-<!--| Toggle task| `Control`&nbsp;`Enter` | `Cmd`&nbsp;`Enter` | -->
+<!--| Toggle task| `Ctrl` + `Enter` | `Cmd` + `Enter` | -->
 
 ### Text Selection
 
 | Command                                            | Windows/Linux                   | macOS                       |
 | ------------------------------------------------- | ------------------------------- | --------------------------- |
-| Select all                                        | `Control`&nbsp;`A`              | `Cmd`&nbsp;`A`              |
-| Extend selection one character to left            | `Shift`&nbsp;`←`                | `Shift`&nbsp;`←`            |
-| Extend selection one character to right           | `Shift`&nbsp;`→`                | `Shift`&nbsp;`→`            |
-| Extend selection one line up                      | `Shift`&nbsp;`↑`                | `Shift`&nbsp;`↑`            |
-| Extend selection one line down                    | `Shift`&nbsp;`↓`                | `Shift`&nbsp;`↓`            |
-| Extend selection to the beginning of the document | `Control`&nbsp;`Shift`&nbsp;`↑` | `Cmd`&nbsp;`Shift`&nbsp;`↑` |
-| Extend selection to the end of the document       | `Control`&nbsp;`Shift`&nbsp;`↓` | `Cmd`&nbsp;`Shift`&nbsp;`↓` |
+| Select all                                        | `Ctrl` + `A`              | `Cmd` + `A`              |
+| Extend selection one character to left            | `Shift` + `←`                | `Shift` + `←`            |
+| Extend selection one character to right           | `Shift` + `→`                | `Shift` + `→`            |
+| Extend selection one line up                      | `Shift` + `↑`                | `Shift` + `↑`            |
+| Extend selection one line down                    | `Shift` + `↓`                | `Shift` + `↓`            |
+| Extend selection to the beginning of the document | `Ctrl` + `Shift` + `↑` | `Cmd` + `Shift` + `↑` |
+| Extend selection to the end of the document       | `Ctrl` + `Shift` + `↓` | `Cmd` + `Shift` + `↓` |
 
-## Overwrite keyboard shortcuts
+## ショートカットの上書き
 
 Keyboard shortcuts may be strings like `'Shift-Control-Enter'`. Keys are based on the strings that can appear in `event.key`, concatenated with a `-`. There is a little tool called [keycode.info](https://keycode.info/), which shows the `event.key` interactively.
 
