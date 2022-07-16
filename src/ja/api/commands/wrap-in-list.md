@@ -1,6 +1,6 @@
 # wrapInList
 
-`wrapInList` will wrap a node in the current selection in a list.
+<!-- `wrapInList` will wrap a node in the current selection in a list. -->
 
 `wrapInList` は、リスト内の現在の選択のノードをラップします。
 
