@@ -8,59 +8,61 @@ icon: quill-pen-line
 [![Version](https://img.shields.io/npm/v/@tiptap/extension-typography.svg?label=version)](https://www.npmjs.com/package/@tiptap/extension-typography)
 [![Downloads](https://img.shields.io/npm/dm/@tiptap/extension-typography.svg)](https://npmcharts.com/compare/@tiptap/extension-typography?minimal=true)
 
-This extension tries to help with common text patterns with the correct typographic character. Under the hood all rules are input rules.
+<!-- This extension tries to help with common text patterns with the correct typographic character. Under the hood all rules are input rules. -->
 
 この拡張機能は、正しい活版印刷文字を使用した一般的なテキストパターンを支援しようとします。内部的には、すべてのルールは入力ルールです。
 
-## Installation
+## インストール
 
 ```bash
 npm install @tiptap/extension-typography
 ```
 
-## Rules
+## ルール
 
-| Name                | Description                                                                             |
-| ------------------- | --------------------------------------------------------------------------------------- |
-| emDash | 二重ダッシュ`--`をemdash`—`に変換 |
-| ellipsis   | 3つのドット`...`を省略記号`…`に変換 |
+| 名前 | 説明 |
+| --- | --- |
+| emDash | 二重ダッシュ `--` を emdash `—` に変換 |
+| ellipsis | 3つのドット `...` を省略記号 `…` に変換 |
 | openDoubleQuote     | 二重引用符で始める |
 | closeDoubleQuote    | 二重引用符で閉じる |
-| openSingleQuote     | `‘`Smart’ opening single quotes.                                                        |
-| closeSingleQuote    | ‘Smart`’` closing single quotes.                                                        |
-| leftArrow           | Converts <code><&dash;</code> to an arrow `←` .                                         |
-| rightArrow          | Converts <code>&dash;></code> to an arrow `→`.                                          |
-| copyright           | Converts `(c)` to a copyright sign `©`.                                                 |
-| registeredTrademark | Converts `(r)` to registered trademark sign `®`.                                        |
-| trademark           | Converts `(tm)` to registered trademark sign `™`.                                       |
-| oneHalf             | Converts `1/2` to one half `½`.                                                         |
-| oneQuarter          | Converts `1/4` to one quarter `¼`.                                                      |
-| threeQuarters       | Converts `3/4` to three quarters `¾`.                                                   |
-| plusMinus           | Converts `+/-` to plus/minus sign `±`.                                                  |
-| notEqual            | Converts <code style="font-variant-ligatures: none;">!=</code> to a not equal sign `≠`. |
-| laquo               | Converts `<<` to left-pointing double angle quotation mark `«`.                         |
-| raquo               | Converts `>>` to right-pointing double angle quotation mark `»`.                        |
-| multiplication      | Converts `2 * 3` or `2x3` to a multiplcation sign `2×3`.                                |
-| superscriptTwo      | Converts `^2` a superscript two `²`.                                                    |
-| superscriptThree    | Converts `^3` a superscript three `³`.                                                  |
+| openSingleQuote     | 一重引用符で始める |
+| closeSingleQuote    | 一重引用符で閉じる |
+| leftArrow           | `<-` を矢印`←`に変換 |
+| rightArrow          | `->` 矢印`→`に変換 |
+| copyright           | `(c)` を著作権記号 `©` に変換 |
+| registeredTrademark | `(r)` を登録商標記号 `®` に変換 |
+| trademark           | `(tm)` を登録商標記号 `™` に変換 |
+| oneHalf             | `1/2` を `½` に変換 |
+| oneQuarter          | `1/4` を `¼` に変換 |
+| threeQuarters       | `3/4` を`¾` に変換 |
+| plusMinus           | `+/-` を `±` に変換 |
+| notEqual            | `!=` を `≠` に変換 |
+| laquo               | `<<` を `«` に変換 |
+| raquo               | `>>` を `»` に変換 |
+| multiplication  | `2 * 3` または `2x3` を `2×3` に変換 |
+| superscriptTwo      | `^2` を `²` に変換 |
+| superscriptThree    | `^3` を `³` に変換 |
 
-## Keyboard shortcuts
+## キーボード ショートカット
 
-| Command         | Windows/Linux | macOS       |
+| コマンド         | Windows/Linux | macOS       |
 | --------------- | ------------- | ----------- |
 | undoInputRule() | `Backspace`   | `Backspace` |
 
-## Source code
+## ソースコード
 
 [packages/extension-typography/](https://github.com/ueberdosis/tiptap/blob/main/packages/extension-typography/)
 
-## Usage
+## 使い方
 
 https://embed.tiptap.dev/preview/Extensions/Typography
 
-### Disabling rules
+### ルールの無効化
 
-You can configure the included rules, or even disable a few of them, like shown below.
+<!-- You can configure the included rules, or even disable a few of them, like shown below. -->
+
+以下に示すように、含まれているルールを構成したり、いくつかのルールを無効にしたりすることもできます。
 
 ```js
 import { Editor } from '@tiptap/core'
