@@ -6,25 +6,25 @@ tableOfContents: true
 
 ## はじめに
 
-This class is a central building block of Tiptap. It does most of the heavy lifting of creating a working  [ProseMirror](https://ProseMirror.net/) editor such as creating the [`EditorView`](https://ProseMirror.net/docs/ref/#view.EditorView), setting the initial [`EditorState`](https://ProseMirror.net/docs/ref/#state.Editor_State) 
+<!-- This class is a central building block of Tiptap. It does most of the heavy lifting of creating a working  [ProseMirror](https://ProseMirror.net/) editor such as creating the [`EditorView`](https://ProseMirror.net/docs/ref/#view.EditorView), setting the initial [`EditorState`](https://ProseMirror.net/docs/ref/#state.Editor_State)  -->
 
-このクラスは、Tiptapの中心的な構成要素です。これは、[`EditorView`]（https://ProseMirror.net/docs/ref/#view）の作成など、機能する[ProseMirror]（https://ProseMirror.net/）エディターを作成するための手間のかかる作業のほとんどを実行します。 EditorView）、初期[`EditorState`]（https://ProseMirror.net/docs/ref/#state.Editor_State）などを設定します。and so on.
+このクラスは、Tiptap の中心的な構成要素です。これは、[`EditorView`](https://ProseMirror.net/docs/ref/#view.EditorView) の作成など、機能する [ProseMirror](https://ProseMirror.net/) エディターを作成するための手間のかかる作業のほとんどを実行します）。初期設定 [`EditorState`](https://ProseMirror.net/docs/ref/#state.Editor_State) などを設定します。
 
 ## メソッド
 
 エディターインスタンスは、一連のパブリックメソッドを提供します。メソッドは通常の関数であり、何でも返すことができます。編集者との共同作業に役立ちます。
 
-メソッドを[コマンド]（/ api /コマンド）と混同しないでください。コマンドは、エディターの状態（コンテンツ、選択など）を変更し、`true`または`false`のみを返すために使用されます。
+メソッドを [コマンド](/api/commands) と混同しないでください。コマンドは、エディターの状態（コンテンツ、選択など）を変更し、`true` または `false` のみを返すために使用されます。
 
-The editor instance will provide a bunch of public methods. Methods are regular functions and can return anything. They’ll help you to work with the editor.
+<!-- The editor instance will provide a bunch of public methods. Methods are regular functions and can return anything. They’ll help you to work with the editor. -->
 
-Don’t confuse methods with [commands](/api/commands). Commands are used to change the state of editor (content, selection, and so on) and only return `true` or `false`.
+<!-- Don’t confuse methods with [commands](/api/commands). Commands are used to change the state of editor (content, selection, and so on) and only return `true` or `false`. -->
 
 ### can()
 
-Check if a command or a command chain can be executed – without actually executing it. Can be very helpful to enable/disable or show/hide buttons.
+<!-- Check if a command or a command chain can be executed – without actually executing it. Can be very helpful to enable/disable or show/hide buttons. -->
 
-コマンドまたはコマンドチェーンを実際に実行せずに実行できるかどうかを確認します。ボタンを有効/無効または表示/非表示にするのに非常に役立ちます。
+コマンドまたはコマンドチェーンを実際に実行せずに実行できるかどうかを確認します。ボタンを「有効 / 無効」または「表示 / 非表示」にするのに非常に役立ちます。
 
 ```js
 // Returns `true` if the undo command can be executed
@@ -33,7 +33,7 @@ editor.can().undo()
 
 ### chain()
 
-Create a command chain to call multiple commands at once.
+<!-- Create a command chain to call multiple commands at once. -->
 
 一度に複数のコマンドを呼び出すコマンドチェーンを作成します。
 
@@ -44,7 +44,7 @@ editor.chain().toggleBold().focus().run()
 
 ### destroy()
 
-Stops the editor instance and unbinds all events.
+<!-- Stops the editor instance and unbinds all events. -->
 
 エディタインスタンスを停止し、すべてのイベントのバインドを解除します。
 
@@ -55,9 +55,9 @@ editor.destroy()
 
 ### getHTML()
 
-Returns the current editor document as HTML
+<!-- Returns the current editor document as HTML -->
 
-現在のエディタドキュメントをHTMLとして返します
+現在のエディタドキュメントを HTML として返します
 
 ```js
 editor.getHTML()
@@ -65,9 +65,9 @@ editor.getHTML()
 
 ### getJSON()
 
-Returns the current editor document as JSON.
+<!-- Returns the current editor document as JSON. -->
 
-現在のエディタードキュメントをJSONとして返します。
+現在のエディタードキュメントを JSON として返します。
 
 ```js
 editor.getJSON()
@@ -75,7 +75,7 @@ editor.getJSON()
 
 ### getText()
 
-Returns the current editor document as plain text.
+<!-- Returns the current editor document as plain text. -->
 
 現在のエディタドキュメントをプレーンテキストとして返します。
 
@@ -92,7 +92,7 @@ editor.getText({ blockSeparator: "\n\n" })
 
 ### getAttributes()
 
-Get attributes of the currently selected node or mark.
+<!-- Get attributes of the currently selected node or mark. -->
 
 現在選択されているノードまたはマークの属性を取得します。
 
@@ -106,7 +106,7 @@ editor.getAttributes('link').href
 
 ### isActive()
 
-Returns if the currently selected node or mark is active.
+<!-- Returns if the currently selected node or mark is active. -->
 
 現在選択されているノードまたはマークがアクティブかどうかを返します。
 
@@ -126,9 +126,9 @@ editor.isActive({ textAlign: 'justify' })
 
 ### registerPlugin()
 
-Register a ProseMirror plugin.
+<!-- Register a ProseMirror plugin. -->
 
-ProseMirrorプラグインを登録します。
+ProseMirror プラグインを登録します。
 
 | Parameter      | Type                                               | Description                                               |
 | -------------- | -------------------------------------------------- | --------------------------------------------------------- |
@@ -156,7 +156,7 @@ editor.setOptions({
 
 ### setEditable()
 
-Update editable state of the editor.
+<!-- Update editable state of the editor. -->
 
 エディターの編集可能な状態を更新します。
 
@@ -171,9 +171,9 @@ editor.setEditable(false)
 
 ### unregisterPlugin()
 
-Unregister a ProseMirror plugin.
+<!-- Unregister a ProseMirror plugin. -->
 
-ProseMirrorプラグインの登録を解除します。
+ProseMirror プラグインの登録を解除します。
 
 | Parameter       | Type                | Description      |
 | --------------- | ------------------- | ---------------- |
