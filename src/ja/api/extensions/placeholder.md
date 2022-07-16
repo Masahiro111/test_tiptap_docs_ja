@@ -3,21 +3,29 @@ description: Configure a helpful placeholder to fill the emptyness.
 icon: ghost-line
 ---
 
-# Placeholder
+# プレースホルダー
+
 [![Version](https://img.shields.io/npm/v/@tiptap/extension-placeholder.svg?label=version)](https://www.npmjs.com/package/@tiptap/extension-placeholder)
 [![Downloads](https://img.shields.io/npm/dm/@tiptap/extension-placeholder.svg)](https://npmcharts.com/compare/@tiptap/extension-placeholder?minimal=true)
 
-This extension provides placeholder support. Give your users an idea what they should write with a tiny hint. There is a handful of things to customize, if you feel like it.
+<!-- This extension provides placeholder support. Give your users an idea what they should write with a tiny hint. There is a handful of things to customize, if you feel like it. -->
 
-## Installation
+この拡張機能は、プレースホルダーのサポートを提供します。小さなヒントを使って、ユーザーに何を書くべきかを考えさせます。必要に応じて、カスタマイズできるものがいくつかあります。
+
+
+## インストール
+
 ```bash
 npm install @tiptap/extension-placeholder
 ```
 
-## Settings
+## 設定
 
 ### emptyEditorClass
-The added CSS class if the editor is empty.
+
+<!-- The added CSS class if the editor is empty. -->
+
+エディターが空の場合に追加された CSS クラス。
 
 Default: `'is-editor-empty'`
 
@@ -28,7 +36,10 @@ Placeholder.configure({
 ```
 
 ### emptyNodeClass
-The added CSS class if the node is empty.
+
+<!-- The added CSS class if the node is empty. -->
+
+ノードが空の場合に追加された CSS クラス。
 
 Default: `'is-empty'`
 
@@ -39,7 +50,10 @@ Placeholder.configure({
 ```
 
 ### placeholder
-The placeholder text added as `data-placeholder` attribute.
+
+<!-- The placeholder text added as `data-placeholder` attribute. -->
+
+`data-placeholder` 属性として追加されたプレースホルダーテキスト。
 
 Default: `'Write something …'`
 
@@ -49,7 +63,9 @@ Placeholder.configure({
 })
 ```
 
-You can even use a function to add placeholder depending on the node:
+<!-- You can even use a function to add placeholder depending on the node: -->
+
+ノードに応じて、関数を使用してプレースホルダーを追加することもできます。
 
 ```js
 Placeholder.configure({
@@ -64,7 +80,10 @@ Placeholder.configure({
 ```
 
 ### showOnlyWhenEditable
-Show decorations only when editor is editable.
+
+<!-- Show decorations only when editor is editable. -->
+
+エディターが編集可能な場合にのみ装飾を表示します。
 
 Default: `true`
 
@@ -75,7 +94,10 @@ Placeholder.configure({
 ```
 
 ### showOnlyCurrent
-Show decorations only in currently selected node.
+
+<!-- Show decorations only in currently selected node. -->
+
+現在選択されているノードにのみ装飾を表示します。
 
 Default: `true`
 
@@ -86,7 +108,10 @@ Placeholder.configure({
 ```
 
 ### includeChildren
-Show decorations also for nested nodes.
+
+<!-- Show decorations also for nested nodes. -->
+
+ネストされたノードの装飾も表示します。
 
 Default: `false`
 
@@ -96,9 +121,10 @@ Placeholder.configure({
 })
 ```
 
+## ソースコード
 
-## Source code
 [packages/extension-placeholder/](https://github.com/ueberdosis/tiptap/blob/main/packages/extension-placeholder/)
 
-## Usage
+## 使い方
+
 https://embed.tiptap.dev/preview/Extensions/Placeholder

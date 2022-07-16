@@ -3,24 +3,29 @@ description: The typography smart ass for your editor, replaces everything that�
 icon: quill-pen-line
 ---
 
-# Typography
+# タイポグラフィ
+
 [![Version](https://img.shields.io/npm/v/@tiptap/extension-typography.svg?label=version)](https://www.npmjs.com/package/@tiptap/extension-typography)
 [![Downloads](https://img.shields.io/npm/dm/@tiptap/extension-typography.svg)](https://npmcharts.com/compare/@tiptap/extension-typography?minimal=true)
 
 This extension tries to help with common text patterns with the correct typographic character. Under the hood all rules are input rules.
 
+この拡張機能は、正しい活版印刷文字を使用した一般的なテキストパターンを支援しようとします。内部的には、すべてのルールは入力ルールです。
+
 ## Installation
+
 ```bash
 npm install @tiptap/extension-typography
 ```
 
 ## Rules
+
 | Name                | Description                                                                             |
 | ------------------- | --------------------------------------------------------------------------------------- |
-| emDash              | Converts double dashes `--` to an emdash `—`.                                           |
-| ellipsis            | Converts three dots `...` to an ellipsis character `…`                                  |
-| openDoubleQuote     | `“`Smart” opening double quotes.                                                        |
-| closeDoubleQuote    | “Smart`”` closing double quotes.                                                        |
+| emDash | 二重ダッシュ`--`をemdash`—`に変換 |
+| ellipsis   | 3つのドット`...`を省略記号`…`に変換 |
+| openDoubleQuote     | 二重引用符で始める |
+| closeDoubleQuote    | 二重引用符で閉じる |
 | openSingleQuote     | `‘`Smart’ opening single quotes.                                                        |
 | closeSingleQuote    | ‘Smart`’` closing single quotes.                                                        |
 | leftArrow           | Converts <code><&dash;</code> to an arrow `←` .                                         |
@@ -40,14 +45,17 @@ npm install @tiptap/extension-typography
 | superscriptThree    | Converts `^3` a superscript three `³`.                                                  |
 
 ## Keyboard shortcuts
+
 | Command         | Windows/Linux | macOS       |
 | --------------- | ------------- | ----------- |
 | undoInputRule() | `Backspace`   | `Backspace` |
 
 ## Source code
+
 [packages/extension-typography/](https://github.com/ueberdosis/tiptap/blob/main/packages/extension-typography/)
 
 ## Usage
+
 https://embed.tiptap.dev/preview/Extensions/Typography
 
 ### Disabling rules
