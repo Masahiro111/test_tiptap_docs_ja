@@ -1,6 +1,6 @@
 # extendMarkRange
 
-The `extendMarkRange` command expands the current selection to encompass the current mark. If the current selection doesn’t have the specified mark, nothing changes.
+<!-- The `extendMarkRange` command expands the current selection to encompass the current mark. If the current selection doesn’t have the specified mark, nothing changes. -->
 
 `extendMarkRange` コマンドは、現在の選択範囲を拡張して、現在のマークを包含します。 現在の選択に指定されたマークがない場合、何も変更されません。
 
