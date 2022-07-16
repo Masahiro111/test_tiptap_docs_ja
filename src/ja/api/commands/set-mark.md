@@ -1,6 +1,6 @@
 # setMark
 
-The `setMark` command will add a new mark at the current selection.
+<!-- The `setMark` command will add a new mark at the current selection. -->
 
 `setMark` コマンドは、現在の選択に新しいマークを追加します。
 

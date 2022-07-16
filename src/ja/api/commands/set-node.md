@@ -2,7 +2,7 @@
 
 <!-- The `setNode` command will replace a given range with a given node. The range depends on the current selection. **Important**: Currently `setNode` only supports text block nodes. -->
 
-`setNode` コマンドは、指定された範囲を指定されたノードに置き換えます。 範囲は現在の選択によって異なります。 **重要** ：現在、`setNode` はテキストブロックノードのみをサポートしています。
+`setNode` コマンドは、指定された範囲を指定されたノードに置き換えます。 範囲は現在の選択によって異なります。 **重要**：現在、`setNode` はテキストブロックノードのみをサポートしています。
 
 ## パラメーター
 
