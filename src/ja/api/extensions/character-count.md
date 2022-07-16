@@ -3,24 +3,28 @@ description: Limit the number of characters in your editor, or at least count th
 icon: calculator-line
 ---
 
-# CharacterCount
+# 文字カウント
 
 [![Version](https://img.shields.io/npm/v/@tiptap/extension-character-count.svg?label=version)](https://www.npmjs.com/package/@tiptap/extension-character-count)
 [![Downloads](https://img.shields.io/npm/dm/@tiptap/extension-character-count.svg)](https://npmcharts.com/compare/@tiptap/extension-character-count?minimal=true)
 
-The `CharacterCount` extension limits the number of allowed character to a specific length. That’s it, that’s all.
+<!-- The `CharacterCount` extension limits the number of allowed character to a specific length. That’s it, that’s all. -->
 
-## Installation
+`CharacterCount`拡張機能は、許可される文字数を特定の長さに制限します。
+
+## インストール
 
 ```bash
 npm install @tiptap/extension-character-count
 ```
 
-## Settings
+## 設定
 
-### limit
+### 制限
 
-The maximum number of characters that should be allowed.
+<!-- The maximum number of characters that should be allowed. -->
+
+許可する必要のある最大文字数。
 
 Default: `null`
 
@@ -30,9 +34,11 @@ CharacterCount.configure({
 })
 ```
 
-### mode
+### モード
 
-The mode by which the size is calculated.
+<!-- The mode by which the size is calculated. -->
+
+サイズが計算されるモード。
 
 Default: `'textSize'`
 
@@ -42,11 +48,13 @@ CharacterCount.configure({
 })
 ```
 
-## Storage
+## ストレージ
 
 ### characters()
 
-Get the number of characters for the current document.
+<!-- Get the number of characters for the current document. -->
+
+現在のドキュメントの文字数を取得します。
 
 ```js
 editor.storage.characterCount.characters()
@@ -60,7 +68,9 @@ editor.storage.characterCount.characters({ mode: 'nodeSize' })
 
 ### words()
 
-Get the number of words for the current document.
+<!-- Get the number of words for the current document. -->
+
+現在のドキュメントの単語数を取得します。
 
 ```js
 editor.storage.characterCount.words()
@@ -69,10 +79,10 @@ editor.storage.characterCount.words()
 editor.storage.characterCount.words({ node: someCustomNode })
 ```
 
-## Source code
+## ソースコード
 
 [packages/extension-character-count/](https://github.com/ueberdosis/tiptap/blob/main/packages/extension-character-count/)
 
-## Usage
+## 使い方
 
 https://embed.tiptap.dev/preview/Extensions/CharacterCount
