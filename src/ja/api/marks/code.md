@@ -8,23 +8,24 @@ icon: code-view
 [![Version](https://img.shields.io/npm/v/@tiptap/extension-code.svg?label=version)](https://www.npmjs.com/package/@tiptap/extension-code)
 [![Downloads](https://img.shields.io/npm/dm/@tiptap/extension-code.svg)](https://npmcharts.com/compare/@tiptap/extension-code?minimal=true)
 
-The Code extensions enables you to use the `<code>` HTML tag in the editor. If you paste in text with `<code>` tags it will rendered accordingly.
+<!-- The Code extensions enables you to use the `<code>` HTML tag in the editor. If you paste in text with `<code>` tags it will rendered accordingly. -->
 
-Type something with <code>\`back-ticks around\`</code> and it will magically transform to `inline code` while you type.
+<!-- Type something with <code>\`back-ticks around\`</code> and it will magically transform to `inline code` while you type. -->
 
-コード拡張機能を使用すると、エディターで`<code>`HTMLタグを使用できます。 `<code>`タグを付けてテキストを貼り付けると、それに応じてレンダリングされます。
+コード拡張機能を使用すると、エディターで `<code>` HTML タグを使用できます。`<code>` タグを付けてテキストを貼り付けると、それに応じてレンダリングされます。
 
-<code> \ `back-ticks around \` </ code>を使用して何かを入力すると、入力中に魔法のように`inlinecode`に変換されます。
+<code>\`back-ticks around\`</code> を使用して何かを入力すると、入力中に魔法のように `inline code` に変換されます。
 
-## Installation
+## インストール
+
 ```bash
 npm install @tiptap/extension-code
 ```
 
-## Settings
+## 設定
 
 ### HTMLAttributes
-Custom HTML attributes that should be added to the rendered HTML tag.
+<!-- Custom HTML attributes that should be added to the rendered HTML tag. -->
 
 レンダリングされたHTMLタグに追加する必要があるカスタムHTML属性。
 
@@ -39,7 +40,7 @@ Code.configure({
 ## Commands
 
 ### setCode()
-Mark text as inline code.
+<!-- Mark text as inline code. -->
 
 テキストをインラインコードとしてマークします。
 
@@ -48,7 +49,7 @@ editor.commands.setCode()
 ```
 
 ### toggleCode()
-Toggle inline code mark.
+<!-- Toggle inline code mark. -->
 
 インラインコードマークを切り替えます。
 
@@ -57,7 +58,7 @@ editor.commands.toggleCode()
 ```
 
 ### unsetCode()
-Remove inline code mark.
+<!-- Remove inline code mark. -->
 
 インラインコードマークを削除します。
 
@@ -68,10 +69,12 @@ editor.commands.unsetCode()
 ## キーボード ショートカット
 | コマンド      | Windows/Linux      | macOS          |
 | ------------ | ------------------ | -------------- |
-| toggleCode() | `Control`&nbsp;`E` | `Cmd`&nbsp;`E` |
+| toggleCode() | `Ctrl` + `E` | `Cmd` + `E` |
 
-## Source code
+## ソースコード
+
 [packages/extension-code/](https://github.com/ueberdosis/tiptap/blob/main/packages/extension-code/)
 
-## Usage
+## 使い方
+
 https://embed.tiptap.dev/preview/Marks/Code
