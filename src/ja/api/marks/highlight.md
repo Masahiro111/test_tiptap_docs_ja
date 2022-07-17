@@ -11,6 +11,10 @@ Use this extension to render highlighted text with `<mark>`. You can use only de
 
 Type `==two equal signs==` and it will magically transform to <mark>highlighted</mark> text while you type.
 
+この拡張機能を使用して、強調表示されたテキストを`<mark>`でレンダリングします。デフォルトで黄色の背景色を持つデフォルトの`<mark>`HTMLタグのみを使用するか、異なる色を適用できます。
+
+`== 2つの等号==`と入力すると、入力中に<mark>ハイライトされた</mark>テキストに魔法のように変換されます。
+
 ## Installation
 ```bash
 npm install @tiptap/extension-highlight
@@ -20,6 +24,8 @@ npm install @tiptap/extension-highlight
 
 ### HTMLAttributes
 Custom HTML attributes that should be added to the rendered HTML tag.
+
+レンダリングされたHTMLタグに追加する必要があるカスタムHTML属性。
 
 ```js
 Highlight.configure({
@@ -31,6 +37,8 @@ Highlight.configure({
 
 ### multicolor
 Add support for multiple colors.
+
+複数の色のサポートを追加します。
 
 Default: `false`
 
@@ -45,6 +53,8 @@ Highlight.configure({
 ### setHighlight()
 Mark text as highlighted.
 
+テキストを強調表示としてマークします。
+
 ```js
 editor.commands.setHighlight()
 editor.commands.setHighlight({ color: '#ffcc00' })
@@ -52,6 +62,8 @@ editor.commands.setHighlight({ color: '#ffcc00' })
 
 ### toggleHighlight()
 Toggle a text highlight.
+
+テキストのハイライトを切り替えます。
 
 ```js
 editor.commands.toggleHighlight()
@@ -61,13 +73,15 @@ editor.commands.toggleHighlight({ color: '#ffcc00' })
 ### unsetHighlight()
  Removes the highlight.
 
+  ハイライトを削除します。
+
 ```js
 editor.commands. unsetHighlight()
 ```
 
 
-## Keyboard shortcuts
-| Command           | Windows/Linux                   | macOS                       |
+## キーボード ショートカット
+| コマンド           | Windows/Linux                   | macOS                       |
 | ----------------- | ------------------------------- | --------------------------- |
 | toggleHighlight() | `Control`&nbsp;`Shift`&nbsp;`H` | `Cmd`&nbsp;`Shift`&nbsp;`H` |
 

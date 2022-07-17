@@ -13,15 +13,23 @@ In a real world application, you would probably add a more sophisticated user in
 
 Pasted URLs will be transformed to links automatically.
 
-## Installation
+Link拡張機能は、エディターに`<a>`タグのサポートを追加します。拡張機能もヘッドレスであり、リンクを追加、変更、または削除するための実際のUIはありません。以下の使用例では、ネイティブJavaScriptプロンプトを使用して、それがどのように機能するかを示しています。
+
+実際のアプリケーションでは、おそらくより洗練されたユーザーインターフェイスを追加します。
+
+貼り付けられたURLは自動的にリンクに変換されます。
+
+## インストール
 ```bash
 npm install @tiptap/extension-link
 ```
 
-## Settings
+## 設定
 
 ### protocols
 Additional custom protocols you would like to be recognized as links.
+
+リンクとして認識したい追加のカスタムプロトコル。
 
 Default: `[]`
 
@@ -34,6 +42,8 @@ Link.configure({
 ### autolink
 If enabled, it adds links as you type.
 
+有効にすると、入力時にリンクが追加されます。
+
 Default: `true`
 
 ```js
@@ -44,6 +54,8 @@ Link.configure({
 
 ### openOnClick
 If enabled, links will be opened on click.
+
+有効にすると、クリックするとリンクが開きます。
 
 Default: `true`
 
@@ -56,6 +68,8 @@ Link.configure({
 ### linkOnPaste
 Adds a link to the current selection if the pasted content only contains an url.
 
+貼り付けたコンテンツにURLのみが含まれている場合は、現在の選択へのリンクを追加します。
+
 Default: `true`
 
 ```js
@@ -66,6 +80,8 @@ Link.configure({
 
 ### HTMLAttributes
 Custom HTML attributes that should be added to the rendered HTML tag.
+
+レンダリングされたHTMLタグに追加する必要があるカスタムHTML属性。
 
 ```js
 Link.configure({
@@ -80,6 +96,10 @@ A function that validates every autolinked link. If it exists, it will be called
 
 Can be used to set rules for example excluding or including certain domains, tlds, etc.
 
+自動リンクされたすべてのリンクを検証する関数。存在する場合は、リンクhrefを引数として呼び出されます。 `false`を返す場合、リンクは削除されます。
+
+たとえば、特定のドメイン、TLDなどを除外または含めるルールを設定するために使用できます。
+
 ```js
 // only autolink urls with a protocol
 Link.configure({
@@ -87,10 +107,12 @@ Link.configure({
 })
 ```
 
-## Commands
+## コマンド
 
 ### setLink()
 Links the selected text.
+
+選択したテキストをリンクします。
 
 ```js
 editor.commands.setLink({ href: 'https://example.com' })
@@ -100,6 +122,8 @@ editor.commands.setLink({ href: 'https://example.com', target: '_blank' })
 ### toggleLink()
 Adds or removes a link from the selected text.
 
+選択したテキストにリンクを追加または削除します。
+
 ```js
 editor.commands.toggleLink({ href: 'https://example.com' })
 editor.commands.toggleLink({ href: 'https://example.com', target: '_blank' })
@@ -108,16 +132,28 @@ editor.commands.toggleLink({ href: 'https://example.com', target: '_blank' })
 ### unsetLink()
 Removes a link.
 
+リンクを削除します。
+
 ```js
 editor.commands.unsetLink()
 ```
 
-## Keyboard shortcuts
+## キーボードショートカット
+
+:::警告キーボードショートカットはありません
+この拡張機能は、特定のキーボードショートカットをバインドしません。ただし、おそらく`Mod-k`でカスタムUIを開くでしょう。
+：：：
+
 :::warning Doesn’t have a keyboard shortcut
 This extension doesn’t bind a specific keyboard shortcut. You would probably open your custom UI on `Mod-k` though.
 :::
 
 ## Get the current value
+
+現在の値を取得します
+
+[`getAttributes`]（/​​ api / editor＃get-attributes）を使用して、現在設定されている属性（たとえば、どのhref）を見つけることができることをご存知ですか？ [コマンド]（/ api /コマンド）（状態を変更する）と混同しないでください。これは単なるメソッドです。これがどのように見えるかです：
+
 Did you know that you can use [`getAttributes`](/api/editor#get-attributes) to find out which attributes, for example which href, is currently set? Don’t confuse it with a [command](/api/commands) (which changes the state), it’s just a method. Here is how that could look like:
 
 ```js

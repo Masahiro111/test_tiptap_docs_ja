@@ -4,12 +4,17 @@ icon: code-view
 ---
 
 # Code
+
 [![Version](https://img.shields.io/npm/v/@tiptap/extension-code.svg?label=version)](https://www.npmjs.com/package/@tiptap/extension-code)
 [![Downloads](https://img.shields.io/npm/dm/@tiptap/extension-code.svg)](https://npmcharts.com/compare/@tiptap/extension-code?minimal=true)
 
 The Code extensions enables you to use the `<code>` HTML tag in the editor. If you paste in text with `<code>` tags it will rendered accordingly.
 
 Type something with <code>\`back-ticks around\`</code> and it will magically transform to `inline code` while you type.
+
+コード拡張機能を使用すると、エディターで`<code>`HTMLタグを使用できます。 `<code>`タグを付けてテキストを貼り付けると、それに応じてレンダリングされます。
+
+<code> \ `back-ticks around \` </ code>を使用して何かを入力すると、入力中に魔法のように`inlinecode`に変換されます。
 
 ## Installation
 ```bash
@@ -20,6 +25,8 @@ npm install @tiptap/extension-code
 
 ### HTMLAttributes
 Custom HTML attributes that should be added to the rendered HTML tag.
+
+レンダリングされたHTMLタグに追加する必要があるカスタムHTML属性。
 
 ```js
 Code.configure({
@@ -34,12 +41,16 @@ Code.configure({
 ### setCode()
 Mark text as inline code.
 
+テキストをインラインコードとしてマークします。
+
 ```js
 editor.commands.setCode()
 ```
 
 ### toggleCode()
 Toggle inline code mark.
+
+インラインコードマークを切り替えます。
 
 ```js
 editor.commands.toggleCode()
@@ -48,12 +59,14 @@ editor.commands.toggleCode()
 ### unsetCode()
 Remove inline code mark.
 
+インラインコードマークを削除します。
+
 ```js
 editor.commands.unsetCode()
 ```
 
-## Keyboard shortcuts
-| Command      | Windows/Linux      | macOS          |
+## キーボード ショートカット
+| コマンド      | Windows/Linux      | macOS          |
 | ------------ | ------------------ | -------------- |
 | toggleCode() | `Control`&nbsp;`E` | `Cmd`&nbsp;`E` |
 
