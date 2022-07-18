@@ -9,11 +9,11 @@ icon: h-1
 
 <!-- The Heading extension adds support for headings of different levels. Headings are rendered with `<h1>`, `<h2>`, `<h3>`, `<h4>`, `<h5>` or `<h6>` HTML tags. By default all six heading levels (or styles) are enabled, but you can pass an array to only allow a few levels. Check the usage example to see how this is done. -->
 
-Type <code>#&nbsp;</code> at the beginning of a new line and it will magically transform to a heading, same for <code>##&nbsp;</code>, <code>###&nbsp;</code>, <code>####&nbsp;</code>, <code>#####&nbsp;</code> and <code>######&nbsp;</code>.
+<!-- Type <code>#&nbsp;</code> at the beginning of a new line and it will magically transform to a heading, same for <code>##&nbsp;</code>, <code>###&nbsp;</code>, <code>####&nbsp;</code>, <code>#####&nbsp;</code> and <code>######&nbsp;</code>. -->
 
 見出し拡張機能は、さまざまなレベルの見出しのサポートを追加します。見出しは、`<h1>`、`<h2>`、`<h3>`、`<h4>`、`<h5>`、または `<h6>` HTML タグでレンダリングされます。デフォルトでは、6つの見出しレベル（またはスタイル）すべてが有効になっていますが、配列を渡して、いくつかのレベルのみを許可することができます。使用例をチェックして、これがどのように行われるかを確認してください。
 
-新しい行の先頭に `#(スペース)` と入力すると魔法のように見出しに変換されます。同じように <code>##&nbsp;</code>, <code>###&nbsp;</code>, <code>####&nbsp;</code>, <code>#####&nbsp;</code>, <code>######&nbsp;</code> も同様となります。
+新しい行の先頭に **`#` に続けてスペースを入力する** と魔法のように見出しに変換されます。同じように <code>##&nbsp;</code>, <code>###&nbsp;</code>, <code>####&nbsp;</code>, <code>#####&nbsp;</code>, <code>######&nbsp;</code> も同様となります。
 
 ## インストール
 ```bash
