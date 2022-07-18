@@ -7,21 +7,30 @@ icon: list-unordered
 [![Version](https://img.shields.io/npm/v/@tiptap/extension-bullet-list.svg?label=version)](https://www.npmjs.com/package/@tiptap/extension-bullet-list)
 [![Downloads](https://img.shields.io/npm/dm/@tiptap/extension-bullet-list.svg)](https://npmcharts.com/compare/@tiptap/extension-bullet-list?minimal=true)
 
-This extension enables you to use bullet lists in the editor. They are rendered as `<ul>` HTML tags.
+<!-- This extension enables you to use bullet lists in the editor. They are rendered as `<ul>` HTML tags. -->
 
-Type <code>*&nbsp;</code>, <code>-&nbsp;</code> or <code>+&nbsp;</code> at the beginning of a new line and it will magically transform to a bullet list.
+<!-- Type <code>*&nbsp;</code>, <code>-&nbsp;</code> or <code>+&nbsp;</code> at the beginning of a new line and it will magically transform to a bullet list. -->
 
-## Installation
+この拡張機能を使用すると、エディターで箇条書きを使用できます。それらは `<ul>` HTML タグとしてレンダリングされます。
+
+新しい行の先頭に `*`、`-`、または `+` と入力すると、魔法のように箇条書きに変換されます。
+
+## インストール
+
 ```bash
 npm install @tiptap/extension-bullet-list @tiptap/extension-list-item
 ```
 
-This extension requires the [`ListItem`](/api/nodes/list-item) node.
+<!-- This extension requires the [`ListItem`](/api/nodes/list-item) node. -->
 
-## Settings
+この拡張機能には、[`ListItem`](/api/nodes/list-item) ノードが必要で
+
+## 設定
 
 ### HTMLAttributes
-Custom HTML attributes that should be added to the rendered HTML tag.
+<!-- Custom HTML attributes that should be added to the rendered HTML tag. -->
+
+レンダリングされたHTMLタグに追加する必要があるカスタムHTML属性。
 
 ```js
 BulletList.configure({
@@ -32,7 +41,9 @@ BulletList.configure({
 ```
 
 ### itemTypeName
-Specify the list item name.
+<!-- Specify the list item name. -->
+
+リスト項目名を指定します。
 
 Default: `'listItem'`
 
@@ -42,22 +53,27 @@ BulletList.configure({
 })
 ```
 
-## Commands
+## コマンド
 
 ### toggleBulletList()
-Toggles a bullet list.
+<!-- Toggles a bullet list. -->
+
+箇条書きを切り替えます。
 
 ```js
 editor.commands.toggleBulletList()
 ```
 
-## Keyboard shortcuts
-| Command          | Windows/Linux                   | macOS                       |
-| ---------------- | ------------------------------- | --------------------------- |
-| toggleBulletList | `Control`&nbsp;`Shift`&nbsp;`8` | `Cmd`&nbsp;`Shift`&nbsp;`8` |
+## キーボードショートカット
 
-## Source code
+| コマンド          | Windows/Linux                   | macOS                       |
+| ---------------- | ------------------------------- | --------------------------- |
+| toggleBulletList | `Ctrl` + `Shift` + `8` | `Cmd` + `Shift` + `8` |
+
+## ソースコード
+
 [packages/extension-bullet-list/](https://github.com/ueberdosis/tiptap/blob/main/packages/extension-bullet-list/)
 
-## Usage
+## 使い方
+
 https://embed.tiptap.dev/preview/Nodes/BulletList
