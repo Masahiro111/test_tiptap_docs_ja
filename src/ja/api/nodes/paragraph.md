@@ -13,6 +13,12 @@ Yes, the schema is very strict. Without this extension you won’t even be able 
 tiptap 1 tried to hide that node from you, but it has always been there. You have to explicitly import it from now on (or use `StarterKit`).
 :::
 
+はい、スキーマは非常に厳密です。この拡張機能がないと、エディターで段落を使用することもできません。
+
+:::警告1.x→2.xからの重大な変更
+tiptap 1はそのノードをあなたから隠そうとしましたが、それは常にそこにありました。今後は明示的にインポートする必要があります（または `StarterKit`を使用します）。
+：：：
+
 ## Installation
 ```bash
 npm install @tiptap/extension-paragraph
@@ -22,6 +28,8 @@ npm install @tiptap/extension-paragraph
 
 ### HTMLAttributes
 Custom HTML attributes that should be added to the rendered HTML tag.
+
+レンダリングされたHTMLタグに追加する必要があるカスタムHTML属性。
 
 ```js
 Paragraph.configure({
@@ -35,6 +43,8 @@ Paragraph.configure({
 
 ### setParagraph()
 Transforms all selected nodes to paragraphs.
+
+選択したすべてのノードを段落に変換します。
 
 ```js
 editor.commands.setParagraph()

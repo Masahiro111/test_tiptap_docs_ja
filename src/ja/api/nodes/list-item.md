@@ -9,6 +9,8 @@ icon: asterisk
 
 The ListItem extension adds support for the `<li>` HTML tag. It’s used for bullet lists and ordered lists and can’t really be used without them.
 
+ListItem拡張機能は、`<li>`HTMLタグのサポートを追加します。箇条書きと順序付きリストに使用され、それらなしでは実際には使用できません。
+
 ## Installation
 ```bash
 npm install @tiptap/extension-list-item
@@ -16,10 +18,14 @@ npm install @tiptap/extension-list-item
 
 This extension requires the [`BulletList`](/api/nodes/bullet-list) or [`OrderedList`](/api/nodes/ordered-list) node.
 
+この拡張機能には、[`BulletList`]（/ api / nodes / bullet-list）または[` OrderedList`]（/ api / ノード/ordered-list）ノードが必要です。
+
 ## Settings
 
 ### HTMLAttributes
 Custom HTML attributes that should be added to the rendered HTML tag.
+
+レンダリングされたHTMLタグに追加する必要があるカスタムHTML属性。
 
 ```js
 ListItem.configure({

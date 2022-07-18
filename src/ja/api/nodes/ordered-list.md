@@ -11,6 +11,10 @@ This extension enables you to use ordered lists in the editor. They are rendered
 
 Type <code>1.&nbsp;</code> (or any other number followed by a dot) at the beginning of a new line and it will magically transform to a ordered list.
 
+この拡張機能を使用すると、エディターで順序付きリストを使用できます。それらは`<ol>`HTMLタグとしてレンダリングされます。
+
+新しい行の先頭に<code>1.＆nbsp; </ code>（または他の数字の後にドットが続く）と入力すると、魔法のように順序付きリストに変換されます。
+
 ## Installation
 ```bash
 npm install @tiptap/extension-ordered-list @tiptap/extension-list-item
@@ -18,10 +22,14 @@ npm install @tiptap/extension-ordered-list @tiptap/extension-list-item
 
 This extension requires the [`ListItem`](/api/nodes/list-item) node.
 
+この拡張機能には、[`ListItem`]（/ api / nodes / list-item）ノードが必要です。
+
 ## Settings
 
 ### HTMLAttributes
 Custom HTML attributes that should be added to the rendered HTML tag.
+
+レンダリングされたHTMLタグに追加する必要があるカスタムHTML属性。
 
 ```js
 OrderedList.configure({
@@ -33,6 +41,8 @@ OrderedList.configure({
 
 ### itemTypeName
 Specify the list item name.
+
+リスト項目名を指定します。
 
 Default: `'listItem'`
 
@@ -46,6 +56,8 @@ OrderedList.configure({
 
 ### toggleOrderedList()
 Toggle an ordered list.
+
+順序付きリストを切り替えます。
 
 ```js
 editor.commands.toggleOrderedList()
