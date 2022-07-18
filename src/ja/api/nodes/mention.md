@@ -11,30 +11,30 @@ Honestly, the mention node is amazing. It adds support for `@mentions`, for exam
 
 Literally everything can be customized. You can pass a custom component for the rendering.  All examples use `.filter()` to search through items, but feel free to send async queries to an API or add a more advanced library like [fuse.js](https://fusejs.io/) to your project.
 
-正直なところ、言及ノードは素晴らしいです。たとえば、pingユーザーに `@mentions`のサポートを追加し、*および*レンダリングを完全に制御します。
+正直なところ、`Mention` ノードは素晴らしいです。たとえば、 ping ユーザーに `@mentions` のサポートを追加するなど、レンダリングを完全に制御します。
 
-文字通りすべてをカスタマイズすることができます。レンダリング用のカスタムコンポーネントを渡すことができます。すべての例で`.filter（）`を使用してアイテムを検索しますが、非同期クエリをAPIに送信するか、[fuse.js]（https://fusejs.io/）などのより高度なライブラリをプロジェクトに追加してください。
+文字通りすべてをカスタマイズすることができます。レンダリング用のカスタムコンポーネントを渡すことができます。すべての例で `.filter()` を使用してアイテムを検索しますが、非同期クエリをAPIに送信するか、[fuse.js](https://fusejs.io/) などのより高度なライブラリをプロジェクトに追加してください。
 
-## Installation
+## インストール
 ```bash
 npm install @tiptap/extension-mention
 ```
 
-## Dependencies
-To place the popups correctly, we’re using [tippy.js](https://atomiks.github.io/tippyjs/) in all our examples. You are free to bring your own library, but if you’re fine with it, just install what we use:
+## 依存関係
+<!-- To place the popups correctly, we’re using [tippy.js](https://atomiks.github.io/tippyjs/) in all our examples. You are free to bring your own library, but if you’re fine with it, just install what we use: -->
 
-ポップアップを正しく配置するために、すべての例で[tippy.js]（https://atomiks.github.io/tippyjs/）を使用しています。自分のライブラリを自由に持参できますが、問題がなければ、使用しているものをインストールするだけです。
+ポップアップを正しく配置するために、すべての例で [tippy.js](https://atomiks.github.io/tippyjs/) を使用しています。自分のライブラリを自由に持参できますが、問題がなければ、使用しているものをインストールするだけです。
 
 ```bash
 npm install tippy.js
 ```
 
-## Settings
+## 設定
 
 ### HTMLAttributes
-Custom HTML attributes that should be added to the rendered HTML tag.
+<!-- Custom HTML attributes that should be added to the rendered HTML tag. -->
 
-レンダリングされたHTMLタグに追加する必要があるカスタムHTML属性。
+レンダリングされた HTML タグに追加する必要があるカスタム HTML 属性。
 
 ```js
 Mention.configure({
@@ -45,7 +45,7 @@ Mention.configure({
 ```
 
 ### renderLabel
-Define how a mention label should be rendered.
+<!-- Define how a mention label should be rendered. -->
 
 メンションラベルのレンダリング方法を定義します。
 
