@@ -2,7 +2,7 @@
 tableOfContents: true
 ---
 
-# Editor
+# エディター
 
 ## はじめに
 
@@ -79,7 +79,7 @@ editor.getJSON()
 
 現在のエディタドキュメントをプレーンテキストとして返します。
 
-| Parameter  | Type                           | Description              |
+| パラメーター  | タイプ                           | 説明              |
 | ---------- | ------------------------------ | ------------------------ |
 | options | { blockSeparator?: string, textSerializers?: Record<string, TextSerializer>} | Options for the serialization.  |
 
@@ -96,7 +96,7 @@ editor.getText({ blockSeparator: "\n\n" })
 
 現在選択されているノードまたはマークの属性を取得します。
 
-| Parameter  | Type                           | Description              |
+| パラメーター  | タイプ                           | 説明              |
 | ---------- | ------------------------------ | ------------------------ |
 | typeOrName | string \| NodeType \| MarkType | Name of the node or mark |
 
@@ -110,7 +110,7 @@ editor.getAttributes('link').href
 
 現在選択されているノードまたはマークがアクティブかどうかを返します。
 
-| Parameter              | Type                | Description                    |
+| パラメーター              | タイプ                | 説明                    |
 | ---------------------- | ------------------- | ------------------------------ |
 | name                   | string \| null      | Name of the node or mark       |
 | attributes             | Record<string, any> | Attributes of the node or mark |
@@ -128,18 +128,20 @@ editor.isActive({ textAlign: 'justify' })
 
 <!-- Register a ProseMirror plugin. -->
 
-ProseMirror プラグインを登録します。
+ProseMirror プラグインを登録
 
-| Parameter      | Type                                               | Description                                               |
+| パラメーター      | タイプ                                               | 説明                                               |
 | -------------- | -------------------------------------------------- | --------------------------------------------------------- |
 | plugin         | Plugin                                             | A ProseMirror plugin                                      |
 | handlePlugins? | (newPlugin: Plugin, plugins: Plugin[]) => Plugin[] | Control how to merge the plugin into the existing plugins |
 
 ### setOptions()
 
-Update editor options.
+<!-- Update editor options. -->
 
-| Parameter | Type                   | Description       |
+エディターオプションを更新
+
+| パラメーター | タイプ                   | 説明       |
 | --------- | ---------------------- | ----------------- |
 | options   | Partial<EditorOptions> | A list of options |
 
@@ -158,9 +160,9 @@ editor.setOptions({
 
 <!-- Update editable state of the editor. -->
 
-エディターの編集可能な状態を更新します。
+エディターの編集可能な状態を更新
 
-| Parameter | Type    | Description                                                   |
+| パラメーター | タイプ    | 説明                                                   |
 | --------- | ------- | ------------------------------------------------------------- |
 | editable  | boolean | ユーザーがエディターに書き込める必要がある場合は `true` |
 
@@ -175,7 +177,7 @@ editor.setEditable(false)
 
 ProseMirror プラグインの登録を解除します。
 
-| Parameter       | Type                | Description      |
+| パラメーター       | タイプ                | 説明      |
 | --------------- | ------------------- | ---------------- |
 | nameOrPluginKey | string \| PluginKey | The plugins name |
 
@@ -205,7 +207,9 @@ editor.isEmpty
 
 ### element
 
-The `element` specifies the HTML element the editor will be binded to. The following code will integrate Tiptap with an element with the `.element` class:
+<!-- The `element` specifies the HTML element the editor will be binded to. The following code will integrate Tiptap with an element with the `.element` class: -->
+
+`element` は、エディタがバインドされるHTML要素を指定します。 次のコードは、Tiptapを `.element` クラスの要素と統合します。
 
 ```js
 import { Editor } from '@tiptap/core'
@@ -291,7 +295,7 @@ new Editor({
 ### autofocus
 With `autofocus` you can force the cursor to jump in the editor on initialization.
 
-| Value     | Description                                            |
+| Value     | 説明                                            |
 | --------- | ------------------------------------------------------ |
 | `'start'` | Sets the focus to the beginning of the document.       |
 | `'end'`   | Sets the focus to the end of the document.             |

@@ -2,7 +2,7 @@
 tableOfContents: true
 ---
 
-# Marks
+# マーク
 
 ## はじめに
 

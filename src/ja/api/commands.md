@@ -320,30 +320,30 @@ addCommands() {
 
 ## 独自のコマンドを書く
 
-All extensions can add additional commands (and most do), check out the specific [documentation for the provided nodes](/api/nodes), [marks](/api/marks), and [extensions](/api/extensions) to learn more about those. And of course, you can [add your custom extensions](/guide/custom-extensions) with custom commands aswell.
+<!-- All extensions can add additional commands (and most do), check out the specific [documentation for the provided nodes](/api/nodes), [marks](/api/marks), and [extensions](/api/extensions) to learn more about those. And of course, you can [add your custom extensions](/guide/custom-extensions) with custom commands aswell. -->
 
-すべての拡張機能は、コマンドを追加でき（ほとんどの場合、追加できます）、特定の[提供されたノードのドキュメント]（/ api / ノード）、[マーク]（/ api /マーク）、および[拡張機能]（/ api / extends）を確認できます。 それらについてもっと学ぶために。 もちろん、カスタムコマンドを使用して[カスタム拡張機能を追加]（/ guide / custom-extensions）することもできます。
+すべての拡張機能は、コマンドを追加でき（ほとんどの場合、追加できます）、特定の [提供されたノードのドキュメント](/api/nodes)、[マーク]（/ api /マーク）、および  [拡張機能](/api/marks) を確認できます。 それらについてもっと学ぶために。 もちろん、カスタムコマンドを使用して[カスタム拡張機能を追加](/guide/custom-extensions) することもできます。
 
-But how do you write those commands? There’s a little bit to learn about that.
+<!-- But how do you write those commands? There’s a little bit to learn about that. -->
 
 しかし、これらのコマンドをどのように記述しますか？ それについて学ぶことが少しあります。
 
-:::pro Oops, this is work in progress
-A well-written documentation needs attention to detail, a great understanding of the project and time to write.
+<!-- :::pro Oops, this is work in progress -->
+<!-- A well-written documentation needs attention to detail, a great understanding of the project and time to write. -->
 
-::: proおっと、これは仕掛品です
+> pro **おっと、これは仕掛品です**
 適切に作成されたドキュメントには、詳細に注意を払い、プロジェクトを十分に理解し、作成する時間が必要です。
 
-Though Tiptap is used by thousands of developers all around the world, it’s still a side project for us. Let’s change that and make open source our full-time job! With nearly 300 sponsors we are half way there already.
+<!-- Though Tiptap is used by thousands of developers all around the world, it’s still a side project for us. Let’s change that and make open source our full-time job! With nearly 300 sponsors we are half way there already. -->
 
 
-Tiptapは世界中の何千もの開発者によって使用されていますが、それでも私たちにとっては副次的なプロジェクトです。 それを変えて、オープンソースを私たちのフルタイムの仕事にしましょう！ 300近くのスポンサーがいるので、私たちはすでに中途半端です。
+Tiptap は世界中の何千もの開発者によって使用されていますが、それでも私たちにとっては副次的なプロジェクトです。 それを変えて、オープンソースを私たちのフルタイムの仕事にしましょう！ 300 近くのスポンサーがいるので、私たちはすでに中途半端です。
 
-Join them and become a sponsor! Enable us to put more time into open source and we’ll fill this page and keep it up to date for you.
+<!-- Join them and become a sponsor! Enable us to put more time into open source and we’ll fill this page and keep it up to date for you. -->
 
 それらに参加してスポンサーになりましょう！ オープンソースにより多くの時間を費やせるようにしてください。このページに記入して、最新の状態に保ちます。
 
-[Become a sponsor on GitHub →](https://github.com/sponsors/ueberdosis)
+[GitHub でスポンサーになる →](https://github.com/sponsors/ueberdosis)
 :::
 
 

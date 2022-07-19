@@ -6,17 +6,23 @@ tableOfContents: true
 
 ## はじめに
 
-tiptap comes with sensible keyboard shortcut defaults. Depending on what you want to use it for, you’ll probably want to change those keyboard shortcuts to your liking. Let’s have a look at what we defined for you, and show you how to change it then!
+<!-- tiptap comes with sensible keyboard shortcut defaults. Depending on what you want to use it for, you’ll probably want to change those keyboard shortcuts to your liking. Let’s have a look at what we defined for you, and show you how to change it then! -->
 
-Funfact: We built a [keyboard shortcut learning app](https://mouseless.app), to which we manually added exercises for thousands of keyboard shortcuts for a bunch of tools.
+<!-- Funfact: We built a [keyboard shortcut learning app](https://mouseless.app), to which we manually added exercises for thousands of keyboard shortcuts for a bunch of tools. -->
 
-## Predefined keyboard shortcuts
+Tiptap には、実用的なキーボードショートカットのデフォルトが付属しています。 用途に応じて、これらのキーボードショートカットを好みに合わせて変更することをお勧めします。 私たちがあなたのために定義したものを見て、それを変更する方法を示しましょう！
 
-Most of the core extensions register their own keyboard shortcuts. Depending on what set of extension you use, not all of the below listed keyboard shortcuts work for your editor.
+[キーボードショートカット学習アプリ](https://mouseless.app) を作成しました。これに、多数のツールの何千ものキーボードショートカットの演習を手動で追加しました。
+
+## 事前に定義されたキーボードショートカット
+
+ほとんどのコア拡張機能は、独自のキーボードショートカットを登録します。 使用する拡張機能のセットによっては、以下にリストされているキーボードショートカットのすべてがエディターで機能するわけではありません。
+
+<!-- Most of the core extensions register their own keyboard shortcuts. Depending on what set of extension you use, not all of the below listed keyboard shortcuts work for your editor. -->
 
 ### よく使うショートカット
 
-| Command                   | Windows/Linux                   | macOS                       |
+| コマンド                   | Windows/Linux                   | macOS                       |
 | ------------------------ | ------------------------------- | --------------------------- |
 | Copy                     | `Ctrl` + `C`              | `Cmd` + `C`              |
 | Cut                      | `Ctrl` + `X`              | `Cmd` + `X`              |
@@ -28,7 +34,7 @@ Most of the core extensions register their own keyboard shortcuts. Depending on 
 
 ### テキスト フォーマット
 
-| Command        | Windows/Linux                   | macOS                       |
+| コマンド        | Windows/Linux                   | macOS                       |
 | ------------- | ------------------------------- | --------------------------- |
 | Bold          | `Ctrl` + `B`              | `Cmd` + `B`              |
 | Italicize     | `Ctrl` + `I`              | `Cmd` + `I`              |
@@ -39,7 +45,7 @@ Most of the core extensions register their own keyboard shortcuts. Depending on 
 
 ### パラグラフ フォーマット
 
-| Command                  | Windows/Linux                   | macOS                       |
+| コマンド                  | Windows/Linux                   | macOS                       |
 | ----------------------- | ------------------------------- | --------------------------- |
 | Apply normal text style | `Ctrl` + `Alt` + `0`   | `Cmd` + `Alt` + `0`   |
 | Apply heading style 1   | `Ctrl` + `Alt` + `1`   | `Cmd` + `Alt` + `1`   |
@@ -62,29 +68,39 @@ Most of the core extensions register their own keyboard shortcuts. Depending on 
 
 <!--| Toggle task| `Ctrl` + `Enter` | `Cmd` + `Enter` | -->
 
-### Text Selection
+### テキストの選択
 
-| Command                                            | Windows/Linux                   | macOS                       |
+| コマンド | Windows/Linux | macOS |
 | ------------------------------------------------- | ------------------------------- | --------------------------- |
-| Select all                                        | `Ctrl` + `A`              | `Cmd` + `A`              |
-| Extend selection one character to left            | `Shift` + `←`                | `Shift` + `←`            |
-| Extend selection one character to right           | `Shift` + `→`                | `Shift` + `→`            |
-| Extend selection one line up                      | `Shift` + `↑`                | `Shift` + `↑`            |
-| Extend selection one line down                    | `Shift` + `↓`                | `Shift` + `↓`            |
-| Extend selection to the beginning of the document | `Ctrl` + `Shift` + `↑` | `Cmd` + `Shift` + `↑` |
-| Extend selection to the end of the document       | `Ctrl` + `Shift` + `↓` | `Cmd` + `Shift` + `↓` |
+| すべてを選択  | `Ctrl` + `A`              | `Cmd` + `A`              |
+| 選択範囲を1文字左に拡張 | `Shift` + `←`                | `Shift` + `←`            |
+| 選択範囲を1文字右に拡張 | `Shift` + `→`                | `Shift` + `→`            |
+| 選択範囲を1列に拡張 | `Shift` + `↑`                | `Shift` + `↑`            |
+| 選択範囲を1行下に拡張 | `Shift` + `↓`                | `Shift` + `↓`            |
+| 選択範囲をドキュメントの先頭まで拡張 | `Ctrl` + `Shift` + `↑` | `Cmd` + `Shift` + `↑` |
+| 選択範囲をドキュメントの最後まで拡張 | `Ctrl` + `Shift` + `↓` | `Cmd` + `Shift` + `↓` |
 
 ## ショートカットの上書き
 
-Keyboard shortcuts may be strings like `'Shift-Control-Enter'`. Keys are based on the strings that can appear in `event.key`, concatenated with a `-`. There is a little tool called [keycode.info](https://keycode.info/), which shows the `event.key` interactively.
+<!-- Keyboard shortcuts may be strings like `'Shift-Control-Enter'`. Keys are based on the strings that can appear in `event.key`, concatenated with a `-`. There is a little tool called [keycode.info](https://keycode.info/), which shows the `event.key` interactively. -->
 
-Use lowercase letters to refer to letter keys (or uppercase letters if you want shift to be held). You may use `Space` as an alias for the <code>&nbsp;</code>.
+<!-- Use lowercase letters to refer to letter keys (or uppercase letters if you want shift to be held). You may use `Space` as an alias for the <code>&nbsp;</code>. -->
 
-Modifiers can be given in any order. `Shift`, `Alt`, `Control` and `Cmd` are recognized. For characters that are created by holding shift, the `Shift` prefix is implied, and should not be added explicitly.
+<!-- Modifiers can be given in any order. `Shift`, `Alt`, `Control` and `Cmd` are recognized. For characters that are created by holding shift, the `Shift` prefix is implied, and should not be added explicitly. -->
 
-You can use `Mod` as a shorthand for `Cmd` on Mac and `Control` on other platforms.
+<!-- You can use `Mod` as a shorthand for `Cmd` on Mac and `Control` on other platforms. -->
 
-Here is an example how you can overwrite the keyboard shortcuts for an existing extension:
+<!-- Here is an example how you can overwrite the keyboard shortcuts for an existing extension: -->
+
+キーボードショートカットは、`'Shift-Control-Enter'` のような文字列にすることができます。 キーは、`-` と連結された `event.key` に表示できる文字列に基づいています。[keycode.info](https://keycode.info/) と呼ばれる小さなツールがあり、`event.key` をインタラクティブに表示します。
+
+文字キー（または Shift キーを押したままにする場合は大文字）を参照するには、小文字を使用します。<code>&nbsp;</code> のエイリアスとして `Space` を使用できます。
+
+修飾子は任意の順序で指定できます。`Shift`、`Alt`、`Control`、`Cmd` が認識されます。 Shift キーを押しながら作成された文字の場合、`Shift` プレフィックスが暗黙指定されているため、明示的に追加しないでください。
+
+Mac では `Cmd`、その他のプラットフォームでは `Control` の省略形として `Mod` を使用できます。
+
+既存の拡張機能のキーボードショートカットを上書きする方法の例を次に示します。
 
 ```js
 // 1. Import the extension
