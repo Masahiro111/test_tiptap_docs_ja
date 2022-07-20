@@ -468,7 +468,7 @@ new Editor({
 これを使用して、イベントハンドラーにフックし、カスタムの貼り付けハンドラー（たとえば）を渡すこともできます。
 
 ### parseOptions
-<!-- Passed content is parsed by ProseMirror. To hook into the parsing, you can pass `parseOptions` which are then handled by [ProseMirror](https://prosemirror.net/docs/ref/#model.ParseOptions). -->
+<!-- Passed content is parsed by ProseMirror. To hook into the parsing, you can pagitss `parseOptions` which are then handled by [ProseMirror](https://prosemirror.net/docs/ref/#model.ParseOptions). -->
 
 渡されたコンテンツは ProseMirror によって解析されます。解析にフックするには、`parseOptions` を渡すことができます。これは、[ProseMirror](https://prosemirror.net/docs/ref/#model.ParseOptions) によって処理されます。
 
