@@ -55,7 +55,7 @@ cd my-tiptap-project
 npm install @tiptap/react @tiptap/starter-kit
 ```
 
-If you followed step 1 and 2, you can now start your project with `npm run start`, and open [http://localhost:3000](http://localhost:3000) in your browser.
+<!-- If you followed step 1 and 2, you can now start your project with `npm run start`, and open [http://localhost:3000](http://localhost:3000) in your browser. -->
 
 手順1 と 2 を実行した場合は、`npm run start`を使用してプロジェクトを開始し、ブラウザで[http://localhost:3000](http://localhost:3000) を開くことができます。
 
