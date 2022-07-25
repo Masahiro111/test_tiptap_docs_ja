@@ -80,6 +80,8 @@ npm install @tiptap/core @tiptap/starter-kit
 これですべてが整ったので、実際のエディターをセットアップしましょう。次のコードを JavaScript に追加します。
 
 ```js
+import { Editor } from '@tiptap/core'
+import StarterKit from '@tiptap/starter-kit'
 
 new Editor({
   element: document.querySelector('.element'),
@@ -159,6 +161,8 @@ Tiptap の使用を実際に開始するには、新しいコンポーネント�
 
 ```jsx
 // src/Tiptap.jsx
+import { useEditor, EditorContent } from '@tiptap/react'
+import StarterKit from '@tiptap/starter-kit'
 
 const Tiptap = () => {
   const editor = useEditor({
@@ -183,6 +187,7 @@ export default Tiptap
 <!-- Finally, replace the content of `src/App.js` with our new `Tiptap` component. -->
 
 ```jsx
+import Tiptap from './Tiptap.jsx'
 
 const App = () => {
   return (
@@ -264,6 +269,8 @@ Tiptap の使用を実際に開始するには、アプリに新しいコンポ�
 <!-- To actually start using Tiptap, you’ll need to add a new component to your app. To do this, first create a directory called `components/`. Now it's time to create our component which we'll call `Tiptap`. To do this put the following example code in `components/Tiptap.js`. -->
 
 ```jsx
+import { useEditor, EditorContent } from '@tiptap/react'
+import StarterKit from '@tiptap/starter-kit'
 
 const Tiptap = () => {
   const editor = useEditor({
@@ -288,6 +295,7 @@ export default Tiptap;
 <!-- Now, let’s replace the content of `pages/index.js` with the following example code to use our new `Tiptap` component in our app. -->
 
 ```jsx
+import Tiptap from '../components/Tiptap'
 
 export default function Home() {
     return (
@@ -367,6 +375,8 @@ Tiptap の使用を実際に開始するには、アプリに新しいコンポ�
 </template>
 
 <script>
+import { Editor, EditorContent } from '@tiptap/vue-3'
+import StarterKit from '@tiptap/starter-kit'
 
 export default {
   components: {
@@ -405,6 +415,8 @@ export default {
 </template>
 
 <script>
+import { useEditor, EditorContent } from '@tiptap/vue-3'
+import StarterKit from '@tiptap/starter-kit'
 
 export default {
   components: {
@@ -435,6 +447,8 @@ export default {
 </template>
 
 <script setup>
+import { useEditor, EditorContent } from '@tiptap/vue-3'
+import StarterKit from '@tiptap/starter-kit'
 
 const editor = useEditor({
   content: '<p>I’m running Tiptap with Vue.js. 🎉</p>',
@@ -459,6 +473,7 @@ const editor = useEditor({
 </template>
 
 <script>
+import Tiptap from './components/Tiptap.vue'
 
 export default {
   name: 'App',
@@ -550,6 +565,8 @@ Tiptap の使用を実際に開始するには、アプリに新しいコンポ�
 </template>
 
 <script>
+import { Editor, EditorContent } from '@tiptap/vue-2'
+import StarterKit from '@tiptap/starter-kit'
 
 export default {
   components: {
@@ -592,6 +609,7 @@ export default {
 </template>
 
 <script>
+import Tiptap from './components/Tiptap.vue'
 
 export default {
   name: 'App',
@@ -618,6 +636,8 @@ export default {
 </template>
 
 <script>
+import { Editor, EditorContent } from '@tiptap/vue-2'
+import StarterKit from '@tiptap/starter-kit'
 
 export default {
   components: {
@@ -742,6 +762,8 @@ Tiptap の使用を実際に開始するには、アプリに新しいコンポ�
 </template>
 
 <script>
+import { Editor, EditorContent } from '@tiptap/vue-2'
+import StarterKit from '@tiptap/starter-kit'
 
 export default {
   components: {
@@ -785,6 +807,7 @@ export default {
   </div>
 </template>
 <script>
+import TiptapEditor from '~/components/TiptapEditor.vue'
 export default {
   components: {
     TiptapEditor
@@ -815,6 +838,8 @@ https://embed.tiptap.dev/preview/GuideGettingStarted/VModel
 </template>
 
 <script>
+import { Editor, EditorContent } from '@tiptap/vue-2'
+import StarterKit from '@tiptap/starter-kit'
 
 export default {
   components: {
@@ -938,7 +963,10 @@ Tiptapの使用を実際に開始するには、アプリに新しいコンポ�
 
 ```html
 <script>
-      
+  import { onMount, onDestroy } from 'svelte'
+  import { Editor } from '@tiptap/core'
+  import StarterKit from '@tiptap/starter-kit'
+
   let element
   let editor
 
@@ -997,7 +1025,8 @@ Tiptapの使用を実際に開始するには、アプリに新しいコンポ�
 
 ```html
 <script>
-  </script>
+  import Tiptap from '$lib/Tiptap.svelte'
+</script>
 
 <main>
   <Tiptap />
@@ -1072,6 +1101,9 @@ Tiptap の使用を実際に開始するには、JavaScript を少し作成す�
 <!-- This is the fastest way to get Tiptap up and running with Alpine.js. It will give you a very basic version of Tiptap. No worries, you will be able to add more functionality soon. -->
 
 ```js
+import Alpine from 'alpinejs'
+import { Editor } from '@tiptap/core'
+import StarterKit from '@tiptap/starter-kit'
 
 window.setupEditor = function(content) {
   return {
@@ -1207,6 +1239,8 @@ Tiptap は、Laravel、Livewire、Inertia.js、[Alpine.js](/installation/alpine)
 ### index.js
 
 ```js
+import { Editor } from '@tiptap/core'
+import StarterKit from '@tiptap/starter-kit'
 
 window.setupEditor = function (content) {
   return {
@@ -1318,8 +1352,12 @@ npm-check -u
 
 tiptap v1 は、デフォルト設定の `useBuiltInExtensions: true` を使用して、いくつかの必要な拡張機能を非表示にしようとしました。その設定は削除されており、すべての拡張機能をインポートする必要があります。少なくとも [`Document`](/api/nodes/document) 、[`Paragraph`](/api/nodes/paragraph) と [`Text`](/api/nodes/text) 拡張子を明示的にインポートしてください。
 
-<!-- tiptap 1 tried to hide a few required extensions from you with the default setting `useBuiltInExtensions: true`. That setting has been removed and you’re required to 
+<!-- tiptap 1 tried to hide a few required extensions from you with the default setting `useBuiltInExtensions: true`. That setting has been removed and you’re required to import all extensions. Be sure to explicitly import at least the [`Document`](/api/nodes/document), [`Paragraph`](/api/nodes/paragraph) and [`Text`](/api/nodes/text) extensions. -->
+
 ```js
+import Document from '@tiptap/extension-document'
+import Paragraph from '@tiptap/extension-paragraph'
+import Text from '@tiptap/extension-text'
 
 new Editor({
   extensions: [
@@ -1368,6 +1406,7 @@ lowerCamelCase に切り替えたため、多くのタイプ名が変更され�
 <!-- In case you’ve built some custom extensions for your project, you’re required to rewrite them to fit the new API. No worries, you can keep a lot of your work though. The `schema`, `commands`, `keys`, `inputRules` and `pasteRules` all work like they did before. It’s just different how you register them. -->
 
 ```js
+import { Node } from '@tiptap/core'
 
 const CustomExtension = Node.create({
   name: 'custom_extension',
@@ -1741,6 +1780,8 @@ Our plug & play collaboration backend hocuspocus is still work in progress. If y
 >プラグアンドプレイコラボレーションバックエンド hocuspocus はまだ進行中です。 試してみたい場合は、[早期アクセスを取得](https://www.hocuspocus.dev) してください。
 
 ```js
+import { Server } from '@hocuspocus/server'
+import { RocksDB } from '@hocuspocus/extension-rocksdb'
 
 const server = Server.configure({
   port: 80,
@@ -1857,6 +1898,10 @@ https://embed.tiptap.dev/preview/Examples/CodeBlockLanguage
 <!-- To add your configuration, pass [an object with settings](/api/editor) to the `Editor` class, like shown here: -->
 
 ```js
+import { Editor } from '@tiptap/core'
+import Document from '@tiptap/extension-document'
+import Paragraph from '@tiptap/extension-paragraph'
+import Text from '@tiptap/extension-text'
 
 new Editor({
   element: document.querySelector('.element'),
@@ -1902,6 +1947,10 @@ new Editor({
 <!-- Here is the minimal setup with only three extensions: -->
 
 ```js
+import { Editor } from '@tiptap/core'
+import Document from '@tiptap/extension-document'
+import Paragraph from '@tiptap/extension-paragraph'
+import Text from '@tiptap/extension-text'
 
 new Editor({
   element: document.querySelector('.element'),
@@ -1924,6 +1973,11 @@ new Editor({
 <!-- The following example will disable the default heading levels 4, 5 and 6 and just allow 1, 2 and 3: -->
 
 ```js
+import { Editor } from '@tiptap/core'
+import Document from '@tiptap/extension-document'
+import Paragraph from '@tiptap/extension-paragraph'
+import Text from '@tiptap/extension-text'
+import Heading from '@tiptap/extension-heading'
 
 new Editor({
   element: document.querySelector('.element'),
@@ -1949,6 +2003,7 @@ new Editor({
 <!-- We have bundled a few of the most common extensions into a `StarterKit` extension. Here is how you to use that: -->
 
 ```js
+import StarterKit from '@tiptap/starter-kit'
 
 new Editor({
   extensions: [
@@ -1962,6 +2017,7 @@ new Editor({
 含まれているすべての拡張機能の構成をオブジェクトとして渡すこともできます。構成の前に拡張子名を付けるだけです。
 
 ```js
+import StarterKit from '@tiptap/starter-kit'
 
 new Editor({
   extensions: StarterKit.configure({
@@ -1977,6 +2033,8 @@ new Editor({
 `StarterKit` 拡張機能は最も一般的な拡張機能をロードしますが、利用可能なすべての拡張機能をロードするわけではありません。追加の拡張機能をロードしたり、カスタム拡張機能を追加したりする場合は、それらを `extensions` 配列に追加します。
 
 ```js
+import StarterKit from '@tiptap/starter-kit'
+import Strike from '@tiptap/extension-strike'
 
 new Editor({
   extensions: [
@@ -1991,6 +2049,7 @@ new Editor({
 `StarterKit` から特定の拡張機能をロードしたくないですか？設定に `false` を渡すだけです。
 
 ```js
+import StarterKit from '@tiptap/starter-kit'
 
 new Editor({
   extensions: [
@@ -2295,6 +2354,7 @@ https://embed.tiptap.dev/preview/Experiments/Tailwind
 <!-- Or you can customize the markup for extensions. The following example will make a custom bold extension that doesn’t render a `<strong>` tag, but a `<b>` tag: -->
 
 ```js
+import Bold from '@tiptap/extension-bold'
 
 const CustomBold = Bold.extend({
   renderHTML({ HTMLAttributes }) {
@@ -2419,7 +2479,8 @@ https://embed.tiptap.dev/preview/GuideContent/ExportHTML?hideSource
 
 <!-- Internally, Y.js stores a history of all changes. That can be in the browser, on a server, synced with other connected clients, or on a USB stick. But, it’s important to know that Y.js needs those stored changes. A simple JSON document is not enough to merge changes. -->
 
-<!-- Sure, you can 
+<!-- Sure, you can import existing JSON documents to get started and get a JSON out of Y.js, but that’s more like an import/export format. It won’t be your single source. That’s important to consider when adding Y.js for one of the mentioned use cases. -->
+
 <!-- That said, it’s amazing and we’re about to provide an amazing backend, that makes all that a breeze. -->
 
 ### マークダウンはオプションではありません
@@ -2628,6 +2689,11 @@ npm install @tiptap/extension-collaboration yjs y-webrtc
 次に、新しい Y ドキュメントを作成し、Tiptap に登録します。
 
 ```js
+import { Editor } from '@tiptap/core'
+import StarterKit from '@tiptap/starter-kit'
+import Collaboration from '@tiptap/extension-collaboration'
+import * as Y from 'yjs'
+import { WebrtcProvider } from 'y-webrtc'
 
 // A new Y document
 const ydoc = new Y.Doc()
@@ -2685,6 +2751,10 @@ npm install @tiptap/extension-collaboration @hocuspocus/provider
 次に、WebSocket プロバイダーを Tiptap に登録します。
 
 ```js
+import { Editor } from '@tiptap/core'
+import StarterKit from '@tiptap/starter-kit'
+import Collaboration from '@tiptap/extension-collaboration'
+import { HocuspocusProvider } from '@hocuspocus/provider'
 
 // Set up the Hocuspocus WebSocket provider
 const provider = new HocuspocusProvider({
@@ -2775,6 +2845,11 @@ WebRTC には、クライアントを接続するためのシグナリングサ�
 <!-- To enable users to see the cursor and text selections of each other, add the [`CollaborationCursor`](/api/extensions/collaboration-cursor) extension. -->
 
 ```js
+import { Editor } from '@tiptap/core'
+import StarterKit from '@tiptap/starter-kit'
+import Collaboration from '@tiptap/extension-collaboration'
+import CollaborationCursor from '@tiptap/extension-collaboration-cursor'
+import { HocuspocusProvider } from '@hocuspocus/provider'
 
 // Set up the Hocuspocus WebSocket provider
 const provider = new HocuspocusProvider({
@@ -2822,6 +2897,10 @@ npm install y-indexeddb
 そしてそれを Y ドキュメントに接続します：
 
 ```js
+import { Editor } from '@tiptap/core'
+import Collaboration from '@tiptap/extension-collaboration'
+import * as Y from 'yjs'
+import { IndexeddbPersistence } from 'y-indexeddb'
 
 const ydoc = new Y.Doc()
 
@@ -2915,6 +2994,7 @@ Collaboration.configure({
 <!-- When throwing an error (or rejecting the returned Promise), the connection to the client will be terminated. If the client is authorized and authenticated you can also return contextual data which will be accessible in other hooks. But you don’t need to. -->
 
 ```js
+import { Server } from '@hocuspocus/server'
 
 const server = Server.configure({
   async onAuthenticate({ token }) {
@@ -2998,6 +3078,7 @@ Tiptap の強みの1つは、その拡張性です。提供されている拡張
 
 ```js
 // 1. Import the extension
+import BulletList from '@tiptap/extension-bullet-list'
 
 // 2. Overwrite the keyboard shortcuts
 const CustomBulletList = BulletList.extend({
@@ -3038,6 +3119,7 @@ new Editor({
 <!-- The priority defines the order in which extensions are registered. The default priority is `100`, that’s what most extension have. Extensions with a higher priority will be loaded earlier. -->
 
 ```js
+import Link from '@tiptap/extension-link'
 
 const CustomLink = Link.extend({
   priority: 1000,
@@ -3069,6 +3151,7 @@ const CustomLink = Link.extend({
 <!-- All settings can be configured through the extension anyway, but if you want to change the default settings, for example to provide a library on top of Tiptap for other developers, you can do it like that: -->
 
 ```js
+import Heading from '@tiptap/extension-heading'
 
 const CustomHeading = Heading.extend({
   addOptions() {
@@ -3087,6 +3170,7 @@ const CustomHeading = Heading.extend({
 <!-- At some point you probably want to save some data within your extension instance. This data is mutable. You can access it within the extension under `this.storage`. -->
 
 ```js
+import { Extension } from '@tiptap/core'
 
 const CustomExtension = Extension.create({
   name: 'customExtension',
@@ -3129,6 +3213,7 @@ Tiptap は、コンテンツの構造化、ネスト、動作などを構成す�
 
 ```js
 // Blockquotes must only include paragraphs
+import Blockquote from '@tiptap/extension-blockquote'
 
 const CustomBlockquote = Blockquote.extend({
   content: 'paragraph*',
@@ -3141,6 +3226,7 @@ const CustomBlockquote = Blockquote.extend({
 
 ```js
 // Draggable paragraphs
+import Paragraph from '@tiptap/extension-paragraph'
 
 const CustomParagraph = Paragraph.extend({
   draggable: true,
@@ -3273,6 +3359,7 @@ const CustomTableCell = TableCell.extend({
 <!-- Take a closer look at [the full source code](https://github.com/ueberdosis/tiptap/tree/main/packages/extension-text-align) of the [`TextAlign`](/api/extensions/text-align) extension to see a more complex example. But here is how it works in a nutshell: -->
 
 ```js
+import { Extension } from '@tiptap/core'
 
 const TextAlign = Extension.create({
   addGlobalAttributes() {
@@ -3325,10 +3412,12 @@ renderHTML({ HTMLAttributes }) {
 },
 ```
 
-<!-- If you want to add some specific attributes there, 
+<!-- If you want to add some specific attributes there, import the `mergeAttributes` helper from `@tiptap/core`: -->
+
 そこに特定の属性を追加する場合は、`@tiptap/core` から `mergeAttributes` ヘルパーをインポートします。
 
 ```js
+import { mergeAttributes } from '@tiptap/core'
 
 // ...
 
@@ -3447,6 +3536,7 @@ addAttributes() {
 ### コマンド
 
 ```js
+import Paragraph from '@tiptap/extension-paragraph'
 
 const CustomParagraph = Paragraph.extend({
   addCommands() {
@@ -3474,6 +3564,7 @@ To access other commands inside `addCommands` use the `commands` parameter that�
 
 ```js
 // Change the bullet list keyboard shortcut
+import BulletList from '@tiptap/extension-bullet-list'
 
 const CustomBulletList = BulletList.extend({
   addKeyboardShortcuts() {
@@ -3496,6 +3587,8 @@ const CustomBulletList = BulletList.extend({
 
 ```js
 // Use the ~single tilde~ markdown shortcut
+import Strike from '@tiptap/extension-strike'
+import { markInputRule } from '@tiptap/core'
 
 // Default:
 // const inputRegex = /(?:^|\s)((?:~~)((?:[^~]+))(?:~~))$/
@@ -3531,6 +3624,8 @@ const CustomStrike = Strike.extend({
 
 ```js
 // Check pasted content for the ~single tilde~ markdown syntax
+import Strike from '@tiptap/extension-strike'
+import { markPasteRule } from '@tiptap/core'
 
 // Default:
 // const pasteRegex = /(?:^|\s)((?:~~)((?:[^~]+))(?:~~))/g
@@ -3557,6 +3652,7 @@ const CustomStrike = Strike.extend({
 <!-- You can even move your [event listeners](/api/events) to a separate extension. Here is an example with listeners for all events: -->
 
 ```js
+import { Extension } from '@tiptap/core'
 
 const CustomExtension = Extension.create({
   onCreate() {
@@ -3619,6 +3715,7 @@ this.parent
 <!-- You can wrap existing ProseMirror plugins in Tiptap extensions like shown in the example below. -->
 
 ```js
+import { history } from 'prosemirror-history'
 
 const History = Extension.create({
   addProseMirrorPlugins() {
@@ -3641,6 +3738,8 @@ const History = Extension.create({
 または、以下の例に示すように、それらを Tiptap 拡張機能に追加することもできます。
 
 ```js
+import { Extension } from '@tiptap/core'
+import { Plugin, PluginKey } from 'prosemirror-state'
 
 export const EventHandler = Extension.create({
   name: 'eventHandler',
@@ -3673,6 +3772,7 @@ export const EventHandler = Extension.create({
 <!-- They are really powerful, but also complex. In a nutshell, you need to return a parent DOM element, and a DOM element where the content should be rendered in. Look at the following, simplified example: -->
 
 ```js
+import Image from '@tiptap/extension-image'
 
 const CustomImage = Image.extend({
   addNodeView() {
@@ -3712,6 +3812,7 @@ const CustomImage = Image.extend({
 <!-- If you think of the document as a tree, then [nodes](/api/nodes) are just a type of content in that tree. Good examples to learn from are [`Paragraph`](/api/nodes/paragraph), [`Heading`](/api/nodes/heading), or [`CodeBlock`](/api/nodes/code-block). -->
 
 ```js
+import { Node } from '@tiptap/core'
 
 const CustomNode = Node.create({
   name: 'customNode',
@@ -3731,6 +3832,7 @@ const CustomNode = Node.create({
 <!-- One or multiple marks can be applied to [nodes](/api/nodes), for example to add inline formatting. Good examples to learn from are [`Bold`](/api/marks/bold), [`Italic`](/api/marks/italic) and [`Highlight`](/api/marks/highlight). -->
 
 ```js
+import { Mark } from '@tiptap/core'
 
 const CustomMark = Mark.create({
   name: 'customMark',
@@ -3750,6 +3852,7 @@ const CustomMark = Mark.create({
 <!-- A good example to learn from is probably [`TextAlign`](/api/extensions/text-align). -->
 
 ```js
+import { Extension } from '@tiptap/core'
 
 const CustomExtension = Extension.create({
   name: 'customExtension',
@@ -3981,6 +4084,8 @@ Vue や React のようなフレームワークを使用することは、これ
 <!-- This is how your node extension could look like: -->
 
 ```js
+import { Node } from '@tiptap/core'
+import Component from './Component.vue'
 
 export default Node.create({
   // configuration …
@@ -4137,6 +4242,9 @@ React での作業に慣れている場合、Vanilla JavaScript の使用は複�
 <!-- This is how your node extension could look like: -->
 
 ```js
+import { Node } from '@tiptap/core'
+import { ReactNodeViewRenderer } from '@tiptap/react'
+import Component from './Component.jsx'
 
 export default Node.create({
   // configuration …
@@ -4208,6 +4316,8 @@ export default props => {
 <!-- There is another component called `NodeViewContent` which helps you adding editable content to your node view. Here is an example: -->
 
 ```jsx
+import React from 'react'
+import { NodeViewWrapper, NodeViewContent } from '@tiptap/react'
 
 export default () => {
   return (
@@ -4331,6 +4441,9 @@ Vue での作業に慣れている場合、Vanilla JavaScript の使用は複雑
 <!-- This is how your node extension could look like: -->
 
 ```js
+import { Node } from '@tiptap/core'
+import { VueNodeViewRenderer } from '@tiptap/vue-2'
+import Component from './Component.vue'
 
 export default Node.create({
   // configuration …
@@ -4429,6 +4542,7 @@ this.updateAttributes({
 </template>
 
 <script>
+import { NodeViewWrapper, NodeViewContent } from '@tiptap/vue-2'
 
 export default {
   components: {
@@ -4517,6 +4631,7 @@ https://embed.tiptap.dev/preview/GuideNodeViews/VueComponentContent
 </template>
 
 <script>
+import { NodeViewWrapper } from '@tiptap/vue-2'
 
 export default {
   components: {
@@ -4568,16 +4683,21 @@ export default {
 </script>
 ```
 
-<!-- If you just want to have all (and TypeScript support) you can 
+<!-- If you just want to have all (and TypeScript support) you can import all props like that: -->
+
 すべて（および TypeScript サポート）が必要な場合は、次のようなすべての小道具をインポートできます。
 
 ```js
 // Vue 3
+import { defineComponent } from 'vue'
+import { nodeViewProps } from '@tiptap/vue-3'
 export default defineComponent({
   props: nodeViewProps,
 })
 
 // Vue 2
+import Vue from 'vue'
+import { nodeViewProps } from '@tiptap/vue-2'
 export default Vue.extend({
   props: nodeViewProps,
 })
@@ -4664,6 +4784,7 @@ TypeScript は、型を追加することで JavaScript を拡張します（そ
 <!-- To extend or create default options for an extension, you’ll need to define a custom type, here is an example: -->
 
 ```ts
+import { Extension } from '@tiptap/core'
 
 export interface CustomExtensionOptions {
   awesomeness: number,
@@ -4685,6 +4806,7 @@ const CustomExtension = Extension.create<CustomExtensionOptions>({
 <!-- To add types for your extension storage, you’ll have to pass that as a second type parameter. -->
 
 ```ts
+import { Extension } from '@tiptap/core'
 
 export interface CustomExtensionStorage {
   awesomeness: number,
@@ -4706,6 +4828,7 @@ const CustomExtension = Extension.create<{}, CustomExtensionStorage>({
 拡張機能の外部でストレージを使用する場合は、タイプを手動で設定する必要があります。
 
 ```
+import { CustomExtensionStorage } from './custom-extension
 
 const customStorage = editor.storage.customExtension as CustomExtensionStorage
 ```
@@ -4717,6 +4840,7 @@ const customStorage = editor.storage.customExtension as CustomExtensionStorage
 <!-- The core package also exports a `Command` type, which needs to be added to all commands that you specify in your code. Here is an example: -->
 
 ```ts
+import { Extension } from '@tiptap/core'
 
 declare module '@tiptap/core' {
   interface Commands<ReturnType> {
@@ -4999,6 +5123,8 @@ editor.isEmpty
 `element` は、エディタがバインドされるHTML要素を指定します。 次のコードは、Tiptapを `.element` クラスの要素と統合します。
 
 ```js
+import { Editor } from '@tiptap/core'
+import StarterKit from '@tiptap/starter-kit'
 
 new Editor({
   element: document.querySelector('.element'),
@@ -5023,6 +5149,12 @@ yourContainerElement.append(editor.options.element)
 <!-- It’s required to pass a list of extensions to the `extensions` property, even if you only want to allow paragraphs. -->
 
 ```js
+import { Editor } from '@tiptap/core'
+import StarterKit from '@tiptap/starter-kit'
+import Document from '@tiptap/extension-document'
+import Paragraph from '@tiptap/extension-paragraph'
+import Text from '@tiptap/extension-text'
+import Highlight from '@tiptap/extension-highlight'
 
 new Editor({
   // Use the default extensions
@@ -5052,6 +5184,8 @@ new Editor({
 <!-- With the `content` property you can provide the initial content for the editor. This can be HTML or JSON. -->
 
 ```js
+import { Editor } from '@tiptap/core'
+import StarterKit from '@tiptap/starter-kit'
 
 new Editor({
   content: `<p>Example Text</p>`,
@@ -5068,6 +5202,8 @@ new Editor({
 <!-- The `editable` property determines if users can write into the editor. -->
 
 ```js
+import { Editor } from '@tiptap/core'
+import StarterKit from '@tiptap/starter-kit'
 
 new Editor({
   content: `<p>Example Text</p>`,
@@ -5095,6 +5231,8 @@ new Editor({
 | `null`    | オートフォーカスを無効 |
 
 ```js
+import { Editor } from '@tiptap/core'
+import StarterKit from '@tiptap/starter-kit'
 
 new Editor({
   extensions: [
@@ -5110,6 +5248,8 @@ By default, Tiptap enables all [input rules](/guide/custom-extensions/#input-rul
 デフォルトでは、Tiptap はすべての [入力ルール](/guide/custom-extensions/#input-rules)を有効にします。 `enableInputRules` を使用すると、それを制御できます。
 
 ```js
+import { Editor } from '@tiptap/core'
+import StarterKit from '@tiptap/starter-kit'
 
 new Editor({
   content: `<p>Example Text</p>`,
@@ -5125,6 +5265,9 @@ new Editor({
 または、特定の入力ルールのみを許可することもできます。
 
 ```js
+import { Editor } from '@tiptap/core'
+import StarterKit from '@tiptap/starter-kit'
+import Link from '@tiptap/extension-link'
 
 new Editor({
   content: `<p>Example Text</p>`,
@@ -5144,6 +5287,8 @@ By default, Tiptap enables all [paste rules](/guide/custom-extensions/#paste-rul
 デフォルトでは、Tiptap はすべての[貼り付けルール](/guide/custom-extensions/#paste-rules) を有効にします。 `enablePasteRules` を使用すると、それを制御できます。
 
 ```js
+import { Editor } from '@tiptap/core'
+import StarterKit from '@tiptap/starter-kit'
 
 new Editor({
   content: `<p>Example Text</p>`,
@@ -5159,6 +5304,9 @@ new Editor({
 または、特定の貼り付けルールのみを許可することもできます。
 
 ```js
+import { Editor } from '@tiptap/core'
+import StarterKit from '@tiptap/starter-kit'
+import Link from '@tiptap/extension-link'
 
 new Editor({
   content: `<p>Example Text</p>`,
@@ -5178,6 +5326,8 @@ new Editor({
 デフォルトでは、Tiptap は [少しのCSS](https://github.com/ueberdosis/tiptap/tree/main/packages/core/src/style.ts) を挿入します。`injectCSS` を使用すると、それを無効にできます。
 
 ```js
+import { Editor } from '@tiptap/core'
+import StarterKit from '@tiptap/starter-kit'
 
 new Editor({
   extensions: [
@@ -5193,6 +5343,8 @@ new Editor({
 [Content-Security-Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy) を `nonce` で使用する場合、動的に作成された要素に追加する `nonce` を指定できます。次に例を示します。
 
 ```js
+import { Editor } from '@tiptap/core'
+import StarterKit from '@tiptap/starter-kit'
 
 new Editor({
   extensions: [
@@ -5400,6 +5552,7 @@ addCommands() {
 プレーンな ProseMirror コマンドをラップするだけの場合は、とにかく `dispatch` を渡す必要があります。次に、それをチェックする必要もありません。
 
 ```js
+import { exitCode } from 'prosemirror-commands'
 
 export default () => ({ state, dispatch }) => {
   return exitCode(state, dispatch)
@@ -6711,6 +6864,7 @@ Tiptap 用に独自のノードを自由に作成できます。独自のノー�
 <!-- You’re free to create your own nodes for Tiptap. Here is the boilerplate code that’s need to create and register your own node: -->
 
 ```js
+import { Node } from '@tiptap/core'
 
 const CustomNode = Node.create({
   // Your code here
@@ -7031,6 +7185,7 @@ npm install lowlight @tiptap/extension-code-block-lowlight
 この拡張機能に `lowlight` モジュールを提供する必要があります。 `lowlight` パッケージを拡張機能から切り離すことで、クライアントアプリケーションは、使用する lowlight のバージョンと、ロードする必要のあるプログラミング言語パッケージを制御できます。
 
 ```js
+import { lowlight } from 'lowlight/lib/core'
 
 CodeBlockLowlight.configure({
   lowlight,
@@ -7121,7 +7276,8 @@ https://embed.tiptap.dev/preview/Nodes/CodeBlockLowlight
 <!-- The node is very tiny though. It defines a name of the node (`doc`), is configured to be a top node (`topNode: true`) and that it can contain multiple other nodes (`block+`). That’s all. But have a look yourself: -->
 
 <!-- :::warning Breaking Change from 1.x → 2.x
-tiptap 1 tried to hide that node from you, but it has always been there. You have to explicitly ::: -->
+tiptap 1 tried to hide that node from you, but it has always been there. You have to explicitly import it from now on (or use `StarterKit`).
+::: -->
 
 **Tiptap で何をビルドするかに関係なく、Document 拡張機能が必要です**。これはいわゆる "topNode" であり、他のすべてのノードのホームとなるノードです。ドキュメントの `<body>` タグのように考えてください。
 
@@ -7642,7 +7798,8 @@ https://embed.tiptap.dev/preview/Nodes/OrderedList
 <!-- Yes, the schema is very strict. Without this extension you won’t even be able to use paragraphs in the editor. -->
 
 <!-- :::warning Breaking Change from 1.x → 2.x
-tiptap 1 tried to hide that node from you, but it has always been there. You have to explicitly ::: -->
+tiptap 1 tried to hide that node from you, but it has always been there. You have to explicitly import it from now on (or use `StarterKit`).
+::: -->
 
 スキーマは非常に厳密です。この拡張機能がないと、エディターで段落を使用することもできません。
 
@@ -8187,7 +8344,8 @@ https://embed.tiptap.dev/preview/Nodes/TaskItem
 <!-- **The `Text` extension is required**, at least if you want to work with text of any kind and that’s very likely. This extension is a little bit different, it doesn’t even render HTML. It’s plain text, that’s all. -->
 
 <!-- :::warning Breaking Change from 1.x → 2.x
-tiptap 1 tried to hide that node from you, but it has always been there. You have to explicitly ::: -->
+tiptap 1 tried to hide that node from you, but it has always been there. You have to explicitly import it from now on (or use `StarterKit`).
+::: -->
 
 **Text 拡張子が必要です**。少なくとも、あらゆる種類のテキストを処理する場合は、その可能性が非常に高くなります。この拡張機能は少し異なり、 HTML もレンダリングしません。プレーンテキストです、それだけです。
 
@@ -9178,6 +9336,7 @@ Tiptap 用の独自の拡張機能を自由に作成できます。独自の拡�
 <!-- You’re free to create your own extensions for Tiptap. Here is the boilerplate code that’s need to create and register your own extension: -->
 
 ```js
+import { Extension } from '@tiptap/core'
 
 const CustomExtension = Extension.create({
   // Your code here
@@ -9257,6 +9416,8 @@ Type: `(props) => boolean`
 ### JavaScript
 
 ```js
+import { Editor } from '@tiptap/core'
+import BubbleMenu from '@tiptap/extension-bubble-menu'
 
 new Editor({
   extensions: [
@@ -9289,6 +9450,8 @@ BubbleMenu.configure({
 Use multiple menus by setting an unique `pluginKey`.
 
 ```js
+import { Editor } from '@tiptap/core'
+import BubbleMenu from '@tiptap/extension-bubble-menu'
 
 new Editor({
   extensions: [
@@ -9307,6 +9470,9 @@ new Editor({
 Alternatively you can pass a ProseMirror `PluginKey`.
 
 ```js
+import { Editor } from '@tiptap/core'
+import BubbleMenu from '@tiptap/extension-bubble-menu'
+import { PluginKey } from 'prosemirror-state'
 
 new Editor({
   extensions: [
@@ -9814,6 +9980,8 @@ Type: `(props) => boolean`
 ## Vanilla JavaScript の使用
 
 ```js
+import { Editor } from '@tiptap/core'
+import FloatingMenu from '@tiptap/extension-floating-menu'
 
 new Editor({
   extensions: [
@@ -9850,6 +10018,8 @@ FloatingMenu.configure({
 一意の `pluginKey` を設定して、複数のメニューを使用します。
 
 ```js
+import { Editor } from '@tiptap/core'
+import FloatingMenu from '@tiptap/extension-floating-menu'
 
 new Editor({
   extensions: [
@@ -9870,6 +10040,9 @@ new Editor({
 または、ProseMirror `PluginKey` を渡すこともできます。
 
 ```js
+import { Editor } from '@tiptap/core'
+import FloatingMenu from '@tiptap/extension-floating-menu'
+import { PluginKey } from 'prosemirror-state'
 
 new Editor({
   extensions: [
@@ -10308,6 +10481,8 @@ npm install @tiptap/starter-kit
 `StarterKit` をエディタに渡して、含まれているすべての拡張機能を一度にロードします。
 
 ```js
+import { Editor } from '@tiptap/core'
+import StarterKit from '@tiptap/starter-kit'
 
 const editor = new Editor({
   content: '<p>Example Text</p>',
@@ -10322,6 +10497,8 @@ const editor = new Editor({
 以下に示すように、含まれている拡張機能を構成したり、いくつかの拡張機能を無効にしたりすることもできます。
 
 ```js
+import { Editor } from '@tiptap/core'
+import StarterKit from '@tiptap/starter-kit'
 
 const editor = new Editor({
   content: '<p>Example Text</p>',
@@ -10511,6 +10688,8 @@ https://embed.tiptap.dev/preview/Extensions/Typography
 以下に示すように、含まれているルールを構成したり、いくつかのルールを無効にしたりすることもできます。
 
 ```js
+import { Editor } from '@tiptap/core'
+import Typography from '@tiptap/extension-typography'
 
 const editor = new Editor({
   extensions: [
@@ -10772,6 +10951,7 @@ Mac では `Cmd`、その他のプラットフォームでは `Control` の省�
 
 ```js
 // 1. Import the extension
+import BulletList from '@tiptap/extension-bullet-list'
 
 // 2. Overwrite the keyboard shortcuts
 const CustomBulletList = BulletList.extend({
@@ -10846,6 +11026,7 @@ Tiptapでは、すべてのノード、マーク、および拡張子が独自�
 
 ```js
 // the Tiptap schema API
+import { Node } from '@tiptap/core'
 
 const Document = Node.create({
   name: 'doc',
@@ -11186,6 +11367,10 @@ Mark.create({
 <!-- If you need this on the client side and need an editor instance anyway, it’s available through the editor: -->
 
 ```js
+import { Editor } from '@tiptap/core'
+import Document from '@tiptap/extension-document'
+import Paragraph from '@tiptap/extension-paragraph'
+import Text from '@tiptap/extension-text'
 
 const editor = new Editor({
   extensions: [
@@ -11206,6 +11391,10 @@ const schema = editor.schema
 <!-- If you just want to have the schema *without* initializing an actual editor, you can use the `getSchema` helper function. It needs an array of available extensions and conveniently generates a ProseMirror schema for you: -->
 
 ```js
+import { getSchema } from '@tiptap/core'
+import Document from '@tiptap/extension-document'
+import Paragraph from '@tiptap/extension-paragraph'
+import Text from '@tiptap/extension-text'
 
 const schema = getSchema([
   Document,
@@ -11384,6 +11573,7 @@ editor.off('update', onUpdate)
 イベントリスナーをカスタム拡張機能（またはノード、またはマーク）に移動することも可能です。これは次のようになります。
 
 ```js
+import { Extension } from '@tiptap/core'
 
 const CustomExtension = Extension.create({
   onBeforeCreate({ editor }) {

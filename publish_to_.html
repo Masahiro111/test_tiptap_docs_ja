@@ -1,4 +1,20 @@
-<h1>はじめに</h1>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.1.0/github-markdown.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+        <title>Publish html</title>
+    </head>
+    <body>
+        <div class="markdown-body">
+            <h1>はじめに</h1>
 <h2>Tiptap ってなに？</h2>
 <p>Tiptap は、<a href="https://ProseMirror.net">ProseMirror</a> のヘッドレスラッパーです。リッチテキスト WYSIWYG エディターを構築するためのツールキットであり、 <em>New York Times</em> 、<em>The Guardian</em> または <em>Atlassian</em> などの多くの有名企業ですでに使用されています。</p>
 <p>カスタマイズ可能なビルディングブロックから、必要なリッチテキストエディタを正確に作成します。 Tiptap には、賢明なデフォルト、多くの拡張機能、あらゆる側面をカスタマイズするための使いやすい API が付属しています。ウェルカムなコミュニティ、オープンソースに支えられています。</p>
@@ -67,7 +83,9 @@
 <h3>3. エディターを初期化します</h3>
 
 <p>これですべてが整ったので、実際のエディターをセットアップしましょう。次のコードを JavaScript に追加します。</p>
-<pre><code class="language-js">
+<pre><code class="language-js">import { Editor } from '@tiptap/core'
+import StarterKit from '@tiptap/starter-kit'
+
 new Editor({
   element: document.querySelector('.element'),
   extensions: [
@@ -112,6 +130,8 @@ cd my-tiptap-project
 <p>Tiptap の使用を実際に開始するには、新しいコンポーネントを作成する必要があります。これを <code>Tiptap</code> と呼び、次のサンプルコードを <code>src/Tiptap.jsx</code> に配置します。</p>
 
 <pre><code class="language-jsx">// src/Tiptap.jsx
+import { useEditor, EditorContent } from '@tiptap/react'
+import StarterKit from '@tiptap/starter-kit'
 
 const Tiptap = () =&gt; {
   const editor = useEditor({
@@ -131,7 +151,8 @@ export default Tiptap
 <h4>4.アプリに追加</h4>
 <p>最後に、<code>src/App.js</code> のコンテンツを新しい<code>Tiptap</code> コンポーネントに置き換えます。</p>
 
-<pre><code class="language-jsx">
+<pre><code class="language-jsx">import Tiptap from './Tiptap.jsx'
+
 const App = () =&gt; {
   return (
     &lt;div className=&quot;App&quot;&gt;
@@ -182,7 +203,9 @@ cd my-tiptap-project
 <h2>3.新しいコンポーネントを作成</h2>
 <p>Tiptap の使用を実際に開始するには、アプリに新しいコンポーネントを追加する必要があります。これを行うには、最初に <code>components/</code> というディレクトリを作成します。次に、<code>Tiptap</code> と呼ぶコンポーネントを作成します。これを行うには、次のサンプルコードを  <code>components/Tiptap.js</code> に配置します。</p>
 
-<pre><code class="language-jsx">
+<pre><code class="language-jsx">import { useEditor, EditorContent } from '@tiptap/react'
+import StarterKit from '@tiptap/starter-kit'
+
 const Tiptap = () =&gt; {
   const editor = useEditor({
     extensions: [
@@ -201,7 +224,8 @@ export default Tiptap;
 <h2>4.アプリに追加</h2>
 <p>次に、<code>pages/index.js</code> のコンテンツを次のサンプルコードに置き換えて、アプリで新しい <code>Tiptap</code> コンポーネントを使用します。</p>
 
-<pre><code class="language-jsx">
+<pre><code class="language-jsx">import Tiptap from '../components/Tiptap'
+
 export default function Home() {
     return (
          &lt;Tiptap /&gt;
@@ -253,6 +277,8 @@ cd my-tiptap-project
 &lt;/template&gt;
 
 &lt;script&gt;
+import { Editor, EditorContent } from '@tiptap/vue-3'
+import StarterKit from '@tiptap/starter-kit'
 
 export default {
   components: {
@@ -287,6 +313,8 @@ export default {
 &lt;/template&gt;
 
 &lt;script&gt;
+import { useEditor, EditorContent } from '@tiptap/vue-3'
+import StarterKit from '@tiptap/starter-kit'
 
 export default {
   components: {
@@ -313,6 +341,8 @@ export default {
 &lt;/template&gt;
 
 &lt;script setup&gt;
+import { useEditor, EditorContent } from '@tiptap/vue-3'
+import StarterKit from '@tiptap/starter-kit'
 
 const editor = useEditor({
   content: '&lt;p&gt;I’m running Tiptap with Vue.js. 🎉&lt;/p&gt;',
@@ -332,6 +362,7 @@ const editor = useEditor({
 &lt;/template&gt;
 
 &lt;script&gt;
+import Tiptap from './components/Tiptap.vue'
 
 export default {
   name: 'App',
@@ -388,6 +419,8 @@ cd my-tiptap-project
 &lt;/template&gt;
 
 &lt;script&gt;
+import { Editor, EditorContent } from '@tiptap/vue-2'
+import StarterKit from '@tiptap/starter-kit'
 
 export default {
   components: {
@@ -425,6 +458,7 @@ export default {
 &lt;/template&gt;
 
 &lt;script&gt;
+import Tiptap from './components/Tiptap.vue'
 
 export default {
   name: 'App',
@@ -444,6 +478,8 @@ export default {
 &lt;/template&gt;
 
 &lt;script&gt;
+import { Editor, EditorContent } from '@tiptap/vue-2'
+import StarterKit from '@tiptap/starter-kit'
 
 export default {
   components: {
@@ -542,6 +578,8 @@ cd my-tiptap-project
 &lt;/template&gt;
 
 &lt;script&gt;
+import { Editor, EditorContent } from '@tiptap/vue-2'
+import StarterKit from '@tiptap/starter-kit'
 
 export default {
   components: {
@@ -580,6 +618,7 @@ export default {
   &lt;/div&gt;
 &lt;/template&gt;
 &lt;script&gt;
+import TiptapEditor from '~/components/TiptapEditor.vue'
 export default {
   components: {
     TiptapEditor
@@ -600,6 +639,8 @@ export default {
 &lt;/template&gt;
 
 &lt;script&gt;
+import { Editor, EditorContent } from '@tiptap/vue-2'
+import StarterKit from '@tiptap/starter-kit'
 
 export default {
   components: {
@@ -695,7 +736,10 @@ npm run dev
 
 
 <pre><code class="language-html">&lt;script&gt;
-      
+  import { onMount, onDestroy } from 'svelte'
+  import { Editor } from '@tiptap/core'
+  import StarterKit from '@tiptap/starter-kit'
+
   let element
   let editor
 
@@ -750,7 +794,8 @@ npm run dev
 <h2>4.アプリに追加</h2>
 <p>次に、<code>src/routers/index.svelte</code>のコンテンツを次のサンプルコードに置き換えて、アプリで新しい <code>Tiptap</code> コンポーネントを使用します。</p>
 <pre><code class="language-html">&lt;script&gt;
-  &lt;/script&gt;
+  import Tiptap from '$lib/Tiptap.svelte'
+&lt;/script&gt;
 
 &lt;main&gt;
   &lt;Tiptap /&gt;
@@ -795,7 +840,10 @@ npm run dev
 <p>これは、Tiptap を Alpine.js で起動して実行するための最速の方法です。それはあなたにTiptap の非常に基本的なバージョンを与えるでしょう。心配はいりません。まもなく機能を追加できるようになります。</p>
 
 
-<pre><code class="language-js">
+<pre><code class="language-js">import Alpine from 'alpinejs'
+import { Editor } from '@tiptap/core'
+import StarterKit from '@tiptap/starter-kit'
+
 window.setupEditor = function(content) {
   return {
     editor: null,
@@ -904,7 +952,9 @@ Alpine.start()
 &lt;/div&gt;
 </code></pre>
 <h3>index.js</h3>
-<pre><code class="language-js">
+<pre><code class="language-js">import { Editor } from '@tiptap/core'
+import StarterKit from '@tiptap/starter-kit'
+
 window.setupEditor = function (content) {
   return {
     editor: null,
@@ -980,6 +1030,20 @@ npm-check -u
 <h2>ドキュメント、テキスト、段落の拡張子を明示的に登録する</h2>
 <p>tiptap v1 は、デフォルト設定の <code>useBuiltInExtensions: true</code> を使用して、いくつかの必要な拡張機能を非表示にしようとしました。その設定は削除されており、すべての拡張機能をインポートする必要があります。少なくとも <a href="/api/nodes/document"><code>Document</code></a> 、<a href="/api/nodes/paragraph"><code>Paragraph</code></a> と <a href="/api/nodes/text"><code>Text</code></a> 拡張子を明示的にインポートしてください。</p>
 
+<pre><code class="language-js">import Document from '@tiptap/extension-document'
+import Paragraph from '@tiptap/extension-paragraph'
+import Text from '@tiptap/extension-text'
+
+new Editor({
+  extensions: [
+    Document,
+    Paragraph,
+    Text,
+    // all your other extensions
+  ],
+})
+</code></pre>
+
 <p>そして、<code>dropCursor</code>、<code> enableDropCursor</code>、および<code>enableGapCursor</code>等、いくつかの設定を削除しました。 これらは現在、別々の拡張機能となっています（ <a href="/api/extends/dropcursor"><code>Dropcursor</code></a> と <a href="/api/extends/gapcursor"><code>Gapcursor</code></a>）。 通常は、それらをロードして使用できますが、この機能がいらない場合は、無視していただいて結構です。</p>
 <h2>拡張機能の新しい名前</h2>
 <p>lowerCamelCase に切り替えたため、多くのタイプ名が変更されました。 コンテンツを JSON として保存した場合は、コンテンツをループして名前を変更する必要があります。 すみません。</p>
@@ -1044,7 +1108,8 @@ npm-check -u
 <h2>新しい拡張 API</h2>
 <p>プロジェクト用にいくつかのカスタム拡張機能を構築した場合は、新しいAPIに合うようにそれらを書き直す必要があります。 心配はいりませんが、多くの作業を続けることができます。 <code>schema</code>、<code>commands</code>、<code>keys</code>、<code> inputRules</code>、および  <code>pasteRules</code> はすべて、以前と同じように機能します。 登録方法が違うだけです。</p>
 
-<pre><code class="language-js">
+<pre><code class="language-js">import { Node } from '@tiptap/core'
+
 const CustomExtension = Node.create({
   name: 'custom_extension',
   addOptions() {
@@ -1376,7 +1441,9 @@ Our plug &amp; play collaboration backend hocuspocus is still work in progress. 
 <p>警告早期アクセスをリクエストする
 プラグアンドプレイコラボレーションバックエンド hocuspocus はまだ進行中です。 試してみたい場合は、<a href="https://www.hocuspocus.dev">早期アクセスを取得</a> してください。</p>
 </blockquote>
-<pre><code class="language-js">
+<pre><code class="language-js">import { Server } from '@hocuspocus/server'
+import { RocksDB } from '@hocuspocus/extension-rocksdb'
+
 const server = Server.configure({
   port: 80,
   extensions: [
@@ -1436,7 +1503,11 @@ server.listen()
 <h2>エディターを構成する</h2>
 <p>構成を追加するには、次に示すように、<a href="/api/editor">設定のあるオブジェクト</a> を <code>Editor</code>クラスに渡します。</p>
 
-<pre><code class="language-js">
+<pre><code class="language-js">import { Editor } from '@tiptap/core'
+import Document from '@tiptap/extension-document'
+import Paragraph from '@tiptap/extension-paragraph'
+import Text from '@tiptap/extension-text'
+
 new Editor({
   element: document.querySelector('.element'),
   extensions: [
@@ -1475,7 +1546,11 @@ new Editor({
 <p>これは、3つの拡張機能のみを使用した最小限のセットアップです。</p>
 
 
-<pre><code class="language-js">
+<pre><code class="language-js">import { Editor } from '@tiptap/core'
+import Document from '@tiptap/extension-document'
+import Paragraph from '@tiptap/extension-paragraph'
+import Text from '@tiptap/extension-text'
+
 new Editor({
   element: document.querySelector('.element'),
   extensions: [
@@ -1490,7 +1565,12 @@ new Editor({
 <p>次の例では、デフォルトの見出しレベル4、5、および6を無効にし、1、2、および 3のみを許可します。</p>
 
 
-<pre><code class="language-js">
+<pre><code class="language-js">import { Editor } from '@tiptap/core'
+import Document from '@tiptap/extension-document'
+import Paragraph from '@tiptap/extension-paragraph'
+import Text from '@tiptap/extension-text'
+import Heading from '@tiptap/extension-heading'
+
 new Editor({
   element: document.querySelector('.element'),
   extensions: [
@@ -1508,7 +1588,8 @@ new Editor({
 <h3>デフォルトの拡張機能</h3>
 <p>最も一般的な拡張機能のいくつかを<code>StarterKit</code> 拡張機能にバンドルしました。これを使用する方法は次のとおりです。</p>
 
-<pre><code class="language-js">
+<pre><code class="language-js">import StarterKit from '@tiptap/starter-kit'
+
 new Editor({
   extensions: [
     StarterKit,
@@ -1517,7 +1598,8 @@ new Editor({
 </code></pre>
 
 <p>含まれているすべての拡張機能の構成をオブジェクトとして渡すこともできます。構成の前に拡張子名を付けるだけです。</p>
-<pre><code class="language-js">
+<pre><code class="language-js">import StarterKit from '@tiptap/starter-kit'
+
 new Editor({
   extensions: StarterKit.configure({
     heading: {
@@ -1528,7 +1610,9 @@ new Editor({
 </code></pre>
 
 <p><code>StarterKit</code> 拡張機能は最も一般的な拡張機能をロードしますが、利用可能なすべての拡張機能をロードするわけではありません。追加の拡張機能をロードしたり、カスタム拡張機能を追加したりする場合は、それらを <code>extensions</code> 配列に追加します。</p>
-<pre><code class="language-js">
+<pre><code class="language-js">import StarterKit from '@tiptap/starter-kit'
+import Strike from '@tiptap/extension-strike'
+
 new Editor({
   extensions: [
     StarterKit,
@@ -1538,7 +1622,8 @@ new Editor({
 </code></pre>
 
 <p><code>StarterKit</code> から特定の拡張機能をロードしたくないですか？設定に <code>false</code> を渡すだけです。</p>
-<pre><code class="language-js">
+<pre><code class="language-js">import StarterKit from '@tiptap/starter-kit'
+
 new Editor({
   extensions: [
     StarterKit.configure({
@@ -1727,7 +1812,8 @@ p {
 <h2>オプション3：HTMLをカスタマイズする</h2>
 <p>または、拡張機能のマークアップをカスタマイズできます。次の例では、<code>&lt;strong&gt;</code> タグではなく、<code>&lt;b&gt;</code> タグをレンダリングするカスタムの太字の拡張機能を作成します。</p>
 
-<pre><code class="language-js">
+<pre><code class="language-js">import Bold from '@tiptap/extension-bold'
+
 const CustomBold = Bold.extend({
   renderHTML({ HTMLAttributes }) {
     // Original:
@@ -1800,6 +1886,7 @@ new Editor({
 <p>内部的には、Y.js はすべての変更の履歴を保存します。これは、ブラウザ、サーバー、接続されている他のクライアントとの同期、または USB スティックで行うことができます。ただし、Y.js にはこれらの保存された変更が必要であることを知っておくことが重要です。単純な JSON ドキュメントでは、変更をマージするのに十分ではありません。</p>
 <p>もちろん、既存の JSON ドキュメントをインポートして開始し、Y.js から JSON を取得することはできますが、それはインポート/エクスポート形式に似ています。それはあなたの単一の情報源ではありません。上記のユースケースの1つに Y.js を追加する場合は、これを考慮することが重要です。</p>
 <p>とは言うものの、それは素晴らしいことであり、私たちは素晴らしいバックエンドを提供しようとしています。</p>
+
 
 
 
@@ -1914,7 +2001,12 @@ Tiptap を維持、更新、サポート、開発するには、あなたのサ�
 </code></pre>
 
 <p>次に、新しい Y ドキュメントを作成し、Tiptap に登録します。</p>
-<pre><code class="language-js">
+<pre><code class="language-js">import { Editor } from '@tiptap/core'
+import StarterKit from '@tiptap/starter-kit'
+import Collaboration from '@tiptap/extension-collaboration'
+import * as Y from 'yjs'
+import { WebrtcProvider } from 'y-webrtc'
+
 // A new Y document
 const ydoc = new Y.Doc()
 // Registered with a WebRTC provider
@@ -1954,7 +2046,11 @@ const editor = new Editor({
 </code></pre>
 
 <p>次に、WebSocket プロバイダーを Tiptap に登録します。</p>
-<pre><code class="language-js">
+<pre><code class="language-js">import { Editor } from '@tiptap/core'
+import StarterKit from '@tiptap/starter-kit'
+import Collaboration from '@tiptap/extension-collaboration'
+import { HocuspocusProvider } from '@hocuspocus/provider'
+
 // Set up the Hocuspocus WebSocket provider
 const provider = new HocuspocusProvider({
   url: 'ws://127.0.0.1:1234',
@@ -2013,7 +2109,12 @@ new HocuspocusProvider({
 <h3>他のカーソルを表示する</h3>
 <p>ユーザーがカーソルとテキストの選択を相互に表示できるようにするには、<a href="/api/extensions/collaboration-cursor"><code>CollaborationCursor</code></a> 拡張機能を追加します。</p>
 
-<pre><code class="language-js">
+<pre><code class="language-js">import { Editor } from '@tiptap/core'
+import StarterKit from '@tiptap/starter-kit'
+import Collaboration from '@tiptap/extension-collaboration'
+import CollaborationCursor from '@tiptap/extension-collaboration-cursor'
+import { HocuspocusProvider } from '@hocuspocus/provider'
+
 // Set up the Hocuspocus WebSocket provider
 const provider = new HocuspocusProvider({
   url: 'ws://127.0.0.1:1234',
@@ -2049,7 +2150,11 @@ const editor = new Editor({
 </code></pre>
 
 <p>そしてそれを Y ドキュメントに接続します：</p>
-<pre><code class="language-js">
+<pre><code class="language-js">import { Editor } from '@tiptap/core'
+import Collaboration from '@tiptap/extension-collaboration'
+import * as Y from 'yjs'
+import { IndexeddbPersistence } from 'y-indexeddb'
+
 const ydoc = new Y.Doc()
 
 // Store the Y document in the browser
@@ -2112,7 +2217,8 @@ Collaboration.configure({
 <p>エラーをスローする（または返された Promise を拒否する）と、クライアントへの接続は終了します。クライアントが承認および認証されている場合は、他のフックでアクセスできるコンテキストデータを返すこともできます。しかし、そうする必要はありません。</p>
 
 
-<pre><code class="language-js">
+<pre><code class="language-js">import { Server } from '@hocuspocus/server'
+
 const server = Server.configure({
   async onAuthenticate({ token }) {
     // Example test if a user is authenticated
@@ -2166,6 +2272,7 @@ server.listen()
 
 
 <pre><code class="language-js">// 1. Import the extension
+import BulletList from '@tiptap/extension-bullet-list'
 
 // 2. Overwrite the keyboard shortcuts
 const CustomBulletList = BulletList.extend({
@@ -2194,7 +2301,8 @@ new Editor({
 <h3>優先順位</h3>
 <p>優先度は、内線番号が登録される順序を定義します。デフォルトの優先度は <code>100</code> で、これがほとんどの拡張機能にあります。優先度の高い拡張機能は、より早くロードされます。</p>
 
-<pre><code class="language-js">
+<pre><code class="language-js">import Link from '@tiptap/extension-link'
+
 const CustomLink = Link.extend({
   priority: 1000,
 })
@@ -2218,7 +2326,8 @@ const CustomLink = Link.extend({
 <h3>設定</h3>
 <p>いずれにせよ、すべての設定は拡張機能を介して構成できますが、デフォルト設定を変更する場合、たとえば、他の開発者に Tiptap の上にライブラリを提供する場合は、次のように行うことができます。</p>
 
-<pre><code class="language-js">
+<pre><code class="language-js">import Heading from '@tiptap/extension-heading'
+
 const CustomHeading = Heading.extend({
   addOptions() {
     return {
@@ -2231,7 +2340,8 @@ const CustomHeading = Heading.extend({
 <h3>ストレージ</h3>
 <p>ある時点で、拡張インスタンス内にデータを保存したいと思うかもしれません。このデータは変更可能です。<code>this.storage</code> の下の拡張機能内でアクセスできます。</p>
 
-<pre><code class="language-js">
+<pre><code class="language-js">import { Extension } from '@tiptap/core'
+
 const CustomExtension = Extension.create({
   name: 'customExtension',
 
@@ -2262,6 +2372,7 @@ const awesomeness = editor.storage.customExtension.awesomeness
 
 
 <pre><code class="language-js">// Blockquotes must only include paragraphs
+import Blockquote from '@tiptap/extension-blockquote'
 
 const CustomBlockquote = Blockquote.extend({
   content: 'paragraph*',
@@ -2270,6 +2381,7 @@ const CustomBlockquote = Blockquote.extend({
 
 <p>スキーマでは、ノードをドラッグ可能にすることもできます。これが、<code>draggable</code> オプションの目的です。デフォルトは <code>false</code> ですが、これをオーバーライドできます。</p>
 <pre><code class="language-js">// Draggable paragraphs
+import Paragraph from '@tiptap/extension-paragraph'
 
 const CustomParagraph = Paragraph.extend({
   draggable: true,
@@ -2367,7 +2479,8 @@ const CustomParagraph = Paragraph.extend({
 <p><a href="/api/extensions/text-align"><code>TextAlign</code></a> の <a href="https://github.com/ueberdosis/tiptap/tree/main/packages/extension-text-align">完全なソースコード</a> を詳しく見てください。 拡張機能を使用して、より複雑な例を確認してください。しかし、これが一言で言えばどのように機能するかです。</p>
 
 
-<pre><code class="language-js">
+<pre><code class="language-js">import { Extension } from '@tiptap/core'
+
 const TextAlign = Extension.create({
   addGlobalAttributes() {
     return [
@@ -2407,6 +2520,18 @@ const TextAlign = Extension.create({
   return ['pre', ['code', HTMLAttributes, 0]]
 },
 </code></pre>
+
+<p>そこに特定の属性を追加する場合は、<code>@tiptap/core</code> から <code>mergeAttributes</code> ヘルパーをインポートします。</p>
+<pre><code class="language-js">import { mergeAttributes } from '@tiptap/core'
+
+// ...
+
+renderHTML({ HTMLAttributes }) {
+  return ['a', mergeAttributes(HTMLAttributes, { rel: this.options.rel }), 0]
+},
+</code></pre>
+<h3>HTMLを解析する</h3>
+<p><code>parseHTML()</code> 関数は、HTML からエディタドキュメントを読み込もうとします。この関数は、パラメーターとして渡された HTML DOM 要素を取得し、属性とその値を持つオブジェクトを返すことが期待されています。 <a href="/api/marks/bold"><code>Bold</code></a> マークの簡単な例を次に示します。</p>
 
 <pre><code class="language-js">parseHTML() {
   return [
@@ -2484,7 +2609,8 @@ const TextAlign = Extension.create({
 
 <p><a href="https://prosemirror.net/docs/ref/#model.ParseRule">ProseMirrorリファレンス</a> で、<code>getAttrs</code> およびその他すべての <code>ParseRule</code> プロパティの詳細をご覧ください。</p>
 <h3>コマンド</h3>
-<pre><code class="language-js">
+<pre><code class="language-js">import Paragraph from '@tiptap/extension-paragraph'
+
 const CustomParagraph = Paragraph.extend({
   addCommands() {
     return {
@@ -2504,6 +2630,7 @@ const CustomParagraph = Paragraph.extend({
 <p>ほとんどのコア拡張機能には、適切なキーボードショートカットのデフォルトが付属しています。構築したいものによっては、変更したい場合もあります。<code>addKeyboardShortcuts()</code> メソッドを使用すると、事前定義されたショートカットマップを上書きできます。</p>
 
 <pre><code class="language-js">// Change the bullet list keyboard shortcut
+import BulletList from '@tiptap/extension-bullet-list'
 
 const CustomBulletList = BulletList.extend({
   addKeyboardShortcuts() {
@@ -2519,6 +2646,8 @@ const CustomBulletList = BulletList.extend({
 
 
 <pre><code class="language-js">// Use the ~single tilde~ markdown shortcut
+import Strike from '@tiptap/extension-strike'
+import { markInputRule } from '@tiptap/core'
 
 // Default:
 // const inputRegex = /(?:^|\s)((?:~~)((?:[^~]+))(?:~~))$/
@@ -2545,6 +2674,8 @@ const CustomStrike = Strike.extend({
 
 
 <pre><code class="language-js">// Check pasted content for the ~single tilde~ markdown syntax
+import Strike from '@tiptap/extension-strike'
+import { markPasteRule } from '@tiptap/core'
 
 // Default:
 // const pasteRegex = /(?:^|\s)((?:~~)((?:[^~]+))(?:~~))/g
@@ -2566,7 +2697,8 @@ const CustomStrike = Strike.extend({
 <h3>イベント</h3>
 <p><a href="/api/events">イベントリスナー</a> を別の拡張機能に移動することもできます。すべてのイベントのリスナーの例を次に示します。</p>
 
-<pre><code class="language-js">
+<pre><code class="language-js">import { Extension } from '@tiptap/core'
+
 const CustomExtension = Extension.create({
   onCreate() {
     // The editor is ready.
@@ -2615,7 +2747,8 @@ this.parent
 <h4>既存のプラグイン</h4>
 <p>以下の例に示すように、既存の ProseMirror プラグインを Tiptap 拡張機能でラップできます。</p>
 
-<pre><code class="language-js">
+<pre><code class="language-js">import { history } from 'prosemirror-history'
+
 const History = Extension.create({
   addProseMirrorPlugins() {
     return [
@@ -2630,7 +2763,9 @@ const History = Extension.create({
 
 
 <p>または、以下の例に示すように、それらを Tiptap 拡張機能に追加することもできます。</p>
-<pre><code class="language-js">
+<pre><code class="language-js">import { Extension } from '@tiptap/core'
+import { Plugin, PluginKey } from 'prosemirror-state'
+
 export const EventHandler = Extension.create({
   name: 'eventHandler',
 
@@ -2655,7 +2790,8 @@ export const EventHandler = Extension.create({
 <p>それらは本当に強力ですが、複雑でもあります。簡単に言うと、親 DOM 要素と、コンテンツがレンダリングされる DOM 要素を返す必要があります。次の簡略化された例を見てください。</p>
 
 
-<pre><code class="language-js">
+<pre><code class="language-js">import Image from '@tiptap/extension-image'
+
 const CustomImage = Image.extend({
   addNodeView() {
     return () =&gt; {
@@ -2684,7 +2820,8 @@ const CustomImage = Image.extend({
 <h3>ノードを作成</h3>
 <p>ドキュメントをツリーと考えると、<a href="/api/nodes">ノード(nodes)</a> はそのツリーのコンテンツの一種にすぎません。学ぶのに良い例は、<a href="/api/nodes/paragraph"><code>Paragraph</code></a>、<a href="/api/nodes/heading"><code>Heading</code></a>、または <a href="/api/nodes/code-block"><code>CodeBlock</code></a> です。</p>
 
-<pre><code class="language-js">
+<pre><code class="language-js">import { Node } from '@tiptap/core'
+
 const CustomNode = Node.create({
   name: 'customNode',
 
@@ -2696,7 +2833,8 @@ const CustomNode = Node.create({
 <h3>マークを作成</h3>
 <p>たとえば、インラインフォーマットを追加するために、1つまたは複数のマークを <a href="/api/nodes">nodes</a> に適用できます。学ぶべき良い例は、<a href="/api/marks/bold"><code>Bold</code></a>、<a href="/api/marks/italic"><code>Italic</code></a> 、<a href="/api/marks/highlight"><code>Highlight</code></a></p>
 
-<pre><code class="language-js">
+<pre><code class="language-js">import { Mark } from '@tiptap/core'
+
 const CustomMark = Mark.create({
   name: 'customMark',
 
@@ -2708,7 +2846,8 @@ const CustomMark = Mark.create({
 <p>学ぶべき良い例はおそらく <a href="/api/extensions/text-align"><code>TextAlign</code></a> です。</p>
 
 
-<pre><code class="language-js">
+<pre><code class="language-js">import { Extension } from '@tiptap/core'
+
 const CustomExtension = Extension.create({
   name: 'customExtension',
 
@@ -2831,7 +2970,9 @@ parseHTML() {
 </ol>
 <p>ノード拡張は次のようになります。</p>
 
-<pre><code class="language-js">
+<pre><code class="language-js">import { Node } from '@tiptap/core'
+import Component from './Component.vue'
+
 export default Node.create({
   // configuration …
 
@@ -2946,7 +3087,10 @@ return {
 </ol>
 <p>ノード拡張は次のようになります。</p>
 
-<pre><code class="language-js">
+<pre><code class="language-js">import { Node } from '@tiptap/core'
+import { ReactNodeViewRenderer } from '@tiptap/react'
+import Component from './Component.jsx'
+
 export default Node.create({
   // configuration …
 
@@ -2990,7 +3134,9 @@ export default Node.create({
 <h2>編集可能なコンテンツの追加</h2>
 <p>ノードビューに編集可能なコンテンツを追加するのに役立つ <code>NodeViewContent</code> と呼ばれる別のコンポーネントがあります。次に例を示します。</p>
 
-<pre><code class="language-jsx">
+<pre><code class="language-jsx">import React from 'react'
+import { NodeViewWrapper, NodeViewContent } from '@tiptap/react'
+
 export default () =&gt; {
   return (
     &lt;NodeViewWrapper className=&quot;react-component-with-content&quot;&gt;
@@ -3062,7 +3208,10 @@ export default () =&gt; {
 </ol>
 <p>ノード拡張は次のようになります。</p>
 
-<pre><code class="language-js">
+<pre><code class="language-js">import { Node } from '@tiptap/core'
+import { VueNodeViewRenderer } from '@tiptap/vue-2'
+import Component from './Component.vue'
+
 export default Node.create({
   // configuration …
 
@@ -3126,6 +3275,7 @@ export default Node.create({
 &lt;/template&gt;
 
 &lt;script&gt;
+import { NodeViewWrapper, NodeViewContent } from '@tiptap/vue-2'
 
 export default {
   components: {
@@ -3176,6 +3326,7 @@ export default {
 &lt;/template&gt;
 
 &lt;script&gt;
+import { NodeViewWrapper } from '@tiptap/vue-2'
 
 export default {
   components: {
@@ -3227,6 +3378,23 @@ export default {
 &lt;/script&gt;
 </code></pre>
 
+<p>すべて（および TypeScript サポート）が必要な場合は、次のようなすべての小道具をインポートできます。</p>
+<pre><code class="language-js">// Vue 3
+import { defineComponent } from 'vue'
+import { nodeViewProps } from '@tiptap/vue-3'
+export default defineComponent({
+  props: nodeViewProps,
+})
+
+// Vue 2
+import Vue from 'vue'
+import { nodeViewProps } from '@tiptap/vue-2'
+export default Vue.extend({
+  props: nodeViewProps,
+})
+</code></pre>
+<h2>Dragging</h2>
+
 <p>ノードビューをドラッグ可能にするには、拡張機能で「draggable: true」を設定し、ドラッグハンドルとして機能する DOM 要素に「data-drag-handle」を追加します。</p>
 <p><a href="https://embed.tiptap.dev/preview/GuideNodeViews/DragHandle">https://embed.tiptap.dev/preview/GuideNodeViews/DragHandle</a></p>
 <h1>例</h1>
@@ -3263,7 +3431,8 @@ export default {
 <h3>オプションタイプ</h3>
 <p>拡張機能のデフォルトオプションを拡張または作成するには、カスタムタイプを定義する必要があります。次に例を示します。</p>
 
-<pre><code class="language-ts">
+<pre><code class="language-ts">import { Extension } from '@tiptap/core'
+
 export interface CustomExtensionOptions {
   awesomeness: number,
 }
@@ -3279,7 +3448,8 @@ const CustomExtension = Extension.create&lt;CustomExtensionOptions&gt;({
 <h3>ストレージタイプ</h3>
 <p>拡張ストレージにタイプを追加するには、それを2番目のタイプパラメータとして渡す必要があります。</p>
 
-<pre><code class="language-ts">
+<pre><code class="language-ts">import { Extension } from '@tiptap/core'
+
 export interface CustomExtensionStorage {
   awesomeness: number,
 }
@@ -3296,13 +3466,15 @@ const CustomExtension = Extension.create&lt;{}, CustomExtensionStorage&gt;({
 </code></pre>
 
 <p>拡張機能の外部でストレージを使用する場合は、タイプを手動で設定する必要があります。</p>
-<pre><code>
+<pre><code>import { CustomExtensionStorage } from './custom-extension
+
 const customStorage = editor.storage.customExtension as CustomExtensionStorage
 </code></pre>
 <h3>コマンドタイプ</h3>
 <p>コアパッケージは <code>Command</code> タイプもエクスポートします。これは、コードで指定するすべてのコマンドに追加する必要があります。次に例を示します。</p>
 
-<pre><code class="language-ts">
+<pre><code class="language-ts">import { Extension } from '@tiptap/core'
+
 declare module '@tiptap/core' {
   interface Commands&lt;ReturnType&gt; {
     customExtension: {
@@ -3608,7 +3780,9 @@ editor.setEditable(false)
 <h3>element</h3>
 
 <p><code>element</code> は、エディタがバインドされるHTML要素を指定します。 次のコードは、Tiptapを <code>.element</code> クラスの要素と統合します。</p>
-<pre><code class="language-js">
+<pre><code class="language-js">import { Editor } from '@tiptap/core'
+import StarterKit from '@tiptap/starter-kit'
+
 new Editor({
   element: document.querySelector('.element'),
   extensions: [
@@ -3623,7 +3797,13 @@ new Editor({
 <h3>extensions</h3>
 <p>段落のみを許可する場合でも、拡張機能のリストを <code>extensions</code> プロパティに渡す必要があります。</p>
 
-<pre><code class="language-js">
+<pre><code class="language-js">import { Editor } from '@tiptap/core'
+import StarterKit from '@tiptap/starter-kit'
+import Document from '@tiptap/extension-document'
+import Paragraph from '@tiptap/extension-paragraph'
+import Text from '@tiptap/extension-text'
+import Highlight from '@tiptap/extension-highlight'
+
 new Editor({
   // Use the default extensions
   extensions: [
@@ -3647,7 +3827,9 @@ new Editor({
 <h3>content</h3>
 <p><code>content</code> プロパティを使用すると、エディタの初期コンテンツを提供できます。これは HTML または JSON にすることができます。</p>
 
-<pre><code class="language-js">
+<pre><code class="language-js">import { Editor } from '@tiptap/core'
+import StarterKit from '@tiptap/starter-kit'
+
 new Editor({
   content: `&lt;p&gt;Example Text&lt;/p&gt;`,
   extensions: [
@@ -3658,7 +3840,9 @@ new Editor({
 <h3>editable</h3>
 <p><code>editable</code> プロパティは、ユーザーがエディターに書き込めるかどうかを決定します。</p>
 
-<pre><code class="language-js">
+<pre><code class="language-js">import { Editor } from '@tiptap/core'
+import StarterKit from '@tiptap/starter-kit'
+
 new Editor({
   content: `&lt;p&gt;Example Text&lt;/p&gt;`,
   extensions: [
@@ -3708,7 +3892,9 @@ new Editor({
 </tr>
 </tbody>
 </table>
-<pre><code class="language-js">
+<pre><code class="language-js">import { Editor } from '@tiptap/core'
+import StarterKit from '@tiptap/starter-kit'
+
 new Editor({
   extensions: [
     StarterKit,
@@ -3719,7 +3905,9 @@ new Editor({
 <h3>enableInputRules</h3>
 <p>By default, Tiptap enables all <a href="/guide/custom-extensions/#input-rules">input rules</a>. With <code>enableInputRules</code> you can control that.</p>
 <p>デフォルトでは、Tiptap はすべての <a href="/guide/custom-extensions/#input-rules">入力ルール</a>を有効にします。 <code>enableInputRules</code> を使用すると、それを制御できます。</p>
-<pre><code class="language-js">
+<pre><code class="language-js">import { Editor } from '@tiptap/core'
+import StarterKit from '@tiptap/starter-kit'
+
 new Editor({
   content: `&lt;p&gt;Example Text&lt;/p&gt;`,
   extensions: [
@@ -3730,7 +3918,10 @@ new Editor({
 </code></pre>
 
 <p>または、特定の入力ルールのみを許可することもできます。</p>
-<pre><code class="language-js">
+<pre><code class="language-js">import { Editor } from '@tiptap/core'
+import StarterKit from '@tiptap/starter-kit'
+import Link from '@tiptap/extension-link'
+
 new Editor({
   content: `&lt;p&gt;Example Text&lt;/p&gt;`,
   extensions: [
@@ -3745,7 +3936,9 @@ new Editor({
 <h3>enablePasteRules</h3>
 <p>By default, Tiptap enables all <a href="/guide/custom-extensions/#paste-rules">paste rules</a>. With <code>enablePasteRules</code> you can control that.</p>
 <p>デフォルトでは、Tiptap はすべての<a href="/guide/custom-extensions/#paste-rules">貼り付けルール</a> を有効にします。 <code>enablePasteRules</code> を使用すると、それを制御できます。</p>
-<pre><code class="language-js">
+<pre><code class="language-js">import { Editor } from '@tiptap/core'
+import StarterKit from '@tiptap/starter-kit'
+
 new Editor({
   content: `&lt;p&gt;Example Text&lt;/p&gt;`,
   extensions: [
@@ -3756,7 +3949,10 @@ new Editor({
 </code></pre>
 
 <p>または、特定の貼り付けルールのみを許可することもできます。</p>
-<pre><code class="language-js">
+<pre><code class="language-js">import { Editor } from '@tiptap/core'
+import StarterKit from '@tiptap/starter-kit'
+import Link from '@tiptap/extension-link'
+
 new Editor({
   content: `&lt;p&gt;Example Text&lt;/p&gt;`,
   extensions: [
@@ -3771,7 +3967,9 @@ new Editor({
 <h3>injectCSS</h3>
 
 <p>デフォルトでは、Tiptap は <a href="https://github.com/ueberdosis/tiptap/tree/main/packages/core/src/style.ts">少しのCSS</a> を挿入します。<code>injectCSS</code> を使用すると、それを無効にできます。</p>
-<pre><code class="language-js">
+<pre><code class="language-js">import { Editor } from '@tiptap/core'
+import StarterKit from '@tiptap/starter-kit'
+
 new Editor({
   extensions: [
     StarterKit,
@@ -3782,7 +3980,9 @@ new Editor({
 <h3>injectNonce</h3>
 
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy">Content-Security-Policy</a> を <code>nonce</code> で使用する場合、動的に作成された要素に追加する <code>nonce</code> を指定できます。次に例を示します。</p>
-<pre><code class="language-js">
+<pre><code class="language-js">import { Editor } from '@tiptap/core'
+import StarterKit from '@tiptap/starter-kit'
+
 new Editor({
   extensions: [
     StarterKit,
@@ -3919,7 +4119,8 @@ new Editor({
 </code></pre>
 
 <p>プレーンな ProseMirror コマンドをラップするだけの場合は、とにかく <code>dispatch</code> を渡す必要があります。次に、それをチェックする必要もありません。</p>
-<pre><code class="language-js">
+<pre><code class="language-js">import { exitCode } from 'prosemirror-commands'
+
 export default () =&gt; ({ state, dispatch }) =&gt; {
   return exitCode(state, dispatch)
 }
@@ -4975,7 +5176,8 @@ editor.commands.wrapInList('paragraph')
 <h2>新しいノートの作成</h2>
 <p>Tiptap 用に独自のノードを自由に作成できます。独自のノードを作成して登録するために必要な定型コードは次のとおりです。</p>
 
-<pre><code class="language-js">
+<pre><code class="language-js">import { Node } from '@tiptap/core'
+
 const CustomNode = Node.create({
   // Your code here
 })
@@ -5209,7 +5411,8 @@ CodeBlock 拡張機能にはスタイリングが付属しておらず、構文�
 <h3>lowlight</h3>
 
 <p>この拡張機能に <code>lowlight</code> モジュールを提供する必要があります。 <code>lowlight</code> パッケージを拡張機能から切り離すことで、クライアントアプリケーションは、使用する lowlight のバージョンと、ロードする必要のあるプログラミング言語パッケージを制御できます。</p>
-<pre><code class="language-js">
+<pre><code class="language-js">import { lowlight } from 'lowlight/lib/core'
+
 CodeBlockLowlight.configure({
   lowlight,
 })
@@ -6829,7 +7032,8 @@ editor.commands.toggleLink({ href: 'https://example.com', target: '_blank' })
 <h2>新しい拡張機能を作成します</h2>
 <p>Tiptap 用の独自の拡張機能を自由に作成できます。独自の拡張機能を作成して登録するために必要な定型コードは次のとおりです。</p>
 
-<pre><code class="language-js">
+<pre><code class="language-js">import { Extension } from '@tiptap/core'
+
 const CustomExtension = Extension.create({
   // Your code here
 })
@@ -6875,7 +7079,9 @@ const editor = new Editor({
 <p><a href="https://github.com/ueberdosis/tiptap/blob/main/packages/extension-bubble-menu/">packages/extension-bubble-menu/</a></p>
 <h2>Usage</h2>
 <h3>JavaScript</h3>
-<pre><code class="language-js">
+<pre><code class="language-js">import { Editor } from '@tiptap/core'
+import BubbleMenu from '@tiptap/extension-bubble-menu'
+
 new Editor({
   extensions: [
     BubbleMenu.configure({
@@ -6897,7 +7103,9 @@ new Editor({
 </code></pre>
 <h3>Multiple menus</h3>
 <p>Use multiple menus by setting an unique <code>pluginKey</code>.</p>
-<pre><code class="language-js">
+<pre><code class="language-js">import { Editor } from '@tiptap/core'
+import BubbleMenu from '@tiptap/extension-bubble-menu'
+
 new Editor({
   extensions: [
     BubbleMenu.configure({
@@ -6912,7 +7120,10 @@ new Editor({
 })
 </code></pre>
 <p>Alternatively you can pass a ProseMirror <code>PluginKey</code>.</p>
-<pre><code class="language-js">
+<pre><code class="language-js">import { Editor } from '@tiptap/core'
+import BubbleMenu from '@tiptap/extension-bubble-menu'
+import { PluginKey } from 'prosemirror-state'
+
 new Editor({
   extensions: [
     BubbleMenu.configure({
@@ -7212,7 +7423,9 @@ editor.storage.characterCount.words({ node: someCustomNode })
 <h2>ソースコード</h2>
 <p><a href="https://github.com/ueberdosis/tiptap/blob/main/packages/extension-floating-menu/">packages/extension-floating-menu/</a></p>
 <h2>Vanilla JavaScript の使用</h2>
-<pre><code class="language-js">
+<pre><code class="language-js">import { Editor } from '@tiptap/core'
+import FloatingMenu from '@tiptap/extension-floating-menu'
+
 new Editor({
   extensions: [
     FloatingMenu.configure({
@@ -7236,7 +7449,9 @@ new Editor({
 <h3>複数のメニュー</h3>
 
 <p>一意の <code>pluginKey</code> を設定して、複数のメニューを使用します。</p>
-<pre><code class="language-js">
+<pre><code class="language-js">import { Editor } from '@tiptap/core'
+import FloatingMenu from '@tiptap/extension-floating-menu'
+
 new Editor({
   extensions: [
     FloatingMenu.configure({
@@ -7252,7 +7467,10 @@ new Editor({
 </code></pre>
 
 <p>または、ProseMirror <code>PluginKey</code> を渡すこともできます。</p>
-<pre><code class="language-js">
+<pre><code class="language-js">import { Editor } from '@tiptap/core'
+import FloatingMenu from '@tiptap/extension-floating-menu'
+import { PluginKey } from 'prosemirror-state'
+
 new Editor({
   extensions: [
     FloatingMenu.configure({
@@ -7557,7 +7775,9 @@ new Editor({
 <h2>使い方</h2>
 
 <p><code>StarterKit</code> をエディタに渡して、含まれているすべての拡張機能を一度にロードします。</p>
-<pre><code class="language-js">
+<pre><code class="language-js">import { Editor } from '@tiptap/core'
+import StarterKit from '@tiptap/starter-kit'
+
 const editor = new Editor({
   content: '&lt;p&gt;Example Text&lt;/p&gt;',
   extensions: [
@@ -7567,7 +7787,9 @@ const editor = new Editor({
 </code></pre>
 
 <p>以下に示すように、含まれている拡張機能を構成したり、いくつかの拡張機能を無効にしたりすることもできます。</p>
-<pre><code class="language-js">
+<pre><code class="language-js">import { Editor } from '@tiptap/core'
+import StarterKit from '@tiptap/starter-kit'
+
 const editor = new Editor({
   content: '&lt;p&gt;Example Text&lt;/p&gt;',
   extensions: [
@@ -7795,7 +8017,9 @@ const editor = new Editor({
 <h3>ルールの無効化</h3>
 
 <p>以下に示すように、含まれているルールを構成したり、いくつかのルールを無効にしたりすることもできます。</p>
-<pre><code class="language-js">
+<pre><code class="language-js">import { Editor } from '@tiptap/core'
+import Typography from '@tiptap/extension-typography'
+
 const editor = new Editor({
   extensions: [
     // Disable some included rules
@@ -8152,6 +8376,7 @@ const editor = new Editor({
 <p>Mac では <code>Cmd</code>、その他のプラットフォームでは <code>Control</code> の省略形として <code>Mod</code> を使用できます。</p>
 <p>既存の拡張機能のキーボードショートカットを上書きする方法の例を次に示します。</p>
 <pre><code class="language-js">// 1. Import the extension
+import BulletList from '@tiptap/extension-bullet-list'
 
 // 2. Overwrite the keyboard shortcuts
 const CustomBulletList = BulletList.extend({
@@ -8205,6 +8430,7 @@ new Editor({
 <p>ここで3つのノードを登録します。<code>doc</code>、<code>paragraph</code> および <code>text</code>。<code>doc</code> は、1つ以上のブロックノードを子として許可するルートノードです（<code>content: 'block+'</code>）。<code>paragraph</code> はブロックノードのグループ（<code>group: 'block'</code>）にあるため、ドキュメントには段落のみを含めることができます。私たちの段落では、0個以上のインラインノードを子として許可しているため（<code>content: 'inline*'</code>）、その中には <code>text</code> しか含めることができません。<code>parseDOM</code> は、貼り付けられた HTML からノードを解析する方法を定義します。<code>toDOM</code> は、DOM でのレンダリング方法を定義します。</p>
 <p>Tiptapでは、すべてのノード、マーク、および拡張子が独自のファイルに存在します。これにより、ロジックを分割できます。内部的には、スキーマ全体がマージされます。</p>
 <pre><code class="language-js">// the Tiptap schema API
+import { Node } from '@tiptap/core'
 
 const Document = Node.create({
   name: 'doc',
@@ -8429,7 +8655,11 @@ renderText({ node }) {
 <h3>オプション1：エディターを使用</h3>
 <p>クライアント側でこれが必要で、とにかくエディタインスタンスが必要な場合は、エディタから利用できます。</p>
 
-<pre><code class="language-js">
+<pre><code class="language-js">import { Editor } from '@tiptap/core'
+import Document from '@tiptap/extension-document'
+import Paragraph from '@tiptap/extension-paragraph'
+import Text from '@tiptap/extension-text'
+
 const editor = new Editor({
   extensions: [
     Document,
@@ -8444,7 +8674,11 @@ const schema = editor.schema
 <h3>オプション2：エディターなし</h3>
 <p>実際のエディターを初期化せずにスキーマを作成したいだけの場合は、<code>getSchema</code> ヘルパー関数を使用できます。利用可能な拡張機能の配列が必要であり、ProseMirror スキーマを便利に生成します。</p>
 
-<pre><code class="language-js">
+<pre><code class="language-js">import { getSchema } from '@tiptap/core'
+import Document from '@tiptap/extension-document'
+import Paragraph from '@tiptap/extension-paragraph'
+import Text from '@tiptap/extension-text'
+
 const schema = getSchema([
   Document,
   Paragraph,
@@ -8566,7 +8800,8 @@ editor.off('update', onUpdate)
 <h3>Option 3: 拡張機能</h3>
 
 <p>イベントリスナーをカスタム拡張機能（またはノード、またはマーク）に移動することも可能です。これは次のようになります。</p>
-<pre><code class="language-js">
+<pre><code class="language-js">import { Extension } from '@tiptap/core'
+
 const CustomExtension = Extension.create({
   onBeforeCreate({ editor }) {
     // Before the view is created.
@@ -8594,3 +8829,7 @@ const CustomExtension = Extension.create({
   },
 })
 </code></pre>
+
+        </div>
+    </body>
+</html>
