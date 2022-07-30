@@ -262,11 +262,11 @@ export default () => ({ commands }) => {
 | keyboardShortcut()   | キーボードショートカットをトリガー | [詳細](/api/commands/keyboard-shortcut)  |
 | scrollIntoView()     | ビューへ選択をスクロール | [詳細](/api/commands/scroll-into-view)  |
 | selectAll()          | ドキュメントすべてを選択 | [詳細](/api/commands/select-all)  |
-| selectNodeBackward() | Select a node backward.                 | [詳細](/api/commands/select-node-backward)  |
-| selectNodeForward()  | Select a node forward.                  | [詳細](/api/commands/select-node-forward)  |
-| selectParentNode()   | Select the parent node.                 | [詳細](/api/commands/select-parent-node)  |
-| setNodeSelection()   | Creates a NodeSelection.                | [詳細](/api/commands/set-node-selection)  |
-| setTextSelection()   | Creates a TextSelection.                | [詳細](/api/commands/set-text-selection)  |
+| selectNodeBackward() | ノードを後方に選択 | [詳細](/api/commands/select-node-backward)  |
+| selectNodeForward()  | 前方のノードを選択  | [詳細](/api/commands/select-node-forward)  |
+| selectParentNode()   | 親ノードを選択 | [詳細](/api/commands/select-parent-node)  |
+| setNodeSelection()   | NodeSelection を作成 | [詳細](/api/commands/set-node-selection)  |
+| setTextSelection()   | TextSelection を作成 | [詳細](/api/commands/set-text-selection)  |
 
 <!-- ## Example use cases
 
@@ -344,6 +344,3 @@ Tiptap は世界中の何千もの開発者によって使用されています�
 それらに参加してスポンサーになりましょう！ オープンソースにより多くの時間を費やせるようにしてください。このページに記入して、最新の状態に保ちます。
 
 [GitHub でスポンサーになる →](https://github.com/sponsors/ueberdosis)
-:::
-
-

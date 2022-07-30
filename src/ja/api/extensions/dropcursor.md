@@ -8,9 +8,13 @@ icon: drag-drop-line
 [![Version](https://img.shields.io/npm/v/@tiptap/extension-dropcursor.svg?label=version)](https://www.npmjs.com/package/@tiptap/extension-dropcursor)
 [![Downloads](https://img.shields.io/npm/dm/@tiptap/extension-dropcursor.svg)](https://npmcharts.com/compare/@tiptap/extension-dropcursor?minimal=true)
 
-This extension loads the [ProseMirror Dropcursor plugin](https://github.com/ProseMirror/prosemirror-dropcursor) by Marijn Haverbeke, which shows a cursor at the drop position when something is dragged into the editor.
+<!-- This extension loads the [ProseMirror Dropcursor plugin](https://github.com/ProseMirror/prosemirror-dropcursor) by Marijn Haverbeke, which shows a cursor at the drop position when something is dragged into the editor. -->
 
-Note that Tiptap is headless, but the dropcursor needs CSS for its appearance. There are settings for the color and width, and you’re free to add a custom CSS class.
+この拡張機能は、Marijn Haverbeke による [ProseMirror Dropcursor プラグイン](https://github.com/ProseMirror/prosemirror-dropcursor) を読み込みます。これは、エディターに何かをドラッグすると、ドロップ位置にカーソルを表示します。
+
+<!-- Note that Tiptap is headless, but the dropcursor needs CSS for its appearance. There are settings for the color and width, and you’re free to add a custom CSS class. -->
+
+Tiptap はヘッドレスですが、ドロップカーソルの外観には CSS が必要です。 色と幅の設定があり、カスタム CSS クラスを自由に追加できます。
 
 ## インストール
 
