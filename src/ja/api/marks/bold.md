@@ -16,9 +16,9 @@ icon: bold
 
 `** twoasterisks**` または `__twounderlines__` と入力すると、入力中に魔法のように **太字** のテキストに変換されます。
 
-::: warning Restrictions
+<!-- ::: warning Restrictions
 The extension will generate the corresponding `<strong>` HTML tags when reading contents of the `Editor` instance. All text marked bold, regardless of the method will be normalized to `<strong>` HTML tags.
-:::
+::: -->
 
 > **警告** ： 制限
 拡張機能は、`Editor` インスタンスのコンテンツを読み取るときに対応する `<strong>` HTMLタグを生成します。メソッドに関係なく、太字でマークされたすべてのテキストは、`<strong>`HTML タグに正規化されます。

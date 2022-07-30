@@ -10,7 +10,7 @@ icon: space
 
 <!-- This extension loads the [ProseMirror Gapcursor plugin](https://github.com/ProseMirror/prosemirror-gapcursor) by Marijn Haverbeke, which adds a gap for the cursor in places that don’t allow regular selection. For example, after a table at the end of a document. -->
 
-Note that Tiptap is headless, but the gapcursor needs CSS for its appearance. The [default CSS](https://github.com/ueberdosis/tiptap/tree/main/packages/core/src/style.ts) is loaded through the Editor class.
+<!-- Note that Tiptap is headless, but the gapcursor needs CSS for its appearance. The [default CSS](https://github.com/ueberdosis/tiptap/tree/main/packages/core/src/style.ts) is loaded through the Editor class. -->
 
 この拡張機能は、Marijn Haverbeke による[ProseMirrorGapcursor プラグイン](https://github.com/ProseMirror/prosemirror-gapcursor) をロードします。これにより、通常の選択ができない場所にカーソルのギャップが追加されます。たとえば、ドキュメントの最後にあるテーブルの後などです。
 

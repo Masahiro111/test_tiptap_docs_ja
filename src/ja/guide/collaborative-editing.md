@@ -139,7 +139,7 @@ const editor = new Editor({
 })
 ```
 
-This example doesn’t work out of the box. As you can see, it’s configured to talk to a WebSocket server which is available under `ws://127.0.0.1:1234` (WebSocket protocol `ws://`, your local IP `127.0.0.1` and the port `1234`). You need to set this up, too.
+<!-- This example doesn’t work out of the box. As you can see, it’s configured to talk to a WebSocket server which is available under `ws://127.0.0.1:1234` (WebSocket protocol `ws://`, your local IP `127.0.0.1` and the port `1234`). You need to set this up, too. -->
 
 この例は、そのままでは機能しません。ご覧のとおり、`ws://127.0.0.1:1234`（WebSocketプロトコル `ws://`、ローカルIP `127.0.0.1`、`1234` ポートで利用可能なWebSocketサーバーと通信するように構成されています）。これも設定する必要があります。
 
@@ -292,15 +292,15 @@ const editor = new Editor({
 
 コラボ編集バックエンドは、同期、承認、永続性、スケーリングを処理します。ここでは、いくつかの一般的な使用例を見ていきましょう。
 
-> 警告早期アクセスをリクエストする
-> プラグアンドプレイコラボレーションバックエンド hocuspocus はまだ進行中です。試してみたい場合は、[早期アクセスを取得](https://www.hocuspocus.dev) してください。
-：：：
+> **警告**：早期アクセスをリクエストする
+プラグアンドプレイコラボレーションバックエンド hocuspocus はまだ進行中です。試してみたい場合は、[早期アクセスを取得](https://www.hocuspocus.dev) してください。
 
 <!-- Our collaborative editing backend handles the syncing, authorization, persistence and scaling. Let’s go through a few common use cases here! -->
 
 <!-- :::warning Request early access -->
 <!-- Our plug & play collaboration backend hocuspocus is still work in progress. If you want to give it a try, [get early access](https://www.hocuspocus.dev). -->
-:::
+<!-- ::: -->
+
 
 ### ドキュメント名
 

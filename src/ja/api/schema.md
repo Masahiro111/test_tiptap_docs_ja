@@ -84,7 +84,7 @@ const Text = Node.create({
 
 ## ノードとマーク
 
-### 違い
+### ノードとマークの違い
 
 <!-- Nodes are like blocks of content, for example paragraphs, headings, code blocks, blockquotes and many more. -->
 

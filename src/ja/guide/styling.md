@@ -6,7 +6,7 @@ tableOfContents: true
 
 ## はじめに
 
-tiptap is headless, that means there is no styling provided. That also means, you are in full control of how your editor looks. The following methods allow you to apply custom styles to the editor.
+<!-- tiptap is headless, that means there is no styling provided. That also means, you are in full control of how your editor looks. The following methods allow you to apply custom styles to the editor. -->
 
 Tiptap はヘッドレスです。つまり、スタイリングは提供されません。これは、エディターの外観を完全に制御できることも意味します。次のメソッドを使用すると、カスタムスタイルをエディターに適用できます。
 

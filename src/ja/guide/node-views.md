@@ -109,7 +109,7 @@ Statamic は、Bard エディターにそれらを使用します。これは、
 That doesn’t apply to JSON. In JSON, everything is stored as an object. There is no need to configure the “translation” to and from HTML.
 ::: -->
 
-> **警告 JSONを保存するとどうなりますか？**
+> **警告**：JSONを保存するとどうなりますか？
 これはJSONには適用されません。 JSONでは、すべてがオブジェクトとして保存されます。 HTMLとの間の「変換」を構成する必要はありません。
 
 ### HTMLをレンダリングする

@@ -1014,18 +1014,18 @@ window.setupEditor = function (content) {
 
 
 <p>まず、Tiptap v1 はサポートされなくなり、それ以上のアップデートは受信されなくなります。</p>
-<p>お気に入りのテキストエディタを新しいAPIにアップグレードするのは面倒な作業ですが、最新バージョンにアップグレードする十分な理由があることを確認しました。</p>
+<p>お気に入りのテキストエディタを新しい API にアップグレードするのは面倒な作業ですが、最新バージョンにアップグレードする十分な理由があることを確認しました。</p>
 
 <ul>
-<li>IDEでのオートコンプリート（TypeScriptのおかげで）</li>
-<li>100以上のページと100以上のインタラクティブな例を含むすばらしいドキュメント</li>
+<li>IDE でのオートコンプリート（ TypeScript のおかげで）</li>
+<li>100 以上のページと 100 以上のインタラクティブな例を含むすばらしいドキュメント</li>
 <li>活発な開発、作成中の新機能、毎週の新リリース</li>
 <li>たくさんの新しい拡張機能</li>
 <li>十分にテストされたコードベース</li>
 </ul>
 
 <p>新しい API は見覚えがありますが、多くの変更があります。アップグレードを少し簡単にするために、知っておく必要のあるすべてがここにあります。</p>
-<h2>Tiptap v1をアンインストールします</h2>
+<h2>Tiptap v1 をアンインストールします</h2>
 
 
 <p>パッケージ構造全体が変更され、別の npm 名前空間に移動したため、Tiptap 2 にアップグレードする前に古いバージョンを完全に削除する必要があります。</p>
@@ -1451,9 +1451,7 @@ React · Remirror · Remote · Amsterdam, Netherlands</p>
 <p><a href="https://embed.tiptap.dev/preview/Examples/CollaborativeEditing">https://embed.tiptap.dev/preview/Examples/CollaborativeEditing</a></p>
 <h2>バックエンド</h2>
 
-<p>:::warning Request early access
-Our plug &amp; play collaboration backend hocuspocus is still work in progress. If you want to give it a try, <a href="https://www.hocuspocus.dev">get early access</a>.
-:::</p>
+
 <p>これを実現するためにサーバーにどのような種類のソーサリーが必要か疑問に思われる場合は、デモのバックエンドコード全体を次に示します。</p>
 <blockquote>
 <p>警告早期アクセスをリクエストする
@@ -1766,7 +1764,7 @@ new Editor({
 </ul>
 <h1>スタイリング</h1>
 <h2>はじめに</h2>
-<p>tiptap is headless, that means there is no styling provided. That also means, you are in full control of how your editor looks. The following methods allow you to apply custom styles to the editor.</p>
+
 <p>Tiptap はヘッドレスです。つまり、スタイリングは提供されません。これは、エディターの外観を完全に制御できることも意味します。次のメソッドを使用すると、カスタムスタイルをエディターに適用できます。</p>
 <h2>オプション1：プレーンHTMLのスタイルを設定する</h2>
 
@@ -1984,15 +1982,52 @@ Tiptap を維持、更新、サポート、開発するには、あなたのサ�
 <p>オプションのライティング支援は、たとえば見出しレベルの誤った使用法を指摘するなど、意味的に正しいコンテンツを書く人々を助けることができます。コア開発者が提供するこの種の支援により、多くのアプリケーションのコンテンツを改善するのに役立つ可能性があります。</p>
 
 <h2>資力</h2>
-<p>|ドキュメント|セクション|見出し|
-| -------- | ------- | -------------------------------------------------- ------------------------------------ |
-| WCAG 3.0 | 7.1 | <a href="https://www.w3.org/TR/wcag-3.0/#text-alternatives">代替テキスト</a>|
-| WCAG 2.1 | 1.1.1 | <a href="https://www.w3.org/WAI/WCAG21/Understanding/non-text-content">非テキストコンテンツ</a>|
-| WCAG 2.1 | 2.1 | <a href="https://www.w3.org/WAI/WCAG21/Understanding/keyboard-accessible">キーボードアクセス可能</a>|
-| WCAG 2.1 | 2.1.1 | <a href="https://www.w3.org/WAI/WCAG21/Understanding/keyboard">キーボード</a>|
-| WCAG 2.1 | 4.1.1 | <a href="https://www.w3.org/WAI/WCAG21/Understanding/parsing">解析</a>|
-| WCAG 2.1 | 4.1.2 | <a href="https://www.w3.org/WAI/WCAG21/Understanding/name-role-value">名前、役割、価値</a>|
-| WCAG 2.1 | 2.1.2 | <a href="https://www.w3.org/TR/WCAG21/#no-keyboard-trap">キーボードトラップなし</a>|</p>
+<table>
+<thead>
+<tr>
+<th>ドキュメント</th>
+<th>セクション</th>
+<th>見出し</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WCAG 3.0</td>
+<td>7.1</td>
+<td><a href="https://www.w3.org/TR/wcag-3.0/#text-alternatives">代替テキスト</a></td>
+</tr>
+<tr>
+<td>WCAG 2.1</td>
+<td>1.1.1</td>
+<td><a href="https://www.w3.org/WAI/WCAG21/Understanding/non-text-content">非テキストコンテンツ</a></td>
+</tr>
+<tr>
+<td>WCAG 2.1</td>
+<td>2.1</td>
+<td><a href="https://www.w3.org/WAI/WCAG21/Understanding/keyboard-accessible">キーボードアクセス可能</a></td>
+</tr>
+<tr>
+<td>WCAG 2.1</td>
+<td>2.1.1</td>
+<td><a href="https://www.w3.org/WAI/WCAG21/Understanding/keyboard">キーボード</a></td>
+</tr>
+<tr>
+<td>WCAG 2.1</td>
+<td>4.1.1</td>
+<td><a href="https://www.w3.org/WAI/WCAG21/Understanding/parsing">解析</a></td>
+</tr>
+<tr>
+<td>WCAG 2.1</td>
+<td>4.1.2</td>
+<td><a href="https://www.w3.org/WAI/WCAG21/Understanding/name-role-value">名前、役割、価値</a></td>
+</tr>
+<tr>
+<td>WCAG 2.1</td>
+<td>2.1.2</td>
+<td><a href="https://www.w3.org/TR/WCAG21/#no-keyboard-trap">キーボードトラップなし</a></td>
+</tr>
+</tbody>
+</table>
 <p>TODO：WCAG3.0を指すようにリソースを更新します <a href="https://www.w3.org/TR/wcag-3.0/">https://www.w3.org/TR/wcag-3.0/</a></p>
 <p>ここに追加する必要があるものはありますか？ <a href="mailto:humans@tiptap.dev">お知らせください</a>、それを考慮に入れることができます。</p>
 <h1>コラボ編集</h1>
@@ -2088,7 +2123,7 @@ const editor = new Editor({
   ],
 })
 </code></pre>
-<p>This example doesn’t work out of the box. As you can see, it’s configured to talk to a WebSocket server which is available under <code>ws://127.0.0.1:1234</code> (WebSocket protocol <code>ws://</code>, your local IP <code>127.0.0.1</code> and the port <code>1234</code>). You need to set this up, too.</p>
+
 <p>この例は、そのままでは機能しません。ご覧のとおり、<code>ws://127.0.0.1:1234</code>（WebSocketプロトコル <code>ws://</code>、ローカルIP <code>127.0.0.1</code>、<code>1234</code> ポートで利用可能なWebSocketサーバーと通信するように構成されています）。これも設定する必要があります。</p>
 <h4>WebSocket バックエンド</h4>
 <p>サーバー部分をできるだけ簡単にするために、<a href="http://hocuspocus.dev/">Hocuspocusと呼ばれる意見のあるサーバーパッケージ</a> を提供しています（現在、スポンサーとサブスクライバーのみが利用できます）。これは柔軟なNode.jsパッケージであり、カスタムバックエンドの構築に使用できます。</p>
@@ -2201,7 +2236,7 @@ const editor = new Editor({
 
 
 
-<p>:::</p>
+
 <h3>ドキュメント名</h3>
 <p>ドキュメント名は、ここにあるすべての例で <code>'example-document'</code> ですが、任意の文字列にすることができます。実際のアプリでは、エンティティの名前とエンティティの ID を追加する可能性があります。これがどのように見えるかです。</p>
 

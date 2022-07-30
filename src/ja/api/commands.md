@@ -256,12 +256,12 @@ export default () => ({ commands }) => {
 | --------------------- | --------------------------------------- | ------------------------------------ |
 | blur()               | エディターからフォーカスを削除 | [詳細](/api/commands/blur)  |
 | deleteRange()        | 指定された範囲を削除 | [詳細](/api/commands/delete-range)  |
-| deleteSelection()    | Delete the selection, if there is one.  | [詳細](/api/commands/delete-selection)  |
-| enter()              | Trigger enter.                          | [詳細](/api/commands/enter)  |
-| focus()              | Focus the editor at the given position. | [詳細](/api/commands/focus)  |
-| keyboardShortcut()   | Trigger a keyboard shortcut.            | [詳細](/api/commands/keyboard-shortcut)  |
-| scrollIntoView()     | Scroll the selection into view.         | [詳細](/api/commands/scroll-into-view)  |
-| selectAll()          | Select the whole document.              | [詳細](/api/commands/select-all)  |
+| deleteSelection()    | 選択いる箇所がある場合、選択を削除  | [詳細](/api/commands/delete-selection)  |
+| enter()              | エンターキーをトリガー  | [詳細](/api/commands/enter)  |
+| focus()              | 与えられたポジションのエディターにフォーカス | [詳細](/api/commands/focus)  |
+| keyboardShortcut()   | キーボードショートカットをトリガー | [詳細](/api/commands/keyboard-shortcut)  |
+| scrollIntoView()     | ビューへ選択をスクロール | [詳細](/api/commands/scroll-into-view)  |
+| selectAll()          | ドキュメントすべてを選択 | [詳細](/api/commands/select-all)  |
 | selectNodeBackward() | Select a node backward.                 | [詳細](/api/commands/select-node-backward)  |
 | selectNodeForward()  | Select a node forward.                  | [詳細](/api/commands/select-node-forward)  |
 | selectParentNode()   | Select the parent node.                 | [詳細](/api/commands/select-parent-node)  |

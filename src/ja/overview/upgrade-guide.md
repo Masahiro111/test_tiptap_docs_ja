@@ -12,7 +12,7 @@ tableOfContents: true
 
 まず、Tiptap v1 はサポートされなくなり、それ以上のアップデートは受信されなくなります。
 
-お気に入りのテキストエディタを新しいAPIにアップグレードするのは面倒な作業ですが、最新バージョンにアップグレードする十分な理由があることを確認しました。
+お気に入りのテキストエディタを新しい API にアップグレードするのは面倒な作業ですが、最新バージョンにアップグレードする十分な理由があることを確認しました。
 
 <!-- * Autocompletion in your IDE (thanks to TypeScript)
 * Amazing documentation with 100+ pages and 100+ interactive examples
@@ -20,8 +20,8 @@ tableOfContents: true
 * Tons of new extensions
 * Well-tested code base -->
 
-* IDEでのオートコンプリート（TypeScriptのおかげで）
-* 100以上のページと100以上のインタラクティブな例を含むすばらしいドキュメント
+* IDE でのオートコンプリート（ TypeScript のおかげで）
+* 100 以上のページと 100 以上のインタラクティブな例を含むすばらしいドキュメント
 * 活発な開発、作成中の新機能、毎週の新リリース
 * たくさんの新しい拡張機能
 * 十分にテストされたコードベース
@@ -30,7 +30,7 @@ tableOfContents: true
 
 新しい API は見覚えがありますが、多くの変更があります。アップグレードを少し簡単にするために、知っておく必要のあるすべてがここにあります。
 
-## Tiptap v1をアンインストールします
+## Tiptap v1 をアンインストールします
 
 <!-- The whole package structure has changed, we even moved to another npm namespace, so you’ll need to remove the old version entirely before upgrading to Tiptap 2. -->
 

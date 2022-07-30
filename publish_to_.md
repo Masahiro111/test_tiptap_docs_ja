@@ -1291,7 +1291,7 @@ window.setupEditor = function (content) {
 
 まず、Tiptap v1 はサポートされなくなり、それ以上のアップデートは受信されなくなります。
 
-お気に入りのテキストエディタを新しいAPIにアップグレードするのは面倒な作業ですが、最新バージョンにアップグレードする十分な理由があることを確認しました。
+お気に入りのテキストエディタを新しい API にアップグレードするのは面倒な作業ですが、最新バージョンにアップグレードする十分な理由があることを確認しました。
 
 <!-- * Autocompletion in your IDE (thanks to TypeScript)
 * Amazing documentation with 100+ pages and 100+ interactive examples
@@ -1299,8 +1299,8 @@ window.setupEditor = function (content) {
 * Tons of new extensions
 * Well-tested code base -->
 
-* IDEでのオートコンプリート（TypeScriptのおかげで）
-* 100以上のページと100以上のインタラクティブな例を含むすばらしいドキュメント
+* IDE でのオートコンプリート（ TypeScript のおかげで）
+* 100 以上のページと 100 以上のインタラクティブな例を含むすばらしいドキュメント
 * 活発な開発、作成中の新機能、毎週の新リリース
 * たくさんの新しい拡張機能
 * 十分にテストされたコードベース
@@ -1309,7 +1309,7 @@ window.setupEditor = function (content) {
 
 新しい API は見覚えがありますが、多くの変更があります。アップグレードを少し簡単にするために、知っておく必要のあるすべてがここにあります。
 
-## Tiptap v1をアンインストールします
+## Tiptap v1 をアンインストールします
 
 <!-- The whole package structure has changed, we even moved to another npm namespace, so you’ll need to remove the old version entirely before upgrading to Tiptap 2. -->
 
@@ -1770,9 +1770,9 @@ https://embed.tiptap.dev/preview/Examples/CollaborativeEditing
 
 <!-- In case you’re wondering what kind of sorcery you need on the server to achieve this, here is the whole backend code for the demo: -->
 
-:::warning Request early access
+<!-- :::warning Request early access
 Our plug & play collaboration backend hocuspocus is still work in progress. If you want to give it a try, [get early access](https://www.hocuspocus.dev).
-:::
+::: -->
 
 これを実現するためにサーバーにどのような種類のソーサリーが必要か疑問に思われる場合は、デモのバックエンドコード全体を次に示します。
 
@@ -2253,7 +2253,7 @@ This section needs some work. Do you know what else needs to be taken into accou
 
 ## はじめに
 
-tiptap is headless, that means there is no styling provided. That also means, you are in full control of how your editor looks. The following methods allow you to apply custom styles to the editor.
+<!-- tiptap is headless, that means there is no styling provided. That also means, you are in full control of how your editor looks. The following methods allow you to apply custom styles to the editor. -->
 
 Tiptap はヘッドレスです。つまり、スタイリングは提供されません。これは、エディターの外観を完全に制御できることも意味します。次のメソッドを使用すると、カスタムスタイルをエディターに適用できます。
 
@@ -2623,7 +2623,7 @@ Tiptap を誰もが利用できるように努めていますが、正直なと�
 ## 資力
 
 |ドキュメント|セクション|見出し|
-| -------- | ------- | -------------------------------------------------- ------------------------------------ |
+| --- | --- | --- |
 | WCAG 3.0 | 7.1 | [代替テキスト](https://www.w3.org/TR/wcag-3.0/#text-alternatives)|
 | WCAG 2.1 | 1.1.1 | [非テキストコンテンツ](https://www.w3.org/WAI/WCAG21/Understanding/non-text-content)|
 | WCAG 2.1 | 2.1 | [キーボードアクセス可能](https://www.w3.org/WAI/WCAG21/Understanding/keyboard-accessible)|
@@ -2776,7 +2776,7 @@ const editor = new Editor({
 })
 ```
 
-This example doesn’t work out of the box. As you can see, it’s configured to talk to a WebSocket server which is available under `ws://127.0.0.1:1234` (WebSocket protocol `ws://`, your local IP `127.0.0.1` and the port `1234`). You need to set this up, too.
+<!-- This example doesn’t work out of the box. As you can see, it’s configured to talk to a WebSocket server which is available under `ws://127.0.0.1:1234` (WebSocket protocol `ws://`, your local IP `127.0.0.1` and the port `1234`). You need to set this up, too. -->
 
 この例は、そのままでは機能しません。ご覧のとおり、`ws://127.0.0.1:1234`（WebSocketプロトコル `ws://`、ローカルIP `127.0.0.1`、`1234` ポートで利用可能なWebSocketサーバーと通信するように構成されています）。これも設定する必要があります。
 
@@ -2937,7 +2937,8 @@ const editor = new Editor({
 
 <!-- :::warning Request early access -->
 <!-- Our plug & play collaboration backend hocuspocus is still work in progress. If you want to give it a try, [get early access](https://www.hocuspocus.dev). -->
-:::
+<!-- ::: -->
+
 
 ### ドキュメント名
 

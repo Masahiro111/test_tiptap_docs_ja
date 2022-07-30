@@ -61,7 +61,7 @@ tableOfContents: true
 エディターが破棄されたとき
 
 
-## Register event listeners
+## イベントリスナを登録
 
 <!-- There are three ways to register event listeners. -->
 
