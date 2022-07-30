@@ -2929,9 +2929,8 @@ const editor = new Editor({
 
 コラボ編集バックエンドは、同期、承認、永続性、スケーリングを処理します。ここでは、いくつかの一般的な使用例を見ていきましょう。
 
-> 警告早期アクセスをリクエストする
-> プラグアンドプレイコラボレーションバックエンド hocuspocus はまだ進行中です。試してみたい場合は、[早期アクセスを取得](https://www.hocuspocus.dev) してください。
-：：：
+> **警告**：早期アクセスをリクエストする
+プラグアンドプレイコラボレーションバックエンド hocuspocus はまだ進行中です。試してみたい場合は、[早期アクセスを取得](https://www.hocuspocus.dev) してください。
 
 <!-- Our collaborative editing backend handles the syncing, authorization, persistence and scaling. Let’s go through a few common use cases here! -->
 
@@ -3977,7 +3976,7 @@ Statamic は、Bard エディターにそれらを使用します。これは、
 That doesn’t apply to JSON. In JSON, everything is stored as an object. There is no need to configure the “translation” to and from HTML.
 ::: -->
 
-> **警告 JSONを保存するとどうなりますか？**
+> **警告**：JSONを保存するとどうなりますか？
 これはJSONには適用されません。 JSONでは、すべてがオブジェクトとして保存されます。 HTMLとの間の「変換」を構成する必要はありません。
 
 ### HTMLをレンダリングする
@@ -5649,17 +5648,17 @@ export default () => ({ commands }) => {
 | --------------------- | --------------------------------------- | ------------------------------------ |
 | blur()               | エディターからフォーカスを削除 | [詳細](/api/commands/blur)  |
 | deleteRange()        | 指定された範囲を削除 | [詳細](/api/commands/delete-range)  |
-| deleteSelection()    | Delete the selection, if there is one.  | [詳細](/api/commands/delete-selection)  |
-| enter()              | Trigger enter.                          | [詳細](/api/commands/enter)  |
-| focus()              | Focus the editor at the given position. | [詳細](/api/commands/focus)  |
-| keyboardShortcut()   | Trigger a keyboard shortcut.            | [詳細](/api/commands/keyboard-shortcut)  |
-| scrollIntoView()     | Scroll the selection into view.         | [詳細](/api/commands/scroll-into-view)  |
-| selectAll()          | Select the whole document.              | [詳細](/api/commands/select-all)  |
-| selectNodeBackward() | Select a node backward.                 | [詳細](/api/commands/select-node-backward)  |
-| selectNodeForward()  | Select a node forward.                  | [詳細](/api/commands/select-node-forward)  |
-| selectParentNode()   | Select the parent node.                 | [詳細](/api/commands/select-parent-node)  |
-| setNodeSelection()   | Creates a NodeSelection.                | [詳細](/api/commands/set-node-selection)  |
-| setTextSelection()   | Creates a TextSelection.                | [詳細](/api/commands/set-text-selection)  |
+| deleteSelection()    | 選択いる箇所がある場合、選択を削除  | [詳細](/api/commands/delete-selection)  |
+| enter()              | エンターキーをトリガー  | [詳細](/api/commands/enter)  |
+| focus()              | 与えられたポジションのエディターにフォーカス | [詳細](/api/commands/focus)  |
+| keyboardShortcut()   | キーボードショートカットをトリガー | [詳細](/api/commands/keyboard-shortcut)  |
+| scrollIntoView()     | ビューへ選択をスクロール | [詳細](/api/commands/scroll-into-view)  |
+| selectAll()          | ドキュメントすべてを選択 | [詳細](/api/commands/select-all)  |
+| selectNodeBackward() | ノードを後方に選択 | [詳細](/api/commands/select-node-backward)  |
+| selectNodeForward()  | 前方のノードを選択  | [詳細](/api/commands/select-node-forward)  |
+| selectParentNode()   | 親ノードを選択 | [詳細](/api/commands/select-parent-node)  |
+| setNodeSelection()   | NodeSelection を作成 | [詳細](/api/commands/set-node-selection)  |
+| setTextSelection()   | TextSelection を作成 | [詳細](/api/commands/set-text-selection)  |
 
 <!-- ## Example use cases
 
@@ -5737,9 +5736,6 @@ Tiptap は世界中の何千もの開発者によって使用されています�
 それらに参加してスポンサーになりましょう！ オープンソースにより多くの時間を費やせるようにしてください。このページに記入して、最新の状態に保ちます。
 
 [GitHub でスポンサーになる →](https://github.com/sponsors/ueberdosis)
-:::
-
-
 
 # blur
 
@@ -8404,9 +8400,9 @@ https://embed.tiptap.dev/preview/Nodes/Text
 
 `** twoasterisks**` または `__twounderlines__` と入力すると、入力中に魔法のように **太字** のテキストに変換されます。
 
-::: warning Restrictions
+<!-- ::: warning Restrictions
 The extension will generate the corresponding `<strong>` HTML tags when reading contents of the `Editor` instance. All text marked bold, regardless of the method will be normalized to `<strong>` HTML tags.
-:::
+::: -->
 
 > **警告** ： 制限
 拡張機能は、`Editor` インスタンスのコンテンツを読み取るときに対応する `<strong>` HTMLタグを生成します。メソッドに関係なく、太字でマークされたすべてのテキストは、`<strong>`HTML タグに正規化されます。
@@ -9309,7 +9305,7 @@ https://embed.tiptap.dev/preview/Marks/Underline
 | [Placeholder](/api/extensions/placeholder)                  | –                                                | [GitHub](https://github.com/ueberdosis/tiptap/blob/main/packages/extension-placeholder/)          |
 | [StarterKit](/api/extensions/starter-kit)                   | –                                                | [GitHub](https://github.com/ueberdosis/tiptap/blob/main/packages/starter-kit/)                    |
 | [TextAlign](/api/extensions/text-align)                     | –                                                | [GitHub](https://github.com/ueberdosis/tiptap/blob/main/packages/extension-text-align/)           |
-| [UniqueID](/api/extensions/unique-id)                       | –                                                | Requires a Tiptap Pro subscription                                                                |
+| [UniqueID](/api/extensions/unique-id)                       | –                                                | Tiptap Pro の契約が必要  |
 | [Typography](/api/extensions/typography)                    | –                                                | [GitHub](https://github.com/ueberdosis/tiptap/blob/main/packages/extension-typography/)           |
 
 <!-- You don’t have to use it, but we prepared a `@tiptap/starter-kit` which includes the most common extensions. Read more about [`StarterKit`](/guide/configuration#default-extensions). -->
@@ -9366,21 +9362,27 @@ Learn [more about custom extensions in our guide](/guide/custom-extensions).
 [![Version](https://img.shields.io/npm/v/@tiptap/extension-bubble-menu.svg?label=version)](https://www.npmjs.com/package/@tiptap/extension-bubble-menu)
 [![Downloads](https://img.shields.io/npm/dm/@tiptap/extension-bubble-menu.svg)](https://npmcharts.com/compare/@tiptap/extension-bubble-menu?minimal=true)
 
-This extension will make a contextual menu appear near a selection of text. Use it to let users apply [marks](/api/marks) to their text selection.
+<!-- This extension will make a contextual menu appear near a selection of text. Use it to let users apply [marks](/api/marks) to their text selection. -->
 
-As always, the markup and styling is totally up to you.
+この拡張機能により、選択したテキストの近くにコンテキスト メニューが表示されます。これを使用して、ユーザーがテキスト選択に [marks](/api/marks) を適用できるようにします。
 
-## Installation
+<!-- As always, the markup and styling is totally up to you. -->
+
+いつものように、マークアップとスタイリングは完全にあなた次第です。
+
+## インストール
 
 ```bash
 npm install @tiptap/extension-bubble-menu
 ```
 
-## Settings
+## 設定
 
 ### element
 
-The DOM element that contains your menu.
+<!-- The DOM element that contains your menu. -->
+
+メニューを含む DOM 要素。
 
 Type: `HTMLElement`
 
@@ -9388,7 +9390,9 @@ Default: `null`
 
 ### tippyOptions
 
-Under the hood, the `BubbleMenu` uses [tippy.js](https://atomiks.github.io/tippyjs/v6/all-props/). You can directly pass options to it.
+<!-- Under the hood, the `BubbleMenu` uses [tippy.js](https://atomiks.github.io/tippyjs/v6/all-props/). You can directly pass options to it. -->
+
+内部では、`BubbleMenu` は [tippy.js](https://atomics.github.io/tippyjs/v6/all-props/) を使用します。オプションを直接渡すことができます。
 
 Type: `Object`
 
@@ -9396,7 +9400,9 @@ Default: `{}`
 
 ### pluginKey
 
-The key for the underlying ProseMirror plugin. Make sure to use different keys if you add more than one instance.
+<!-- The key for the underlying ProseMirror plugin. Make sure to use different keys if you add more than one instance. -->
+
+基盤となる ProseMirror プラグインのキー。複数のインスタンスを追加する場合は、必ず別のキーを使用してください。
 
 Type: `string | PluginKey`
 
@@ -9404,15 +9410,17 @@ Default: `'bubbleMenu'`
 
 ### shouldShow
 
-A callback to control whether the menu should be shown or not.
+<!-- A callback to control whether the menu should be shown or not. -->
+
+メニューを表示するかどうかを制御するコールバック。
 
 Type: `(props) => boolean`
 
-## Source code
+## ソースコード
 
 [packages/extension-bubble-menu/](https://github.com/ueberdosis/tiptap/blob/main/packages/extension-bubble-menu/)
 
-## Usage
+## 使用法
 
 ### JavaScript
 
@@ -9429,13 +9437,15 @@ new Editor({
 })
 ```
 
-### Frameworks
+### フレームワーク
 
 https://embed.tiptap.dev/preview/Extensions/BubbleMenu
 
-### Custom logic
+### カスタムロジック
 
-Customize the logic for showing the menu with the `shouldShow` option. For components, `shouldShow` can be passed as a prop.
+<!-- Customize the logic for showing the menu with the `shouldShow` option. For components, `shouldShow` can be passed as a prop. -->
+
+「shouldShow」オプションを使用して、メニューを表示するためのロジックをカスタマイズします。コンポーネントの場合、「shouldShow」を prop として渡すことができます。
 
 ```js
 BubbleMenu.configure({
@@ -9446,9 +9456,11 @@ BubbleMenu.configure({
 })
 ```
 
-### Multiple menus
+### 複数のメニュー
 
-Use multiple menus by setting an unique `pluginKey`.
+<!-- Use multiple menus by setting an unique `pluginKey`. -->
+
+一意の「pluginKey」を設定して、複数のメニューを使用します。
 
 ```js
 import { Editor } from '@tiptap/core'
@@ -9468,7 +9480,9 @@ new Editor({
 })
 ```
 
-Alternatively you can pass a ProseMirror `PluginKey`.
+<!-- Alternatively you can pass a ProseMirror `PluginKey`. -->
+
+または、ProseMirror `PluginKey` を渡すこともできます。
 
 ```js
 import { Editor } from '@tiptap/core'
@@ -9857,9 +9871,13 @@ https://embed.tiptap.dev/preview/Extensions/Color
 [![Version](https://img.shields.io/npm/v/@tiptap/extension-dropcursor.svg?label=version)](https://www.npmjs.com/package/@tiptap/extension-dropcursor)
 [![Downloads](https://img.shields.io/npm/dm/@tiptap/extension-dropcursor.svg)](https://npmcharts.com/compare/@tiptap/extension-dropcursor?minimal=true)
 
-This extension loads the [ProseMirror Dropcursor plugin](https://github.com/ProseMirror/prosemirror-dropcursor) by Marijn Haverbeke, which shows a cursor at the drop position when something is dragged into the editor.
+<!-- This extension loads the [ProseMirror Dropcursor plugin](https://github.com/ProseMirror/prosemirror-dropcursor) by Marijn Haverbeke, which shows a cursor at the drop position when something is dragged into the editor. -->
 
-Note that Tiptap is headless, but the dropcursor needs CSS for its appearance. There are settings for the color and width, and you’re free to add a custom CSS class.
+この拡張機能は、Marijn Haverbeke による [ProseMirror Dropcursor プラグイン](https://github.com/ProseMirror/prosemirror-dropcursor) を読み込みます。これは、エディターに何かをドラッグすると、ドロップ位置にカーソルを表示します。
+
+<!-- Note that Tiptap is headless, but the dropcursor needs CSS for its appearance. There are settings for the color and width, and you’re free to add a custom CSS class. -->
+
+Tiptap はヘッドレスですが、ドロップカーソルの外観には CSS が必要です。 色と幅の設定があり、カスタム CSS クラスを自由に追加できます。
 
 ## インストール
 
@@ -10194,7 +10212,7 @@ https://embed.tiptap.dev/preview/Extensions/FontFamily
 
 <!-- This extension loads the [ProseMirror Gapcursor plugin](https://github.com/ProseMirror/prosemirror-gapcursor) by Marijn Haverbeke, which adds a gap for the cursor in places that don’t allow regular selection. For example, after a table at the end of a document. -->
 
-Note that Tiptap is headless, but the gapcursor needs CSS for its appearance. The [default CSS](https://github.com/ueberdosis/tiptap/tree/main/packages/core/src/style.ts) is loaded through the Editor class.
+<!-- Note that Tiptap is headless, but the gapcursor needs CSS for its appearance. The [default CSS](https://github.com/ueberdosis/tiptap/tree/main/packages/core/src/style.ts) is loaded through the Editor class. -->
 
 この拡張機能は、Marijn Haverbeke による[ProseMirrorGapcursor プラグイン](https://github.com/ProseMirror/prosemirror-gapcursor) をロードします。これにより、通常の選択ができない場所にカーソルのギャップが追加されます。たとえば、ドキュメントの最後にあるテーブルの後などです。
 
@@ -10815,23 +10833,23 @@ Default: `() => ({})`
 [![Total Downloads](https://img.shields.io/packagist/dt/ueberdosis/tiptap-php.svg)](https://packagist.org/packages/ueberdosis/tiptap-php)
 
 ## はじめに
-A PHP package to work with [Tiptap](https://tiptap.dev/) content. You can transform Tiptap-compatible JSON to HTML, and the other way around, sanitize your content, or just modify it.
+<!-- A PHP package to work with [Tiptap](https://tiptap.dev/) content. You can transform Tiptap-compatible JSON to HTML, and the other way around, sanitize your content, or just modify it. -->
 
-[Tiptap]（https://tiptap.dev/）コンテンツを処理するためのPHPパッケージ。 Tiptap互換のJSONをHTMLに変換したり、その逆を行ったり、コンテンツをサニタイズしたり、単に変更したりすることができます。
+[Tiptap](https://tiptap.dev/) コンテンツを処理するための PHP パッケージ。 Tiptap 互換の JSON を HTML に変換したり、その逆を行ったり、コンテンツをサニタイズしたり、単に変更したりすることができます。
 
 ## インストール
-You can install the package via composer:
+<!-- You can install the package via composer: -->
 
-パッケージはcomposerを介してインストールできます。
+パッケージは composer を経由でインストールできます。
 
 ```bash
 composer require ueberdosis/tiptap-php
 ```
 
 ## 使い方
-The PHP package mimics large parts of the JavaScript package. If you know your way around Tiptap, the PHP syntax will feel familiar to you. Here is an easy example:
+<!-- The PHP package mimics large parts of the JavaScript package. If you know your way around Tiptap, the PHP syntax will feel familiar to you. Here is an easy example: -->
 
-PHPパッケージは、JavaScriptパッケージの大部分を模倣しています。 Tiptapの使い方を知っているなら、PHP構文はあなたに馴染みがあると感じるでしょう。簡単な例を次に示します。
+PHP パッケージは、JavaScript パッケージの大部分を模倣しています。 Tiptap の使い方を知っているなら、PHP 構文はあなたに馴染みがあると感じるでしょう。簡単な例を次に示します。
 
 ```php
 (new Tiptap\Editor)
@@ -10843,9 +10861,9 @@ PHPパッケージは、JavaScriptパッケージの大部分を模倣してい�
 ```
 
 ## ドキュメンテーション
-There’s a lot more the PHP package can do. Check out the [repository on GitHub](https://github.com/ueberdosis/tiptap-php).
+<!-- There’s a lot more the PHP package can do. Check out the [repository on GitHub](https://github.com/ueberdosis/tiptap-php). -->
 
-PHPパッケージでできることは他にもたくさんあります。 [GitHubのリポジトリ]（https://github.com/ueberdosis/tiptap-php）を確認してください。
+PHP パッケージでできることは他にもたくさんあります。 [GitHub のリポジトリ](https://github.com/ueberdosis/tiptap-php) を確認してください。
 
 
 
@@ -11057,7 +11075,7 @@ const Text = Node.create({
 
 ## ノードとマーク
 
-### 違い
+### ノードとマークの違い
 
 <!-- Nodes are like blocks of content, for example paragraphs, headings, code blocks, blockquotes and many more. -->
 
@@ -11466,7 +11484,7 @@ const schema = getSchema([
 エディターが破棄されたとき
 
 
-## Register event listeners
+## イベントリスナを登録
 
 <!-- There are three ways to register event listeners. -->
 

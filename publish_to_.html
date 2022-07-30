@@ -2229,9 +2229,8 @@ const editor = new Editor({
 <h2>プラグアンドプレイコラボレーションバックエンド</h2>
 <p>コラボ編集バックエンドは、同期、承認、永続性、スケーリングを処理します。ここでは、いくつかの一般的な使用例を見ていきましょう。</p>
 <blockquote>
-<p>警告早期アクセスをリクエストする
-プラグアンドプレイコラボレーションバックエンド hocuspocus はまだ進行中です。試してみたい場合は、<a href="https://www.hocuspocus.dev">早期アクセスを取得</a> してください。
-：：：</p>
+<p><strong>警告</strong>：早期アクセスをリクエストする
+プラグアンドプレイコラボレーションバックエンド hocuspocus はまだ進行中です。試してみたい場合は、<a href="https://www.hocuspocus.dev">早期アクセスを取得</a> してください。</p>
 </blockquote>
 
 
@@ -2973,7 +2972,7 @@ const CustomExtension = Extension.create({
 <p>しかしながら、それはそれほど簡単ではありません。 エディター内のレンダリングと出力を完全に制御できることを覚えておいてください。</p>
 
 <blockquote>
-<p><strong>警告 JSONを保存するとどうなりますか？</strong>
+<p><strong>警告</strong>：JSONを保存するとどうなりますか？
 これはJSONには適用されません。 JSONでは、すべてがオブジェクトとして保存されます。 HTMLとの間の「変換」を構成する必要はありません。</p>
 </blockquote>
 <h3>HTMLをレンダリングする</h3>
@@ -4410,57 +4409,57 @@ export default () =&gt; ({ state, dispatch }) =&gt; {
 </tr>
 <tr>
 <td>deleteSelection()</td>
-<td>Delete the selection, if there is one.</td>
+<td>選択いる箇所がある場合、選択を削除</td>
 <td><a href="/api/commands/delete-selection">詳細</a></td>
 </tr>
 <tr>
 <td>enter()</td>
-<td>Trigger enter.</td>
+<td>エンターキーをトリガー</td>
 <td><a href="/api/commands/enter">詳細</a></td>
 </tr>
 <tr>
 <td>focus()</td>
-<td>Focus the editor at the given position.</td>
+<td>与えられたポジションのエディターにフォーカス</td>
 <td><a href="/api/commands/focus">詳細</a></td>
 </tr>
 <tr>
 <td>keyboardShortcut()</td>
-<td>Trigger a keyboard shortcut.</td>
+<td>キーボードショートカットをトリガー</td>
 <td><a href="/api/commands/keyboard-shortcut">詳細</a></td>
 </tr>
 <tr>
 <td>scrollIntoView()</td>
-<td>Scroll the selection into view.</td>
+<td>ビューへ選択をスクロール</td>
 <td><a href="/api/commands/scroll-into-view">詳細</a></td>
 </tr>
 <tr>
 <td>selectAll()</td>
-<td>Select the whole document.</td>
+<td>ドキュメントすべてを選択</td>
 <td><a href="/api/commands/select-all">詳細</a></td>
 </tr>
 <tr>
 <td>selectNodeBackward()</td>
-<td>Select a node backward.</td>
+<td>ノードを後方に選択</td>
 <td><a href="/api/commands/select-node-backward">詳細</a></td>
 </tr>
 <tr>
 <td>selectNodeForward()</td>
-<td>Select a node forward.</td>
+<td>前方のノードを選択</td>
 <td><a href="/api/commands/select-node-forward">詳細</a></td>
 </tr>
 <tr>
 <td>selectParentNode()</td>
-<td>Select the parent node.</td>
+<td>親ノードを選択</td>
 <td><a href="/api/commands/select-parent-node">詳細</a></td>
 </tr>
 <tr>
 <td>setNodeSelection()</td>
-<td>Creates a NodeSelection.</td>
+<td>NodeSelection を作成</td>
 <td><a href="/api/commands/set-node-selection">詳細</a></td>
 </tr>
 <tr>
 <td>setTextSelection()</td>
-<td>Creates a TextSelection.</td>
+<td>TextSelection を作成</td>
 <td><a href="/api/commands/set-text-selection">詳細</a></td>
 </tr>
 </tbody>
@@ -4481,8 +4480,7 @@ export default () =&gt; ({ state, dispatch }) =&gt; {
 <p>Tiptap は世界中の何千もの開発者によって使用されていますが、それでも私たちにとっては副次的なプロジェクトです。 それを変えて、オープンソースを私たちのフルタイムの仕事にしましょう！ 300 近くのスポンサーがいるので、私たちはすでに中途半端です。</p>
 
 <p>それらに参加してスポンサーになりましょう！ オープンソースにより多くの時間を費やせるようにしてください。このページに記入して、最新の状態に保ちます。</p>
-<p><a href="https://github.com/sponsors/ueberdosis">GitHub でスポンサーになる →</a>
-:::</p>
+<p><a href="https://github.com/sponsors/ueberdosis">GitHub でスポンサーになる →</a></p>
 <h1>blur</h1>
 <p>このコマンドは、エディターからフォーカスを削除します。</p>
 
@@ -6382,9 +6380,7 @@ tiptap 1はそのノードをあなたから隠そうとしましたが、それ
 <p>この拡張機能は、テキストを <strong>太字</strong> でレンダリングします。 <code>&lt;strong&gt;</code>、<code>&lt;b&gt;</code> タグ、またはインラインの  <code>style</code> 属性を持つテキストを渡して、エディターの初期コンテンツで <code>font-weight</code> CSS ルールを設定すると、それらはすべてそれに応じてレンダリングされます。</p>
 
 <p><code>** twoasterisks**</code> または <code>__twounderlines__</code> と入力すると、入力中に魔法のように <strong>太字</strong> のテキストに変換されます。</p>
-<p>::: warning Restrictions
-The extension will generate the corresponding <code>&lt;strong&gt;</code> HTML tags when reading contents of the <code>Editor</code> instance. All text marked bold, regardless of the method will be normalized to <code>&lt;strong&gt;</code> HTML tags.
-:::</p>
+
 <blockquote>
 <p><strong>警告</strong> ： 制限
 拡張機能は、<code>Editor</code> インスタンスのコンテンツを読み取るときに対応する <code>&lt;strong&gt;</code> HTMLタグを生成します。メソッドに関係なく、太字でマークされたすべてのテキストは、<code>&lt;strong&gt;</code>HTML タグに正規化されます。</p>
@@ -7064,7 +7060,7 @@ editor.commands.toggleLink({ href: 'https://example.com', target: '_blank' })
 <tr>
 <td><a href="/api/extensions/unique-id">UniqueID</a></td>
 <td>–</td>
-<td>Requires a Tiptap Pro subscription</td>
+<td>Tiptap Pro の契約が必要</td>
 </tr>
 <tr>
 <td><a href="/api/extensions/typography">Typography</a></td>
@@ -7107,30 +7103,36 @@ const editor = new Editor({
 <h1>Bubble Menu</h1>
 <p><a href="https://www.npmjs.com/package/@tiptap/extension-bubble-menu"><img src="https://img.shields.io/npm/v/@tiptap/extension-bubble-menu.svg?label=version" alt="Version" /></a>
 <a href="https://npmcharts.com/compare/@tiptap/extension-bubble-menu?minimal=true"><img src="https://img.shields.io/npm/dm/@tiptap/extension-bubble-menu.svg" alt="Downloads" /></a></p>
-<p>This extension will make a contextual menu appear near a selection of text. Use it to let users apply <a href="/api/marks">marks</a> to their text selection.</p>
-<p>As always, the markup and styling is totally up to you.</p>
-<h2>Installation</h2>
+
+<p>この拡張機能により、選択したテキストの近くにコンテキスト メニューが表示されます。これを使用して、ユーザーがテキスト選択に <a href="/api/marks">marks</a> を適用できるようにします。</p>
+
+<p>いつものように、マークアップとスタイリングは完全にあなた次第です。</p>
+<h2>インストール</h2>
 <pre><code class="language-bash">npm install @tiptap/extension-bubble-menu
 </code></pre>
-<h2>Settings</h2>
+<h2>設定</h2>
 <h3>element</h3>
-<p>The DOM element that contains your menu.</p>
+
+<p>メニューを含む DOM 要素。</p>
 <p>Type: <code>HTMLElement</code></p>
 <p>Default: <code>null</code></p>
 <h3>tippyOptions</h3>
-<p>Under the hood, the <code>BubbleMenu</code> uses <a href="https://atomiks.github.io/tippyjs/v6/all-props/">tippy.js</a>. You can directly pass options to it.</p>
+
+<p>内部では、<code>BubbleMenu</code> は <a href="https://atomics.github.io/tippyjs/v6/all-props/">tippy.js</a> を使用します。オプションを直接渡すことができます。</p>
 <p>Type: <code>Object</code></p>
 <p>Default: <code>{}</code></p>
 <h3>pluginKey</h3>
-<p>The key for the underlying ProseMirror plugin. Make sure to use different keys if you add more than one instance.</p>
+
+<p>基盤となる ProseMirror プラグインのキー。複数のインスタンスを追加する場合は、必ず別のキーを使用してください。</p>
 <p>Type: <code>string | PluginKey</code></p>
 <p>Default: <code>'bubbleMenu'</code></p>
 <h3>shouldShow</h3>
-<p>A callback to control whether the menu should be shown or not.</p>
+
+<p>メニューを表示するかどうかを制御するコールバック。</p>
 <p>Type: <code>(props) =&gt; boolean</code></p>
-<h2>Source code</h2>
+<h2>ソースコード</h2>
 <p><a href="https://github.com/ueberdosis/tiptap/blob/main/packages/extension-bubble-menu/">packages/extension-bubble-menu/</a></p>
-<h2>Usage</h2>
+<h2>使用法</h2>
 <h3>JavaScript</h3>
 <pre><code class="language-js">import { Editor } from '@tiptap/core'
 import BubbleMenu from '@tiptap/extension-bubble-menu'
@@ -7143,10 +7145,11 @@ new Editor({
   ],
 })
 </code></pre>
-<h3>Frameworks</h3>
+<h3>フレームワーク</h3>
 <p><a href="https://embed.tiptap.dev/preview/Extensions/BubbleMenu">https://embed.tiptap.dev/preview/Extensions/BubbleMenu</a></p>
-<h3>Custom logic</h3>
-<p>Customize the logic for showing the menu with the <code>shouldShow</code> option. For components, <code>shouldShow</code> can be passed as a prop.</p>
+<h3>カスタムロジック</h3>
+
+<p>「shouldShow」オプションを使用して、メニューを表示するためのロジックをカスタマイズします。コンポーネントの場合、「shouldShow」を prop として渡すことができます。</p>
 <pre><code class="language-js">BubbleMenu.configure({
   shouldShow: ({ editor, view, state, oldState, from, to }) =&gt; {
     // only show the bubble menu for images and links
@@ -7154,8 +7157,9 @@ new Editor({
   },
 })
 </code></pre>
-<h3>Multiple menus</h3>
-<p>Use multiple menus by setting an unique <code>pluginKey</code>.</p>
+<h3>複数のメニュー</h3>
+
+<p>一意の「pluginKey」を設定して、複数のメニューを使用します。</p>
 <pre><code class="language-js">import { Editor } from '@tiptap/core'
 import BubbleMenu from '@tiptap/extension-bubble-menu'
 
@@ -7172,7 +7176,8 @@ new Editor({
   ],
 })
 </code></pre>
-<p>Alternatively you can pass a ProseMirror <code>PluginKey</code>.</p>
+
+<p>または、ProseMirror <code>PluginKey</code> を渡すこともできます。</p>
 <pre><code class="language-js">import { Editor } from '@tiptap/core'
 import BubbleMenu from '@tiptap/extension-bubble-menu'
 import { PluginKey } from 'prosemirror-state'
@@ -7412,8 +7417,10 @@ editor.storage.characterCount.words({ node: someCustomNode })
 <h1>ドロップカーソル</h1>
 <p><a href="https://www.npmjs.com/package/@tiptap/extension-dropcursor"><img src="https://img.shields.io/npm/v/@tiptap/extension-dropcursor.svg?label=version" alt="Version" /></a>
 <a href="https://npmcharts.com/compare/@tiptap/extension-dropcursor?minimal=true"><img src="https://img.shields.io/npm/dm/@tiptap/extension-dropcursor.svg" alt="Downloads" /></a></p>
-<p>This extension loads the <a href="https://github.com/ProseMirror/prosemirror-dropcursor">ProseMirror Dropcursor plugin</a> by Marijn Haverbeke, which shows a cursor at the drop position when something is dragged into the editor.</p>
-<p>Note that Tiptap is headless, but the dropcursor needs CSS for its appearance. There are settings for the color and width, and you’re free to add a custom CSS class.</p>
+
+<p>この拡張機能は、Marijn Haverbeke による <a href="https://github.com/ProseMirror/prosemirror-dropcursor">ProseMirror Dropcursor プラグイン</a> を読み込みます。これは、エディターに何かをドラッグすると、ドロップ位置にカーソルを表示します。</p>
+
+<p>Tiptap はヘッドレスですが、ドロップカーソルの外観には CSS が必要です。 色と幅の設定があり、カスタム CSS クラスを自由に追加できます。</p>
 <h2>インストール</h2>
 <pre><code class="language-bash">npm install @tiptap/extension-dropcursor
 </code></pre>
@@ -7606,7 +7613,7 @@ new Editor({
 <p><a href="https://www.npmjs.com/package/@tiptap/extension-gapcursor"><img src="https://img.shields.io/npm/v/@tiptap/extension-gapcursor.svg?label=version" alt="Version" /></a>
 <a href="https://npmcharts.com/compare/@tiptap/extension-gapcursor?minimal=true"><img src="https://img.shields.io/npm/dm/@tiptap/extension-gapcursor.svg" alt="Downloads" /></a></p>
 
-<p>Note that Tiptap is headless, but the gapcursor needs CSS for its appearance. The <a href="https://github.com/ueberdosis/tiptap/tree/main/packages/core/src/style.ts">default CSS</a> is loaded through the Editor class.</p>
+
 <p>この拡張機能は、Marijn Haverbeke による<a href="https://github.com/ProseMirror/prosemirror-gapcursor">ProseMirrorGapcursor プラグイン</a> をロードします。これにより、通常の選択ができない場所にカーソルのギャップが追加されます。たとえば、ドキュメントの最後にあるテーブルの後などです。</p>
 <p>Tiptap はヘッドレスですが、gapcursor の外観には CSS が必要です。 <a href="https://github.com/ueberdosis/tiptap/tree/main/packages/core/src/style.ts">デフォルトのCSS</a> は、Editor クラスを介して読み込まれます。</p>
 <h2>インストール</h2>
@@ -8149,16 +8156,16 @@ const editor = new Editor({
 <p><a href="https://packagist.org/packages/ueberdosis/tiptap-php"><img src="https://img.shields.io/packagist/v/ueberdosis/tiptap-php.svg" alt="Latest Version on Packagist" /></a>
 <a href="https://packagist.org/packages/ueberdosis/tiptap-php"><img src="https://img.shields.io/packagist/dt/ueberdosis/tiptap-php.svg" alt="Total Downloads" /></a></p>
 <h2>はじめに</h2>
-<p>A PHP package to work with <a href="https://tiptap.dev/">Tiptap</a> content. You can transform Tiptap-compatible JSON to HTML, and the other way around, sanitize your content, or just modify it.</p>
-<p>[Tiptap]（https://tiptap.dev/）コンテンツを処理するためのPHPパッケージ。 Tiptap互換のJSONをHTMLに変換したり、その逆を行ったり、コンテンツをサニタイズしたり、単に変更したりすることができます。</p>
+
+<p><a href="https://tiptap.dev/">Tiptap</a> コンテンツを処理するための PHP パッケージ。 Tiptap 互換の JSON を HTML に変換したり、その逆を行ったり、コンテンツをサニタイズしたり、単に変更したりすることができます。</p>
 <h2>インストール</h2>
-<p>You can install the package via composer:</p>
-<p>パッケージはcomposerを介してインストールできます。</p>
+
+<p>パッケージは composer を経由でインストールできます。</p>
 <pre><code class="language-bash">composer require ueberdosis/tiptap-php
 </code></pre>
 <h2>使い方</h2>
-<p>The PHP package mimics large parts of the JavaScript package. If you know your way around Tiptap, the PHP syntax will feel familiar to you. Here is an easy example:</p>
-<p>PHPパッケージは、JavaScriptパッケージの大部分を模倣しています。 Tiptapの使い方を知っているなら、PHP構文はあなたに馴染みがあると感じるでしょう。簡単な例を次に示します。</p>
+
+<p>PHP パッケージは、JavaScript パッケージの大部分を模倣しています。 Tiptap の使い方を知っているなら、PHP 構文はあなたに馴染みがあると感じるでしょう。簡単な例を次に示します。</p>
 <pre><code class="language-php">(new Tiptap\Editor)
     -&gt;setContent('&lt;p&gt;Example Text&lt;/p&gt;')
     -&gt;getDocument();
@@ -8167,8 +8174,8 @@ const editor = new Editor({
 // ['type' =&gt; 'doc', 'content' =&gt; …]
 </code></pre>
 <h2>ドキュメンテーション</h2>
-<p>There’s a lot more the PHP package can do. Check out the <a href="https://github.com/ueberdosis/tiptap-php">repository on GitHub</a>.</p>
-<p>PHPパッケージでできることは他にもたくさんあります。 [GitHubのリポジトリ]（https://github.com/ueberdosis/tiptap-php）を確認してください。</p>
+
+<p>PHP パッケージでできることは他にもたくさんあります。 <a href="https://github.com/ueberdosis/tiptap-php">GitHub のリポジトリ</a> を確認してください。</p>
 <h1>キーボード ショートカット</h1>
 <h2>はじめに</h2>
 
@@ -8511,7 +8518,7 @@ const Text = Node.create({
 })
 </code></pre>
 <h2>ノードとマーク</h2>
-<h3>違い</h3>
+<h3>ノードとマークの違い</h3>
 
 
 <p>ノードは、段落、見出し、コードブロック、ブロッククォートなどのコンテンツのブロックのようなものです。</p>
@@ -8768,7 +8775,7 @@ const schema = getSchema([
 <h3>destroy</h3>
 
 <p>エディターが破棄されたとき</p>
-<h2>Register event listeners</h2>
+<h2>イベントリスナを登録</h2>
 
 <p>イベントリスナーを登録する方法は3つあります。</p>
 <h3>オプション 1: コンフィギュレーション</h3>
